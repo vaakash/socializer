@@ -1,0 +1,10 @@
+{
+  "name": "socializer",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-watch": "latest",
+	"grunt-sass": "latest"
+  }
+}

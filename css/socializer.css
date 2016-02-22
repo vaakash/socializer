@@ -1,0 +1,223 @@
+/* Socializer - CSS library for social media buttons
+ * Copyright (c) 2016 Aakash Chakravarthy - www.aakashweb.com
+ * MIT license
+ */
+.socializer {
+  padding: 0;
+  margin: 0;
+  display: inline-block; }
+  .socializer li {
+    float: left;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    position: relative; }
+  .socializer a {
+    display: inline-block;
+    border: 0;
+    text-align: center;
+    text-decoration: none;
+    width: 16px;
+    height: 16px;
+    line-height: 18px;
+    font-size: 8px; }
+    .socializer a > * {
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0;
+      margin: 0; }
+  .socializer:after {
+    content: '';
+    clear: both;
+    display: block; }
+
+.socializer--16px a {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  font-size: 8px; }
+
+.socializer--16px.socializer--font-small a {
+  font-size: 5.3333333333px; }
+
+.socializer--16px.socializer--font-huge a {
+  font-size: 10.6666666667px; }
+
+.socializer--32px a {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 16px; }
+
+.socializer--32px.socializer--font-small a {
+  font-size: 10.6666666667px; }
+
+.socializer--32px.socializer--font-huge a {
+  font-size: 21.3333333333px; }
+
+.socializer--48px a {
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  font-size: 24px; }
+
+.socializer--48px.socializer--font-small a {
+  font-size: 16px; }
+
+.socializer--48px.socializer--font-huge a {
+  font-size: 32px; }
+
+.socializer--64px a {
+  width: 64px;
+  height: 64px;
+  line-height: 64px;
+  font-size: 32px; }
+
+.socializer--64px.socializer--font-small a {
+  font-size: 21.3333333333px; }
+
+.socializer--64px.socializer--font-huge a {
+  font-size: 42.6666666667px; }
+
+.socializer__twitter a {
+  color: #00ccff;
+  border-color: #00ccff;
+  background-color: #00ccff; }
+
+.socializer__facebook a {
+  color: #3e5b98;
+  border-color: #3e5b98;
+  background-color: #3e5b98; }
+
+.socializer__google-plus a {
+  color: #d93e2d;
+  border-color: #d93e2d;
+  background-color: #d93e2d; }
+
+.socializer__linkedin a {
+  color: #3371b7;
+  border-color: #3371b7;
+  background-color: #3371b7; }
+
+.socializer__rss a {
+  color: #f26109;
+  border-color: #f26109;
+  background-color: #f26109; }
+
+.socializer--text a {
+  width: auto;
+  padding: 0 0.5em; }
+  .socializer--text a > * {
+    padding-right: 0.5em; }
+    .socializer--text a > *:last-child {
+      padding-right: 0; }
+
+.socializer--solid a {
+  color: #fff; }
+
+.socializer--solid-2 a {
+  color: #fff;
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.4); }
+
+.socializer--solid-3 a {
+  color: #fff; }
+  .socializer--solid-3 a i {
+    text-shadow: 0.2em 0.2em 0px rgba(0, 0, 0, 0.5); }
+
+.socializer--line a {
+  border: 2px solid;
+  background-color: transparent; }
+
+.socializer--icon-only a {
+  border: 0;
+  background-color: transparent; }
+
+.socializer--icon-only-2 a {
+  border-size: 0 0 2px 0;
+  background-color: transparent; }
+
+.socializer--white-1 a {
+  background: #fff;
+  color: #333; }
+
+.socializer--white-2 a {
+  background: #fff;
+  border-bottom: 2px solid; }
+
+.socializer--dark-1 a {
+  background: #333;
+  color: #fff; }
+
+.socializer--dark-2 a {
+  background: #333;
+  color: #fff;
+  border: 1px solid; }
+
+.socializer--circle a {
+  border-radius: 50%; }
+
+.socializer--circle .socializer--text a, .socializer--circle.socializer--text a {
+  border-radius: 1em; }
+
+.socializer--squircle a, .socializer--squircle .socializer--text a, .socializer--squircle.socializer--text a {
+  border-radius: 0.5em; }
+
+.socializer--squircle-2 a, .socializer--squircle-2 .socializer--text a, .socializer--squircle-2.socializer--text a {
+  border-radius: 0 0.5em 0 0.5em; }
+
+.socializer--pad li {
+  margin-right: 0.5em; }
+
+.socializer--fluid {
+  display: table;
+  width: 100%;
+  table-layout: fixed; }
+  .socializer--fluid li {
+    display: table-cell;
+    float: none;
+    width: 100%; }
+  .socializer--fluid a {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden; }
+  .socializer--fluid.socializer--pad {
+    border-spacing: 0.25em; }
+  .socializer--fluid .socializer--text a, .socializer--fluid.socializer--text a {
+    padding: 0; }
+    .socializer--fluid .socializer--text a > *, .socializer--fluid.socializer--text a > * {
+      margin-right: 0.5em; }
+    .socializer--fluid .socializer--text a:last-child, .socializer--fluid.socializer--text a:last-child {
+      margin: 0; }
+  .socializer--fluid.socializer--squircle a {
+    border-radius: 0.5em; }
+  .socializer--fluid.socializer--squircle-2 a {
+    border-radius: 0 0.5em 0 0.5em; }
+
+.socializer--vertical {
+  width: 16px; }
+  .socializer--vertical.socializer--16px {
+    width: 16px; }
+    .socializer--vertical.socializer--16px li {
+      width: 16px; }
+  .socializer--vertical.socializer--32px {
+    width: 32px; }
+    .socializer--vertical.socializer--32px li {
+      width: 32px; }
+  .socializer--vertical.socializer--48px {
+    width: 48px; }
+    .socializer--vertical.socializer--48px li {
+      width: 48px; }
+  .socializer--vertical.socializer--64px {
+    width: 64px; }
+    .socializer--vertical.socializer--64px li {
+      width: 64px; }
+  .socializer--vertical.socializer--pad li {
+    margin: 0 0 0.5em 0; }
+  .socializer--vertical.socializer--text a, .socializer--vertical .socializer--text a {
+    padding: 0;
+    width: inherit; }
+    .socializer--vertical.socializer--text a > *, .socializer--vertical .socializer--text a > * {
+      padding: 0; }
+  .socializer--vertical.socializer--text .text, .socializer--vertical .socializer--text .text {
+    display: none; }
