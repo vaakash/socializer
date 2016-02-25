@@ -10,6 +10,20 @@
 <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css">
 <link rel="stylesheet" type="text/css" href="../bower_components/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="../css/socializer.css">
+
+<script src="../js/socializer.js"></script>
+
+<script>
+window.onload = function(){
+    d = socializer( '.hey', {
+        shape: 'circle',
+        hover: 'sink'
+    });
+    
+    console.log( d );
+}
+</script>
+
 </head>
 <body>
 
@@ -19,6 +33,9 @@
 		margin: 15px;
 	}
 </style>
+
+<div class="hey"></div>
+
 
 <h3>Share</h3>
 <ul class="socializer socializer--32px socializer--solid socializer--circle socializer--pad socializer--verti socializer--fade-white">
