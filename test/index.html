@@ -17,7 +17,10 @@
 window.onload = function(){
     d = socializer( '.hey', {
         shape: 'circle',
-        hover: 'sink'
+        hover: 'shrink',
+        theme: 'solid',
+        sites: ['facebook', 'twitter', 'rss', 'reddit', [ 'googleplus', 'linkedin' ]],
+        text: false
     });
     
     console.log( d );
@@ -40,23 +43,23 @@ window.onload = function(){
 <h3>Share</h3>
 <ul class="socializer socializer--32px socializer--solid socializer--circle socializer--pad socializer--verti socializer--fade-white">
 
-	<li class="socializer__twitter socializer--text">
+	<li class="socializer__btn socializer__twitter socializer--text">
 		<a href="#"><i class="fa fa-twitter"></i><span class="text">Twitter</span><span class="text">20</span></a>
 	</li>
 
-	<li class="socializer__facebook socializer--text">
+	<li class="socializer__btn socializer__facebook socializer--text">
 		<a href="#"><i class="fa fa-facebook"></i><span class="text">Facebook</span></a>
 	</li>
 
-	<li class="socializer__google-plus">
+	<li class="socializer__btn socializer__googleplus">
 		<a href="#"><i class="fa fa-google-plus"></i></a>
 	</li>
 
-	<li class="socializer__linkedin">
+	<li class="socializer__btn socializer__linkedin">
 		<a href="#"><i class="fa fa-linkedin"></i></a>
 	</li>
 
-	<li class="socializer__rss">
+	<li class="socializer__btn socializer__rss">
 		<a href="#"><i class="fa fa-rss"></i></a>
 	</li>
 
@@ -83,7 +86,7 @@ window.onload = function(){
         <a href='#'><i class='fa fa-facebook'></i></a>
     </li><li class='socializer__google'>
         <a href='#'><i class='fa fa-google'></i></a>
-    </li><li class='socializer__google-plus'>
+    </li><li class='socializer__googleplus'>
         <a href='#'><i class='fa fa-google-plus'></i></a>
     </li><li class='socializer__hackernews'>
         <a href='#'><i class='fa fa-hacker-news'></i></a>
@@ -112,7 +115,7 @@ window.onload = function(){
     </li>
     <li class="socializer__more">
         <a href='#'><i class='fa fa-share'></i></a>
-        <ul>
+        <ul class="socializer">
             <li class='socializer__twitter'>
             <a href='#'><i class='fa fa-twitter'></i></a>
             </li><li class='socializer__vkontakte'>

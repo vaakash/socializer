@@ -25,7 +25,7 @@ $sites: (
     google: (
         color: #3A7CEC
     ),
-    google-plus: (
+    googleplus: (
         color: #DB483B
     ),
     hackernews: (
@@ -98,7 +98,7 @@ $size-list: ( 16px, 32px, 48px, 64px );
     // Default font-size
     $size: 16px;
     
-    li{
+    >*{
         float: left;
         list-style: none;
         padding: 0;
@@ -233,10 +233,10 @@ $size-list: ( 16px, 32px, 48px, 64px );
 }
 
 // Gutters
-.socializer--pad li{
+.socializer--pad >*{
     margin-right: 0.5em;
 }
-.socializer--multiline li{
+.socializer--multiline >*{
     margin-bottom: 0.5em;
 }
 
@@ -245,7 +245,7 @@ $size-list: ( 16px, 32px, 48px, 64px );
     width: 100%;
     table-layout: fixed;
     
-    li{
+    >*{
         display: table-cell;
         float: none;
         width: 100%;
@@ -280,12 +280,12 @@ $size-list: ( 16px, 32px, 48px, 64px );
     @each $size in $size-list{
         &.socializer--#{$size}{
             width: $size;
-            li{
+            >*{
                 width: $size;
             }
         }
     }
-    &.socializer--pad li{
+    &.socializer--pad >*{
         margin: 0 0 0.5em 0;
     }   
     &.socializer--text a, & .socializer--text a{
@@ -377,6 +377,7 @@ $size-list: ( 16px, 32px, 48px, 64px );
         position: absolute;
         display: none;
         box-shadow: 0 2px 6px -2px;
+        z-index: 9999;
         
         &:before{
             content: '';
@@ -395,7 +396,7 @@ $size-list: ( 16px, 32px, 48px, 64px );
         }
     }
     
-    li{
+    >*{
         margin: 0 0 0.5em 0;
         
         &:last-child{

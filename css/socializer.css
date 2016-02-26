@@ -6,7 +6,7 @@
   padding: 0;
   margin: 0;
   display: inline-block; }
-  .socializer li {
+  .socializer > * {
     float: left;
     list-style: none;
     padding: 0;
@@ -119,7 +119,7 @@
   border-color: #3A7CEC;
   background-color: #3A7CEC; }
 
-.socializer__google-plus a {
+.socializer__googleplus a {
   color: #DB483B;
   border-color: #DB483B;
   background-color: #DB483B; }
@@ -251,17 +251,17 @@
 .socializer--squircle-2 a, .socializer--squircle-2 .socializer--text a, .socializer--squircle-2.socializer--text a {
   border-radius: 0 0.5em 0 0.5em; }
 
-.socializer--pad li {
+.socializer--pad > * {
   margin-right: 0.5em; }
 
-.socializer--multiline li {
+.socializer--multiline > * {
   margin-bottom: 0.5em; }
 
 .socializer--fluid {
   display: table;
   width: 100%;
   table-layout: fixed; }
-  .socializer--fluid li {
+  .socializer--fluid > * {
     display: table-cell;
     float: none;
     width: 100%; }
@@ -286,21 +286,21 @@
   width: 16px; }
   .socializer--vertical.socializer--16px {
     width: 16px; }
-    .socializer--vertical.socializer--16px li {
+    .socializer--vertical.socializer--16px > * {
       width: 16px; }
   .socializer--vertical.socializer--32px {
     width: 32px; }
-    .socializer--vertical.socializer--32px li {
+    .socializer--vertical.socializer--32px > * {
       width: 32px; }
   .socializer--vertical.socializer--48px {
     width: 48px; }
-    .socializer--vertical.socializer--48px li {
+    .socializer--vertical.socializer--48px > * {
       width: 48px; }
   .socializer--vertical.socializer--64px {
     width: 64px; }
-    .socializer--vertical.socializer--64px li {
+    .socializer--vertical.socializer--64px > * {
       width: 64px; }
-  .socializer--vertical.socializer--pad li {
+  .socializer--vertical.socializer--pad > * {
     margin: 0 0 0.5em 0; }
   .socializer--vertical.socializer--text a, .socializer--vertical .socializer--text a {
     padding: 0;
@@ -366,7 +366,8 @@
   padding: 0.5em;
   position: absolute;
   display: none;
-  box-shadow: 0 2px 6px -2px; }
+  box-shadow: 0 2px 6px -2px;
+  z-index: 9999; }
   .socializer__more ul:before {
     content: '';
     display: inline-block;
@@ -380,9 +381,9 @@
     clear: both;
     display: block; }
 
-.socializer__more li {
+.socializer__more > * {
   margin: 0 0 0.5em 0; }
-  .socializer__more li:last-child {
+  .socializer__more > *:last-child {
     margin-bottom: 0; }
 
 .socializer__more:hover ul {
