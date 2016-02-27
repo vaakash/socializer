@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title></title>
+<title>This is a title</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,11 +16,9 @@
 <script>
 window.onload = function(){
     d = socializer( '.hey', {
-        shape: 'circle',
-        hover: 'shrink',
-        theme: 'solid',
-        sites: ['facebook', 'twitter', 'rss', 'reddit', [ 'googleplus', 'linkedin' ]],
-        text: false
+        sites: ['twitter', 'twitter', 'rss', 'reddit', 'email', [ 'googleplus', 'linkedin' ]],
+        text: false,
+     
     });
     
     console.log( d );
@@ -37,7 +35,12 @@ window.onload = function(){
 	}
 </style>
 
-<div class="hey"></div>
+<div class="hey" data-features="48px,solid,circle,pad,hover" data-sites="facebook,twitter,rss,more" data-more="yahoobookmarks,reddit" data-meta-twitter="http://aaaaaaaaa" data-meta-hey="sdasds"></div>
+
+<h4>Test</h4>
+
+<div class="hey" data-features="32px,line,pad,zoom,vertical" data-sites="reddit,addtofavorites,googleplus,google,yahoo"></div>
+
 
 
 <h3>Share</h3>

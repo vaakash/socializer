@@ -11,13 +11,15 @@
         
         this.elements = document.querySelectorAll( ele );
         this.options = options;
-        this.length = this.elements.length;
         
-        if( this.length == 0 ){
+        if( this.elements.length == 0 ){
             return this;
         }
         
-        this.init();
+        fn.each( this.elements, function( ele ){
+            this.ele = ele;
+            this.init();
+        }, this );
         
         return this;
         
@@ -27,25 +29,29 @@
     _socializer.prototype = {
         
         defaults: {
-            sites: 'facebook,twitter,googleplus,pinterest,email,rss',
-            size: '32px',
-            theme: 'solid',
-            shape: '',
-            gutter: true,
-            hover: '',
-            type: '',
+            sites: [ 'facebook', 'twitter', 'googleplus', 'print', 'email', 'rss' ],
+            features: '32px,solid',
             more: '',
-            link: '',
-            text: false
+            meta: {
+                link: '',
+                title: '',
+                description: '',
+                image: '',
+                rss: '',
+                twitterusername: '',
+            },
+            text: true
         },
         
         init: function(){
             
-            this.options = fn.extend( {}, this.defaults, this.options );
-            this.getClass();
+            this.initOptions();
             this.setClass();
             this.setMeta();
-            this.setHTML();
+            
+            if( this.ele.children.length == 0 ){
+                this.setHTML( this.ele );
+            }
             
         },
         
@@ -67,66 +73,73 @@
             rss: [ 'RSS', 'rss', '{rss-url}' ],
             stumbleupon: [ 'StumbleUpon', 'stumbleupon', 'http://www.stumbleupon.com/submit?url={url}&amp;title={title}' ],
             tumblr: [ 'Tumblr', 'tumblr', 'http://www.tumblr.com/share?v=3&amp;u={url}&amp;t={title}&amp;s={excerpt}' ],
-            twitter: [ 'Twitter', 'twitter', 'http://twitter.com/home?status={title}%20-%20{s-url}%20{twitter-username}' ],
+            twitter: [ 'Twitter', 'twitter', 'http://twitter.com/home?status={title}%20-%20{url}%20{twitter-username}' ],
             vkontakte: [ 'VKontakte', 'vk', 'http://vk.com/share.php?url={url}&title={title}&description={excerpt}' ],
             yahoobookmarks: [ 'Yahoo! Bookmarks', 'yahoo', 'http://bookmarks.yahoo.com/toolbar/savebm?u={url}&amp;t={title}&opener=bm&amp;ei=UTF-8&amp;d={excerpt}' ], 
             more: [ 'More', 'share', '#' ]
         },
         
-        getClass: function(){
+        initOptions: function(){
             
-            var opts = this.options,
-                classes = [];
+            var datas = {};
             
-            if( opts.size ) classes.push( opts.size );
-            if( opts.theme ) classes.push( opts.theme );
-            if( opts.shape ) classes.push( opts.shape );
-            if( opts.gutter ) classes.push( 'pad' );
-            if( opts.hover ) classes.push( opts.hover );
-            if( opts.type ) classes.push( opts.type );
-            
-            return this.classes = classes;
+            for ( var att, i = 0, atts = this.ele.attributes, n = atts.length; i < n; i++){
+                att = atts[i];
+                if( att.nodeName.search( 'data' ) != -1 ){
+                    props = att.nodeName.replace( 'data-', '' );
+                    fn.nest( datas, props.split( '-' ), att.nodeValue );
+                }
+            }
+
+            var opts = fn.extend( {}, this.defaults, this.options, datas );
+
+            opts.sites = ( typeof opts.sites == 'string' ) ? opts.sites.split( ',' ) : opts.sites;
+            opts.sites.more = ( typeof opts.more == 'string' ) ? opts.more.split( ',' ) : opts.more;
+
+            this.ele.socializer = opts;
             
         },
-        
+
         setClass: function(){
             
-            fn.each( this.elements, function( ele ){
-                fn.addClass( ele, 'socializer' );
-                this.classes.forEach(function( className ){
-                    fn.addClass( ele, 'socializer--' + className );
-                });
-            }, this);
+            var ele = this.ele,
+                opts = this.ele.socializer,
+                features = opts.features.split( ',' );
+            
+            fn.removeClass( ele, 'socializer' );
+            fn.addClass( ele, 'socializer' );
+            
+            features.forEach(function( className ){
+                fn.addClass( ele, 'socializer--' + className );
+            });
             
         },
         
-        getHTML: function( sites, tag ){
+        getHTML: function( sites, tag, showText ){
             
-            var opts = this.options,
-                child = ( tag == 'UL' ) ? 'li' : 'span',
+            var child = ( tag == 'UL' ) ? 'li' : 'span',
                 html = [];
-
+                
             sites.forEach( function( site ){
                 
                 if( site in this.sites || typeof site == 'object' ){
-                    
                     var moreHTML = '';
-                    
                     if( site == 'more' || typeof site == 'object' ){
-                        
-                        var moreList = ( typeof site == 'object' ) ? site : ( ( site.more ) ? site.more : [] ),
+ 
+                        var moreList = ( typeof site == 'object' ) ? site : ( ( sites.more ) ? sites.more : [] ),
                             site = 'more';
                         
                         if( moreList.length > 0 ){
-                            moreHTML = this.getHTML( moreList, 'ul' );
+                            moreHTML = this.getHTML( moreList, 'UL', showText );
                             moreHTML = '<ul class="socializer">' + moreHTML + '</ul>';
                         }
                     }
                     
-                    var text = ( opts.text ) ? '<span class="text">' + this.sites[ site ][ 0 ] + '</span>' : '',
-                        textClass = ( text ) ? ' socializer--text' : '';
+                    var text = ( showText ) ? '<span class="text">' + this.sites[ site ][ 0 ] + '</span>' : '',
+                        textClass = ( showText ) ? ' socializer--text' : '',
+                        link = this.getLink( site );
                         
-                    html.push( '<' + child + ' class="socializer__' + site + textClass + '"><a href="#"><i class="fa fa-' + this.sites[ site ][ 1 ] + '"></i>' + text + '</a>' + moreHTML +'</' + child + '>' );
+                    html.push( '<' + child + ' class="socializer__' + site + textClass + '"><a href="'+ link +'"><i class="fa fa-' + this.sites[ site ][ 1 ] + '"></i>' + text + '</a>' + moreHTML +'</' + child + '>' );
                 }
             }, this);
 
@@ -136,33 +149,56 @@
         
         setHTML: function(){
 
-            var opts = this.options;
-            
-            opts.sites = ( typeof opts.sites == 'string' ) ? opts.sites.split( ',' ) : opts.sites;
-            opts.sites.more = ( typeof opts.more == 'string' ) ? opts.more.split( ',' ) : opts.more;
-            
-            fn.each( this.elements, function( ele ){
-                var html = this.getHTML( opts.sites );
-                ele.innerHTML = html;
-            }, this);
+            var opts = this.ele.socializer,
+                html = this.getHTML( opts.sites, this.ele.tagName, opts.text );
+                
+            this.ele.innerHTML = html;
             
         },
         
         setMeta: function(){
             
-            var opts = this.options;
+            var opts = this.ele.socializer;
             
-            if( opts.link ){
-                this.link = opts.link;
-                this.desc = opts.description;
+            if( opts.meta.link ){
+                this.link = opts.meta.link;
+                this.title = opts.meta.title;
+                this.description = opts.meta.description;
+                this.image = opts.meta.image;
+                this.rss = opts.meta.rss;
+                this.twitterusername = opts.meta.twitterusername;
             }else{
                 this.link = window.location.href;
-                this.description = document.title;
+                this.title = document.title;
+                this.description = '';
+                this.image = '';
+                this.rss = '';
+                this.twitterusername = '';
             }
             
         },
-        
+
         getLink: function( site ){
+            
+            var replaceMap = {
+                '{url}' : encodeURIComponent( this.link ),
+                '{title}': encodeURIComponent( this.title ),
+                '{excerpt}': encodeURIComponent( this.description ),
+                '{de-url}': encodeURIComponent( this.link ),
+                '{image}': encodeURIComponent( this.image ),
+                '{rss-url}': encodeURIComponent( this.rss ),
+                '{twitter-username}': encodeURIComponent( this.twitterusername ),
+            },
+                opts = this.ele.socializer,
+                link = ( opts.meta[ site ] ) ? opts.meta[ site ]: this.sites[ site ][ 2 ];
+  
+            for( var item in replaceMap ){
+                if( replaceMap.hasOwnProperty( item ) ){
+                    link = link.replace( item, replaceMap[ item ] );
+                }
+            }
+            
+            return link;
             
         }
         
@@ -189,20 +225,40 @@
                 e.className += ' ' + c;
         },
         
-        extend: function( out ){
+        removeClass: function( e, c ){
+            var a = e.className.split( ' ' ),
+                b = [];
+                
+            a.forEach( function( d, i ){
+                if( d.search( c ) == -1 ){
+                    b.push( d );
+                }
+            });
+            
+            e.className = b.join( ' ' );
+            
+        },
+        
+        extend: function(out) {
             out = out || {};
 
             for (var i = 1; i < arguments.length; i++) {
                 if (!arguments[i])
-                    continue;
+                  continue;
 
-            for (var key in arguments[i]) {
-                if (arguments[i].hasOwnProperty(key))
+                for (var key in arguments[i]) {
+                  if (arguments[i].hasOwnProperty(key))
                     out[key] = arguments[i][key];
                 }
             }
 
             return out;
+        },
+        
+        nest: function( base, array, value ) {
+            for( var i = 0; i < array.length; i++ ) {
+                base = base[ array[i] ] = base[ array[i] ] || ( i == array.length-1 ? value: {} );
+            }
         }
         
     };
