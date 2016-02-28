@@ -71,6 +71,8 @@ $size-list: ( 16px, 32px, 48px, 64px );
 @mixin btn-sizes() {
     @each $size in $size-list{
         .socializer--#{$size}{
+            min-height: $size;
+            
             a{
                 width: $size;
                 height: $size;
@@ -156,7 +158,7 @@ $size-list: ( 16px, 32px, 48px, 64px );
 }
 
 // Text modifier
-.socializer--text a{
+.socializer--text-in a{
     width: auto;
     padding: 0 0.5em;
     &>*{
@@ -164,6 +166,55 @@ $size-list: ( 16px, 32px, 48px, 64px );
       &:last-child{
         padding-right: 0;
       }
+    }
+}
+.socializer--text-out{
+    a{
+        vertical-align: middle;
+    }
+    .text{
+        font-size: 12px;
+        margin-left: 0.5em;
+        vertical-align: middle;
+    }
+}
+.socializer--text-below{
+    text-align: center;
+    
+    .text{
+        display: block;
+        font-size: 12px;
+        margin-top: 0.5em;
+    }
+}
+.socializer--text-hover{
+    .text{
+        display: none;
+        position: absolute;
+        background: #000;
+        color: #fff;
+        font-size: 12px;
+        width: 100px;
+        top: -3em;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 2em;
+        margin-left: -25%;
+        z-index: 9999;
+        
+        &:before{
+            position: absolute;
+            content: '';
+            border: 0.5em solid #F00;
+            bottom: -1em;
+            left: 1em;
+            width: 0;
+            height: 0;
+            border-color: #000 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+        }
+    }
+    &:hover > .text{
+        display: block;
     }
 }
 
@@ -217,17 +268,17 @@ $size-list: ( 16px, 32px, 48px, 64px );
     a{
         border-radius: 50%;
     }
-    .socializer--text a, &.socializer--text a{
+    .socializer--text-in a, &.socializer--text-in a{
         border-radius: 1em;
     }
 }
 .socializer--squircle{
-    a, .socializer--text a, &.socializer--text a{
+    a, .socializer--text-in a, &.socializer--text-in a{
         border-radius: 0.5em;
     }
 }
 .socializer--squircle-2{
-    a, .socializer--text a, &.socializer--text a{
+    a, .socializer--text-in a, &.socializer--text-in a{
         border-radius: 0 0.5em 0 0.5em;
     }
 }
@@ -240,6 +291,7 @@ $size-list: ( 16px, 32px, 48px, 64px );
     margin-bottom: 0.5em;
 }
 
+// Types
 .socializer--fluid{
     display: table;
     width: 100%;
@@ -258,7 +310,7 @@ $size-list: ( 16px, 32px, 48px, 64px );
     &.socializer--pad{
         border-spacing: 0.25em;
     }
-    & .socializer--text a, &.socializer--text a{
+    & .socializer--text-in a, &.socializer--text-in a{
         padding: 0;
         &>*{
             margin-right: 0.5em;
@@ -288,17 +340,18 @@ $size-list: ( 16px, 32px, 48px, 64px );
     &.socializer--pad >*{
         margin: 0 0 0.5em 0;
     }   
-    &.socializer--text a, & .socializer--text a{
+    &.socializer--text-in a, & .socializer--text-in a{
         padding: 0;
         width: inherit;
         &>*{
             padding: 0;
         }
     }
-    &.socializer--text .text, & .socializer--text .text{ // Hack to hide text in vertical mode
+    &.socializer--text-in .text, & .socializer--text-in .text{ // Hack to hide text in vertical mode
         display: none;
     }
 }
+
 
 // Hover and click effects
 .socializer--opacity a{

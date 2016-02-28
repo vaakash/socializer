@@ -36,53 +36,53 @@
     clear: both;
     display: block; }
 
-.socializer--16px a {
-  width: 16px;
-  height: 16px;
-  line-height: 16px;
-  font-size: 8px; }
+.socializer--16px {
+  min-height: 16px; }
+  .socializer--16px a {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 8px; }
+  .socializer--16px.socializer--font-small a {
+    font-size: 5.3333333333px; }
+  .socializer--16px.socializer--font-huge a {
+    font-size: 10.6666666667px; }
 
-.socializer--16px.socializer--font-small a {
-  font-size: 5.3333333333px; }
+.socializer--32px {
+  min-height: 32px; }
+  .socializer--32px a {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 16px; }
+  .socializer--32px.socializer--font-small a {
+    font-size: 10.6666666667px; }
+  .socializer--32px.socializer--font-huge a {
+    font-size: 21.3333333333px; }
 
-.socializer--16px.socializer--font-huge a {
-  font-size: 10.6666666667px; }
+.socializer--48px {
+  min-height: 48px; }
+  .socializer--48px a {
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 24px; }
+  .socializer--48px.socializer--font-small a {
+    font-size: 16px; }
+  .socializer--48px.socializer--font-huge a {
+    font-size: 32px; }
 
-.socializer--32px a {
-  width: 32px;
-  height: 32px;
-  line-height: 32px;
-  font-size: 16px; }
-
-.socializer--32px.socializer--font-small a {
-  font-size: 10.6666666667px; }
-
-.socializer--32px.socializer--font-huge a {
-  font-size: 21.3333333333px; }
-
-.socializer--48px a {
-  width: 48px;
-  height: 48px;
-  line-height: 48px;
-  font-size: 24px; }
-
-.socializer--48px.socializer--font-small a {
-  font-size: 16px; }
-
-.socializer--48px.socializer--font-huge a {
-  font-size: 32px; }
-
-.socializer--64px a {
-  width: 64px;
-  height: 64px;
-  line-height: 64px;
-  font-size: 32px; }
-
-.socializer--64px.socializer--font-small a {
-  font-size: 21.3333333333px; }
-
-.socializer--64px.socializer--font-huge a {
-  font-size: 42.6666666667px; }
+.socializer--64px {
+  min-height: 64px; }
+  .socializer--64px a {
+    width: 64px;
+    height: 64px;
+    line-height: 64px;
+    font-size: 32px; }
+  .socializer--64px.socializer--font-small a {
+    font-size: 21.3333333333px; }
+  .socializer--64px.socializer--font-huge a {
+    font-size: 42.6666666667px; }
 
 .socializer__addtofavorites a {
   color: #F9A600;
@@ -189,13 +189,54 @@
   border-color: green;
   background-color: green; }
 
-.socializer--text a {
+.socializer--text-in a {
   width: auto;
   padding: 0 0.5em; }
-  .socializer--text a > * {
+  .socializer--text-in a > * {
     padding-right: 0.5em; }
-    .socializer--text a > *:last-child {
+    .socializer--text-in a > *:last-child {
       padding-right: 0; }
+
+.socializer--text-out a {
+  vertical-align: middle; }
+
+.socializer--text-out .text {
+  font-size: 12px;
+  margin-left: 0.5em;
+  vertical-align: middle; }
+
+.socializer--text-below {
+  text-align: center; }
+  .socializer--text-below .text {
+    display: block;
+    font-size: 12px;
+    margin-top: 0.5em; }
+
+.socializer--text-hover .text {
+  display: none;
+  position: absolute;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  width: 100px;
+  top: -3em;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 2em;
+  margin-left: -25%;
+  z-index: 9999; }
+  .socializer--text-hover .text:before {
+    position: absolute;
+    content: '';
+    border: 0.5em solid #F00;
+    bottom: -1em;
+    left: 1em;
+    width: 0;
+    height: 0;
+    border-color: #000 transparent transparent transparent; }
+
+.socializer--text-hover:hover > .text {
+  display: block; }
 
 .socializer--solid a {
   color: #fff; }
@@ -242,13 +283,13 @@
 .socializer--circle a {
   border-radius: 50%; }
 
-.socializer--circle .socializer--text a, .socializer--circle.socializer--text a {
+.socializer--circle .socializer--text-in a, .socializer--circle.socializer--text-in a {
   border-radius: 1em; }
 
-.socializer--squircle a, .socializer--squircle .socializer--text a, .socializer--squircle.socializer--text a {
+.socializer--squircle a, .socializer--squircle .socializer--text-in a, .socializer--squircle.socializer--text-in a {
   border-radius: 0.5em; }
 
-.socializer--squircle-2 a, .socializer--squircle-2 .socializer--text a, .socializer--squircle-2.socializer--text a {
+.socializer--squircle-2 a, .socializer--squircle-2 .socializer--text-in a, .socializer--squircle-2.socializer--text-in a {
   border-radius: 0 0.5em 0 0.5em; }
 
 .socializer--pad > * {
@@ -271,11 +312,11 @@
     overflow: hidden; }
   .socializer--fluid.socializer--pad {
     border-spacing: 0.25em; }
-  .socializer--fluid .socializer--text a, .socializer--fluid.socializer--text a {
+  .socializer--fluid .socializer--text-in a, .socializer--fluid.socializer--text-in a {
     padding: 0; }
-    .socializer--fluid .socializer--text a > *, .socializer--fluid.socializer--text a > * {
+    .socializer--fluid .socializer--text-in a > *, .socializer--fluid.socializer--text-in a > * {
       margin-right: 0.5em; }
-    .socializer--fluid .socializer--text a:last-child, .socializer--fluid.socializer--text a:last-child {
+    .socializer--fluid .socializer--text-in a:last-child, .socializer--fluid.socializer--text-in a:last-child {
       margin: 0; }
   .socializer--fluid.socializer--squircle a {
     border-radius: 0.5em; }
@@ -302,12 +343,12 @@
       width: 64px; }
   .socializer--vertical.socializer--pad > * {
     margin: 0 0 0.5em 0; }
-  .socializer--vertical.socializer--text a, .socializer--vertical .socializer--text a {
+  .socializer--vertical.socializer--text-in a, .socializer--vertical .socializer--text-in a {
     padding: 0;
     width: inherit; }
-    .socializer--vertical.socializer--text a > *, .socializer--vertical .socializer--text a > * {
+    .socializer--vertical.socializer--text-in a > *, .socializer--vertical .socializer--text-in a > * {
       padding: 0; }
-  .socializer--vertical.socializer--text .text, .socializer--vertical .socializer--text .text {
+  .socializer--vertical.socializer--text-in .text, .socializer--vertical .socializer--text-in .text {
     display: none; }
 
 .socializer--opacity a:hover {

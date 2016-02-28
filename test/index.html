@@ -15,6 +15,8 @@
 
 <script>
 window.onload = function(){
+
+window.setTimeout(function(){
     d = socializer( '.hey', {
         sites: ['twitter', 'twitter', 'rss', 'reddit', 'email', [ 'googleplus', 'linkedin' ]],
         text: false,
@@ -22,6 +24,8 @@ window.onload = function(){
     });
     
     console.log( d );
+    
+    }, 1);
 }
 </script>
 
@@ -35,38 +39,41 @@ window.onload = function(){
 	}
 </style>
 
-<div class="hey" data-features="48px,solid,circle,pad,hover" data-sites="facebook,twitter,rss,more" data-more="yahoobookmarks,reddit" data-meta-twitter="http://aaaaaaaaa" data-meta-hey="sdasds"></div>
+<div class="hey socializer socializer--64px" data-features="64px,solid,circle,pad,hover" data-sites="facebook,twitter,rss,googleplus,print" data-text="no" data-more="yahoobookmarks,reddit" data-meta-hey="sdasds" style="outline:1px solid red"></div>
 
 <h4>Test</h4>
-
-<div class="hey" data-features="32px,line,pad,zoom,vertical" data-sites="reddit,addtofavorites,googleplus,google,yahoo"></div>
+ 
+<div class="hey" data-features="32px,solid,pad,zoom,vertic" data-sites="reddit,addtofavorites,googleplus,google,yahoobookmarks,more" data-more="linkedin,blogger" data-text="hover"></div>
 
 
 
 <h3>Share</h3>
 <ul class="socializer socializer--32px socializer--solid socializer--circle socializer--pad socializer--verti socializer--fade-white">
 
-	<li class="socializer__btn socializer__twitter socializer--text">
+	<li class="socializer__twitter socializer--text-in">
 		<a href="#"><i class="fa fa-twitter"></i><span class="text">Twitter</span><span class="text">20</span></a>
 	</li>
 
-	<li class="socializer__btn socializer__facebook socializer--text">
+	<li class="socializer__facebook socializer--text-in">
 		<a href="#"><i class="fa fa-facebook"></i><span class="text">Facebook</span></a>
 	</li>
 
-	<li class="socializer__btn socializer__googleplus">
+	<li class="socializer__googleplus socializer--text-hover">
 		<a href="#"><i class="fa fa-google-plus"></i></a>
+        <span class="text">Google+</span>
 	</li>
 
-	<li class="socializer__btn socializer__linkedin">
+	<li class="socializer__linkedin">
 		<a href="#"><i class="fa fa-linkedin"></i></a>
+        <span class="text">LinkedIn</span>
 	</li>
 
-	<li class="socializer__btn socializer__rss">
+	<li class="socializer__rss">
 		<a href="#"><i class="fa fa-rss"></i></a>
+        <span class="text">RSS</span>
 	</li>
 
-	<li class="socializer--text">
+	<li class="socializer--text-in">
 		
 	</li>
 

@@ -40,7 +40,7 @@
                 rss: '',
                 twitterusername: '',
             },
-            text: true
+            text: 'no'
         },
         
         init: function(){
@@ -53,10 +53,12 @@
                 this.setHTML( this.ele );
             }
             
+            this.events();
+            
         },
         
         sites:{
-            addtofavorites: [ 'Add to favorites', 'star', '{de-url}" onclick="addBookmark(event);' ],
+            addtofavorites: [ 'Add to favorites', 'star', '#" onclick="socializer_addbookmark(event)' ],
             blogger: [ 'Blogger', 'rss-square', 'http://www.blogger.com/blog_this.pyra?t&u={url}&n={title}&pli=1' ],
             delicious: [ 'Delicious', 'delicious', 'http://delicious.com/post?url={url}&amp;title={title}&amp;notes={excerpt}' ],
             digg: [ 'Digg', 'digg', 'http://digg.com/submit?phase=2&amp;url={url}&amp;title={title}&amp;bodytext={excerpt}' ],
@@ -134,12 +136,20 @@
                             moreHTML = '<ul class="socializer">' + moreHTML + '</ul>';
                         }
                     }
-                    
-                    var text = ( showText ) ? '<span class="text">' + this.sites[ site ][ 0 ] + '</span>' : '',
-                        textClass = ( showText ) ? ' socializer--text' : '',
+
+                    var text = '<span class="text">' + this.sites[ site ][ 0 ] + '</span>',
+                        textIn = textOut = '',
+                        textClass = ' socializer--text-' + showText,
                         link = this.getLink( site );
-                        
-                    html.push( '<' + child + ' class="socializer__' + site + textClass + '"><a href="'+ link +'"><i class="fa fa-' + this.sites[ site ][ 1 ] + '"></i>' + text + '</a>' + moreHTML +'</' + child + '>' );
+
+                    if( showText == 'in' )
+                        textIn = text;
+                    else if( showText == 'no' )
+                        textClass = '';
+                    else
+                        textOut = text;
+
+                    html.push( '<' + child + ' class="socializer__' + site + textClass + '"><a href="'+ link +'" target="_blank" title="' + this.sites[ site ][ 0 ] + '"><i class="fa fa-' + this.sites[ site ][ 1 ] + '"></i>' + textIn + '</a>' + textOut + moreHTML + '</' + child + '>' );
                 }
             }, this);
 
@@ -153,7 +163,7 @@
                 html = this.getHTML( opts.sites, this.ele.tagName, opts.text );
                 
             this.ele.innerHTML = html;
-            
+            fn.addClass( this.ele, 'a' );
         },
         
         setMeta: function(){
@@ -184,7 +194,6 @@
                 '{url}' : encodeURIComponent( this.link ),
                 '{title}': encodeURIComponent( this.title ),
                 '{excerpt}': encodeURIComponent( this.description ),
-                '{de-url}': encodeURIComponent( this.link ),
                 '{image}': encodeURIComponent( this.image ),
                 '{rss-url}': encodeURIComponent( this.rss ),
                 '{twitter-username}': encodeURIComponent( this.twitterusername ),
@@ -199,6 +208,21 @@
             }
             
             return link;
+            
+        },
+        
+        events: function(){
+            anchors = this.ele.querySelectorAll( 'a' );
+            
+            fn.each( anchors, function( anchor ){
+                anchor.addEventListener( 'click', function(e){
+                    var href = anchor.getAttribute( 'href' );
+                    if( href != '#' ){
+                        var scrWindow = fn.popup( href, "_blank", 800, 500);
+                    }
+                    e.preventDefault();
+                });
+            }, this);
             
         }
         
@@ -238,7 +262,7 @@
             e.className = b.join( ' ' );
             
         },
-        
+
         extend: function(out) {
             out = out || {};
 
@@ -259,8 +283,23 @@
             for( var i = 0; i < array.length; i++ ) {
                 base = base[ array[i] ] = base[ array[i] ] || ( i == array.length-1 ? value: {} );
             }
-        }
+        },
         
+        popup: function( url, title, w, h ) {
+            var left = ( screen.width/2 )-( w/2 ),
+                top = ( screen.height/2 )-( h/2 );
+                
+            return window.open( url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left );
+        } 
+
     };
     
 }());
+
+function socializer_addbookmark( e ){
+    var ua = navigator.userAgent.toLowerCase();
+    var isMac = (ua.indexOf('mac') != -1), str = '';
+    e.preventDefault();
+    str = (isMac ? 'Command/Cmd' : 'CTRL') + ' + D';
+    alert('Press ' + str + ' to bookmark this page');
+}
