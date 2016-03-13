@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 	sass: {
 		main: {
 			files: {
-				'css/socializer.css': 'css/socializer.scss',
+				'socializer.css': 'css/socializer.scss',
 			}
 		}
 	},
@@ -18,14 +18,23 @@ module.exports = function(grunt) {
 		},
 		build: {
 			files: {
-				'css/socializer.min.css': 'css/socializer.css'
+				'css/socializer.min.css': 'socializer.css'
 			}
 		}
 	},
 	
 	watch:{
 		scripts: {
-			files: [ 'css/socializer.scss' ],
+			files: [ 
+                'css/socializer.scss',
+                'css/_config.scss',
+                'css/_hover.scss',
+                'css/_misc.scss',
+                'css/_shapes.scss',
+                'css/_text.scss',
+                'css/_styles.scss',
+                'css/_types.scss',
+            ],
 			tasks: [ 'sass' ]
 		}
 	}

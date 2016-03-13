@@ -49,7 +49,7 @@
             this.setClass();
             this.setMeta();
             
-            if( this.ele.children.length == 0 ){
+            if( this.ele.children.length < 100 ){
                 this.setHTML( this.ele );
             }
             
@@ -59,26 +59,41 @@
         
         sites:{
             addtofavorites: [ 'Add to favorites', 'star', '#" onclick="socializer_addbookmark(event)' ],
-            blogger: [ 'Blogger', 'rss-square', 'http://www.blogger.com/blog_this.pyra?t&u={url}&n={title}&pli=1' ],
-            delicious: [ 'Delicious', 'delicious', 'http://delicious.com/post?url={url}&amp;title={title}&amp;notes={excerpt}' ],
-            digg: [ 'Digg', 'digg', 'http://digg.com/submit?phase=2&amp;url={url}&amp;title={title}&amp;bodytext={excerpt}' ],
+            behance: [ 'Behance', 'behance', 'https://www.behance.net/' ],
+            blogger: [ 'Blogger', 'rss-square', 'https://www.blogger.com/blog_this.pyra?t&u={url}&n={title}&pli=1' ],
+            comments: [ 'Comments', 'comments', '#' ],
+            delicious: [ 'Delicious', 'delicious', 'https://delicious.com/post?url={url}&amp;title={title}&amp;notes={excerpt}' ],
+            digg: [ 'Digg', 'digg', 'https://digg.com/submit?phase=2&amp;url={url}&amp;title={title}&amp;bodytext={excerpt}' ],
+            dribbble: [ 'Dribbble', 'dribbble', 'https://dribbble.com/' ],
             email: [ 'Email', 'envelope', 'mailto:?to=&subject={title}&body={excerpt}%20-%20{de-url}' ],
             facebook: [ 'Facebook', 'facebook', 'http://www.facebook.com/share.php?u={url}&amp;t={title}' ],
+            flickr: [ 'Flickr', 'flickr', 'http://www.flickr.com' ],
+            github: [ 'Github', 'github', 'http://www.github.com/' ],
             google: [ 'Google', 'google', 'http://www.google.com/bookmarks/mark?op=edit&amp;bkmk={url}&amp;title={title}&amp;annotation={excerpt}' ],
             googleplus: [ 'Google Plus', 'google-plus', 'https://plus.google.com/share?url={url}' ],
             hackernews: [ 'Hacker News', 'hacker-news', 'http://news.ycombinator.com/submitlink?u={url}&amp;t={title}' ],
+            instagram: [ 'Instagram', 'instagram', 'http://instagram.com' ],
             linkedin: [ 'LinkedIn', 'linkedin', 'http://linkarena.com/bookmarks/addlink/?url={url}&amp;title={title}' ],
             pdf: [ 'PDF', 'file-pdf-o', 'http://www.printfriendly.com/print?url={url}' ],
             pinterest: [ 'Pinterest', 'pinterest', 'http://www.pinterest.com/pin/create/button/?url={url}&amp;media={image}&amp;description={excerpt}' ],
+            pocket: [ 'Pocket', 'get-pocket', 'https://getpocket.com/save?url={url}&title={title}' ],
             print: [ 'Print', 'print', 'http://www.printfriendly.com/print?url={url}' ],
             reddit: [ 'Reddit', 'reddit', 'http://reddit.com/submit?url={url}&amp;title={title}' ],
             rss: [ 'RSS', 'rss', '{rss-url}' ],
+            shortlink: [ 'Short link', 'link', 'http://goog.gl/abcd" onclick="socializer_shortlink( event, this )' ],
+            soundcloud: [ 'Soundcloud', 'soundcloud', 'https://soundcloud.com/' ],
+            stackoverflow: [ 'StackOverflow', 'stack-overflow', 'http://stackoverflow.com/' ],
             stumbleupon: [ 'StumbleUpon', 'stumbleupon', 'http://www.stumbleupon.com/submit?url={url}&amp;title={title}' ],
             tumblr: [ 'Tumblr', 'tumblr', 'http://www.tumblr.com/share?v=3&amp;u={url}&amp;t={title}&amp;s={excerpt}' ],
-            twitter: [ 'Twitter', 'twitter', 'http://twitter.com/home?status={title}%20-%20{url}%20{twitter-username}' ],
+            twitter: [ 'Twitter', 'twitter', 'http://twitter.com/home?status={title}%20-%20{s-url}%20{twitter-username}' ],
             vkontakte: [ 'VKontakte', 'vk', 'http://vk.com/share.php?url={url}&title={title}&description={excerpt}' ],
-            yahoobookmarks: [ 'Yahoo! Bookmarks', 'yahoo', 'http://bookmarks.yahoo.com/toolbar/savebm?u={url}&amp;t={title}&opener=bm&amp;ei=UTF-8&amp;d={excerpt}' ], 
-            more: [ 'More', 'share', '#' ]
+            vine: [ 'Vine', 'vine', 'https://vine.co' ],
+            wechat: [ 'wechat', 'vk', '' ],
+            whatsapp: [ 'WhatsApp', 'whatsapp', '' ],
+            xing: [ 'Xing', 'xing', 'https://www.xing.com/spi/shares/new?url={url}' ],
+            yahoobookmarks: [ 'Yahoo! Bookmarks', 'yahoo', 'http://bookmarks.yahoo.com/toolbar/savebm?u={url}&amp;t={title}&opener=bm&amp;ei=UTF-8&amp;d={excerpt}' ],
+            youtube: [ 'Youtube', 'youtube', 'http://youtube.com/' ],
+            more: [ 'More', 'share-alt', '#' ]
         },
         
         initOptions: function(){
@@ -108,11 +123,11 @@
                 opts = this.ele.socializer,
                 features = opts.features.split( ',' );
             
-            fn.removeClass( ele, 'socializer' );
+            fn.removeClass( ele, 'sr-' );
             fn.addClass( ele, 'socializer' );
             
             features.forEach(function( className ){
-                fn.addClass( ele, 'socializer--' + className );
+                fn.addClass( ele, 'sr-' + className );
             });
             
         },
@@ -139,7 +154,7 @@
 
                     var text = '<span class="text">' + this.sites[ site ][ 0 ] + '</span>',
                         textIn = textOut = '',
-                        textClass = ' socializer--text-' + showText,
+                        textClass = ' sr-text-' + showText,
                         link = this.getLink( site );
 
                     if( showText == 'in' )
@@ -149,7 +164,7 @@
                     else
                         textOut = text;
 
-                    html.push( '<' + child + ' class="socializer__' + site + textClass + '"><a href="'+ link +'" target="_blank" title="' + this.sites[ site ][ 0 ] + '"><i class="fa fa-' + this.sites[ site ][ 1 ] + '"></i>' + textIn + '</a>' + textOut + moreHTML + '</' + child + '>' );
+                    html.push( '<' + child + ' class="sr-' + site + textClass + '"><a href="'+ link +'" target="_blank" title="' + this.sites[ site ][ 0 ] + '"><i class="fa fa-' + this.sites[ site ][ 1 ] + '"></i>' + textIn + '</a>' + textOut + moreHTML + '</' + child + '>' );
                 }
             }, this);
 
@@ -217,7 +232,7 @@
             fn.each( anchors, function( anchor ){
                 anchor.addEventListener( 'click', function(e){
                     var href = anchor.getAttribute( 'href' );
-                    if( href != '#' ){
+                    if( !( href == '#' || anchor.hasAttribute( 'onclick' ) ) ){
                         var scrWindow = fn.popup( href, "_blank", 800, 500);
                     }
                     e.preventDefault();
@@ -302,4 +317,11 @@ function socializer_addbookmark( e ){
     e.preventDefault();
     str = (isMac ? 'Command/Cmd' : 'CTRL') + ' + D';
     alert('Press ' + str + ' to bookmark this page');
+}
+
+function socializer_shortlink( e, t ){
+    e.preventDefault();
+    link = t.getAttribute( 'href' );
+    if( link != '#' )
+        prompt( 'Short link', link );
 }

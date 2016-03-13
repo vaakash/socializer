@@ -9,25 +9,7 @@
 
 <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css">
 <link rel="stylesheet" type="text/css" href="../bower_components/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="../css/socializer.css">
-
-<script src="../js/socializer.js"></script>
-
-<script>
-window.onload = function(){
-
-window.setTimeout(function(){
-    d = socializer( '.hey', {
-        sites: ['twitter', 'twitter', 'rss', 'reddit', 'email', [ 'googleplus', 'linkedin' ]],
-        text: false,
-     
-    });
-    
-    console.log( d );
-    
-    }, 1);
-}
-</script>
+<link rel="stylesheet" href="../socializer.css">
 
 </head>
 <body>
@@ -39,41 +21,67 @@ window.setTimeout(function(){
 	}
 </style>
 
-<div class="hey socializer socializer--64px" data-features="64px,solid,circle,pad,hover" data-sites="facebook,twitter,rss,googleplus,print" data-text="no" data-more="yahoobookmarks,reddit" data-meta-hey="sdasds" style="outline:1px solid red"></div>
+<div class="hey socializer sr-32px" data-features="32px,icon-white,sw-2,circle,pad,hover" data-sites="facebook,twitter,rss,googleplus,print" data-text="no" data-more="yahoobookmarks,reddit" data-meta-hey="sdasds" style="outline:1px solid red"></div><br/>
+
+<div class="hey socializer sr-32px" data-features="32px,icon-white,diamond,sw-2,pad,float" data-sites="facebook,twitter,rss,googleplus,print,more" data-text="no" data-more="yahoobookmarks,reddit" data-meta-hey="sdasds" style="outline:1px solid red"></div><br/>
+
+<div class="hey socializer sr-32px" data-features="32px,icon-white,ribbon,pa,hover" data-sites="facebook,twitter,rss,googleplus,print" data-text="no" data-more="yahoobookmarks,reddit" data-meta-hey="sdasds" style="outline:1px solid red"></div><br/>
+
+<div class="hey socializer sr-32px" data-features="32px,line,drop,pad,hover" data-sites="facebook,twitter,rss,googleplus,print" data-text="no" data-more="yahoobookmarks,reddit" data-meta-hey="sdasds" style="outline:1px solid red"></div><br/>
+
+<div class="hey socializer sr-32px" data-features="32px,line-white-bg,circle,pad,hover" data-sites="facebook,twitter,rss,googleplus,print" data-text="no" data-more="yahoobookmarks,reddit" data-meta-hey="sdasds" style="outline:1px solid red"></div><br/>
+
+<div class="hey socializer sr-32px" data-features="32px,line-dark-bg,circle,pad,hover" data-sites="facebook,twitter,rss,googleplus,print" data-text="no" data-more="yahoobookmarks,reddit" data-meta-hey="sdasds" style="outline:1px solid red"></div><br/>
+
+<div class="hey socializer sr-32px" data-features="32px,icon-color,pad,hover" data-sites="facebook,twitter,rss,googleplus,print" data-text="no" data-more="yahoobookmarks,reddit" data-meta-hey="sdasds" style="outline:1px solid red"></div><br/>
+
+<div class="hey socializer sr-32px" data-features="32px,icon-white,pad,hover" data-sites="facebook,twitter,rss,googleplus,print" data-text="no" data-more="yahoobookmarks,reddit" data-meta-hey="sdasds" style="outline:1px solid red"></div><br/>
+
+<div class="hey socializer sr-32px" data-features="32px,icon-dark,pad,hover" data-sites="facebook,twitter,rss,googleplus,print" data-text="no" data-more="yahoobookmarks,reddit" data-meta-hey="sdasds" style="outline:1px solid red"></div><br/>
+
+<div class="hey socializer sr-32px" data-features="32px,icon-grey,pad,hover" data-sites="facebook,twitter,rss,googleplus,print" data-text="no" data-more="yahoobookmarks,reddit" data-meta-hey="sdasds" style="outline:1px solid red"></div><br/>
+
+<div class="hey socializer sr-32px" data-features="32px,white,circle,pad,hover" data-sites="facebook,twitter,rss,googleplus,print" data-text="no" data-more="yahoobookmarks,reddit" data-meta-hey="sdasds" style="outline:1px solid red"></div><br/>
+
+<div class="hey socializer sr-32px" data-features="32px,grey,circle,pad,hover" data-sites="facebook,twitter,rss,googleplus,print" data-text="no" data-more="yahoobookmarks,reddit" data-meta-hey="sdasds" style="outline:1px solid red"></div><br/>
+
+<div class="hey socializer sr-32px" data-features="32px,dark,circle,pad,hover" data-sites="facebook,twitter,rss,googleplus,print,shortlink" data-text="no" data-more="yahoobookmarks,reddit" data-meta-hey="sdasds" style="outline:1px solid red"></div><br/>
 
 <h4>Test</h4>
  
-<div class="hey" data-features="32px,solid,pad,zoom,vertic" data-sites="reddit,addtofavorites,googleplus,google,yahoobookmarks,more" data-more="linkedin,blogger" data-text="hover"></div>
+<div class="hey socialzier--32px" data-features="32px,solid,pad,zoom,vertic" data-sites="reddit,addtofavorites,googleplus,google,yahoobookmarks,more" data-more="linkedin,blogger" data-text="hover"></div>
+
+<div class="hey socializer sr-32px sr-solid sr-pad sr-zoom sr-vertic a" data-features="32px,solid,pad,zoom,vertic" data-sites="reddit,addtofavorites,googleplus,google,yahoobookmarks,more" data-more="linkedin,blogger" data-text="hover"><span class="sr-reddit sr-text-hover"><a href="http://reddit.com/submit?url=file%3A%2F%2F%2FD%3A%2FGit%2Fsocializer%2Ftest%2Findex.html&amp;title=This%20is%20a%20title" target="_blank" title="Reddit"><i class="fa fa-reddit"></i></a><span class="text">Reddit</span></span><span class="sr-addtofavorites sr-text-hover"><a href="#" onclick="socializer_addbookmark(event)" target="_blank" title="Add to favorites"><i class="fa fa-star"></i></a><span class="text">Add to favorites</span></span><span class="sr-googleplus sr-text-hover"><a href="https://plus.google.com/share?url=file%3A%2F%2F%2FD%3A%2FGit%2Fsocializer%2Ftest%2Findex.html" target="_blank" title="Google Plus"><i class="fa fa-google-plus"></i></a><span class="text">Google Plus</span></span><span class="sr-google sr-text-hover"><a href="http://www.google.com/bookmarks/mark?op=edit&amp;bkmk=file%3A%2F%2F%2FD%3A%2FGit%2Fsocializer%2Ftest%2Findex.html&amp;title=This%20is%20a%20title&amp;annotation=" target="_blank" title="Google"><i class="fa fa-google"></i></a><span class="text">Google</span></span><span class="sr-yahoobookmarks sr-text-hover"><a href="http://bookmarks.yahoo.com/toolbar/savebm?u=file%3A%2F%2F%2FD%3A%2FGit%2Fsocializer%2Ftest%2Findex.html&amp;t=This%20is%20a%20title&amp;opener=bm&amp;ei=UTF-8&amp;d=" target="_blank" title="Yahoo! Bookmarks"><i class="fa fa-yahoo"></i></a><span class="text">Yahoo! Bookmarks</span></span><span class="sr-more sr-text-hover"><a href="#" target="_blank" title="More"><i class="fa fa-share"></i></a><span class="text">More</span><ul class="socializer"><li class="sr-linkedin sr-text-hover"><a href="http://linkarena.com/bookmarks/addlink/?url=file%3A%2F%2F%2FD%3A%2FGit%2Fsocializer%2Ftest%2Findex.html&amp;title=This%20is%20a%20title" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a><span class="text">LinkedIn</span></li><li class="sr-blogger sr-text-hover"><a href="http://www.blogger.com/blog_this.pyra?t&amp;u=file%3A%2F%2F%2FD%3A%2FGit%2Fsocializer%2Ftest%2Findex.html&amp;n=This%20is%20a%20title&amp;pli=1" target="_blank" title="Blogger"><i class="fa fa-rss-square"></i></a><span class="text">Blogger</span></li></ul></span></div>
 
 
 
 <h3>Share</h3>
-<ul class="socializer socializer--32px socializer--solid socializer--circle socializer--pad socializer--verti socializer--fade-white">
+<ul class="socializer sr-32px sr-grey sr-circle sr-pad sr-verti sr-fade-white">
 
-	<li class="socializer__twitter socializer--text-in">
+	<li class="sr-twitter sr-text-in">
 		<a href="#"><i class="fa fa-twitter"></i><span class="text">Twitter</span><span class="text">20</span></a>
 	</li>
 
-	<li class="socializer__facebook socializer--text-in">
+	<li class="sr-facebook sr-text-in">
 		<a href="#"><i class="fa fa-facebook"></i><span class="text">Facebook</span></a>
 	</li>
 
-	<li class="socializer__googleplus socializer--text-hover">
+	<li class="sr-googleplus sr-text-hover">
 		<a href="#"><i class="fa fa-google-plus"></i></a>
         <span class="text">Google+</span>
 	</li>
 
-	<li class="socializer__linkedin">
+	<li class="sr-linkedin">
 		<a href="#"><i class="fa fa-linkedin"></i></a>
         <span class="text">LinkedIn</span>
 	</li>
 
-	<li class="socializer__rss">
+	<li class="sr-rss">
 		<a href="#"><i class="fa fa-rss"></i></a>
         <span class="text">RSS</span>
 	</li>
 
-	<li class="socializer--text-in">
+	<li class="sr-text-in">
 		
 	</li>
 
@@ -81,56 +89,85 @@ window.setTimeout(function(){
 
 <h3>All icons</h3>
 
-<ul class="socializer socializer--32px socializer--solid socializer--circl socializer--pad socializer--verti socializer--rotate socializer--multiline">
-    <li class='socializer__addtofavorites'>
+<ul class="socializer sr-32px sr-bg-white sr-bdr-md sr-bdr-grey sr-squircle-2 sr-pad sr-vertica sr-rotate sr-multiline">
+
+    <li class='sr-addtofavorites'>
         <a href='#'><i class='fa fa-star'></i></a>
-    </li><li class='socializer__blogger'>
+    </li><li class='sr-behance'>
+        <a href='#'><i class='fa fa-behance'></i></a>
+    </li><li class='sr-blogger'>
         <a href='#'><i class='fa fa-rss-square'></i></a>
-    </li><li class='socializer__delicious'>
+    </li><li class='sr-comments'>
+        <a href='#'><i class='fa fa-comments'></i></a>
+    </li><li class='sr-delicious'>
         <a href='#'><i class='fa fa-delicious'></i></a>
-    </li><li class='socializer__digg'>
+    </li><li class='sr-digg'>
         <a href='#'><i class='fa fa-digg'></i></a>
-    </li><li class='socializer__email'>
+    </li><li class='sr-dribbble'>
+        <a href='#'><i class='fa fa-dribbble'></i></a>
+    </li><li class='sr-email'>
         <a href='#'><i class='fa fa-envelope'></i></a>
-    </li><li class='socializer__facebook'>
+    </li><li class='sr-facebook'>
         <a href='#'><i class='fa fa-facebook'></i></a>
-    </li><li class='socializer__google'>
+    </li><li class='sr-flickr'>
+        <a href='#'><i class='fa fa-flickr'></i></a>
+    </li><li class='sr-github'>
+        <a href='#'><i class='fa fa-github'></i></a>
+    </li><li class='sr-google'>
         <a href='#'><i class='fa fa-google'></i></a>
-    </li><li class='socializer__googleplus'>
+    </li><li class='sr-googleplus'>
         <a href='#'><i class='fa fa-google-plus'></i></a>
-    </li><li class='socializer__hackernews'>
+    </li><li class='sr-hackernews'>
         <a href='#'><i class='fa fa-hacker-news'></i></a>
-    </li><li class='socializer__linkedin'>
+    </li><li class='sr-instagram'>
+        <a href='#'><i class='fa fa-instagram'></i></a>
+    </li><li class='sr-linkedin'>
         <a href='#'><i class='fa fa-linkedin'></i></a>
-    </li><li class='socializer__pdf'>
+    </li><li class='sr-pdf'>
         <a href='#'><i class='fa fa-file-pdf-o'></i></a>
-    </li><li class='socializer__pinterest'>
+    </li><li class='sr-pinterest'>
         <a href='#'><i class='fa fa-pinterest'></i></a>
-    </li><li class='socializer__print'>
+    </li><li class='sr-pocket'>
+        <a href='#'><i class='fa fa-get-pocket'></i></a>
+    </li><li class='sr-print'>
         <a href='#'><i class='fa fa-print'></i></a>
-    </li><li class='socializer__reddit'>
+    </li><li class='sr-reddit'>
         <a href='#'><i class='fa fa-reddit'></i></a>
-    </li><li class='socializer__rss'>
+    </li><li class='sr-rss'>
         <a href='#'><i class='fa fa-rss'></i></a>
-    </li><li class='socializer__stumbleupon'>
+    </li><li class='sr-soundcloud'>
+        <a href='#'><i class='fa fa-soundcloud'></i></a>
+    </li><li class='sr-stackoverflow'>
+        <a href='#'><i class='fa fa-stack-overflow'></i></a>
+    </li><li class='sr-stumbleupon'>
         <a href='#'><i class='fa fa-stumbleupon'></i></a>
-    </li><li class='socializer__tumblr'>
+    </li><li class='sr-tumblr'>
         <a href='#'><i class='fa fa-tumblr'></i></a>
-    </li><li class='socializer__twitter'>
+    </li><li class='sr-twitter'>
         <a href='#'><i class='fa fa-twitter'></i></a>
-    </li><li class='socializer__vkontakte'>
+    </li><li class='sr-vkontakte'>
         <a href='#'><i class='fa fa-vk'></i></a>
-    </li><li class='socializer__yahoobookmarks'>
+    </li><li class='sr-vine'>
+        <a href='#'><i class='fa fa-vine'></i></a>
+    </li><li class='sr-wechat'>
+        <a href='#'><i class='fa fa-vk'></i></a>
+    </li><li class='sr-whatsapp'>
+        <a href='#'><i class='fa fa-whatsapp'></i></a>
+    </li><li class='sr-xing'>
+        <a href='#'><i class='fa fa-xing'></i></a>
+    </li><li class='sr-yahoobookmarks'>
         <a href='#'><i class='fa fa-yahoo'></i></a>
+    </li><li class='sr-youtube'>
+        <a href='#'><i class='fa fa-youtube'></i></a>
     </li>
-    <li class="socializer__more">
-        <a href='#'><i class='fa fa-share'></i></a>
+    <li class="sr-more">
+        <a href='#'><i class='fa fa-share-alt'></i></a>
         <ul class="socializer">
-            <li class='socializer__twitter'>
+            <li class='sr-twitter'>
             <a href='#'><i class='fa fa-twitter'></i></a>
-            </li><li class='socializer__vkontakte'>
+            </li><li class='sr-vkontakte'>
             <a href='#'><i class='fa fa-vk'></i></a>
-            </li><li class='socializer__yahoobookmarks'>
+            </li><li class='sr-yahoobookmarks'>
             <a href='#'><i class='fa fa-yahoo'></i></a>
             </li>
         </ul>
@@ -138,6 +175,27 @@ window.setTimeout(function(){
 </ul>
 
 <h4>Content after</h4>
+
+
+<img src="0https://upload.wikimedia.org/wikipedia/commons/d/d9/Big_Bear_Valley,_California.jpg" />
+
+<!--<script src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Big_Bear_Valley,_California.jpg"></script>-->
+<!--<script src="https://cdn.rawgit.com/vaakash/socializer/master/js/socializer.js?v=3"></script>-->
+<script src="../js/socializer.js?v=3"></script>
+
+
+<!--<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://cdn.rawgit.com/vaakash/socializer/master/js/socializer.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>-->
+
+
+<h3>bottom</h3>
+<div class="hey"></div>
+
+<script>(function(){
+
+    socializer( '.hey' );
+    
+}());</script>
+
 
     </body>
 </html>
