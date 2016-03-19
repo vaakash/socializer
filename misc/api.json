@@ -1,0 +1,182 @@
+{
+   "sites":{
+        "addtofavorites": [ "Add to favorites", "star", "#", "#F9A600", "socializer_addbookmark(event)" ],
+        "behance": [ "Behance", "behance", "https://www.behance.net/", "#1769ff", "" ],
+        "blogger": [ "Blogger", "rss-square", "https://www.blogger.com/blog_this.pyra?t&u={url}&n={title}&pli=1", "#FF6501", "" ],
+        "comments": [ "Comments", "comments", "#", "#333", "" ],
+        "delicious": [ "Delicious", "delicious", "https://delicious.com/post?url={url}&amp;title={title}&amp;notes={excerpt}", "#3274D1", "" ],
+        "digg": [ "Digg", "digg", "https://digg.com/submit?phase=2&amp;url={url}&amp;title={title}&amp;bodytext={excerpt}", "#000", "" ],
+        "dribbble": [ "Dribbble", "dribbble", "https://dribbble.com/", "#ea4c89", "" ],
+        "email": [ "Email", "envelope", "mailto:?to=&subject={title}&body={excerpt}%20-%20{de-url}", "#000", "" ],
+        "facebook": [ "Facebook", "facebook", "http://www.facebook.com/share.php?u={url}&amp;t={title}", "#3e5b98", "" ],
+        "flickr": [ "Flickr", "flickr", "http://www.flickr.com", "#1c9be9", "" ],
+        "github": [ "Github", "github", "http://www.github.com/", "#333", "" ],
+        "google": [ "Google", "google", "http://www.google.com/bookmarks/mark?op=edit&amp;bkmk={url}&amp;title={title}&amp;annotation={excerpt}", "#3A7CEC", "" ],
+        "googleplus": [ "Google Plus", "google-plus", "https://plus.google.com/share?url={url}", "#DB483B", "" ],
+        "hackernews": [ "Hacker News", "hacker-news", "http://news.ycombinator.com/submitlink?u={url}&amp;t={title}", "#FF6500", "" ],
+        "instagram": [ "Instagram", "instagram", "http://instagram.com", "#0d3c5f", "" ],
+        "linkedin": [ "LinkedIn", "linkedin", "http://linkarena.com/bookmarks/addlink/?url={url}&amp;title={title}", "#0274B3", "" ],
+        "pdf": [ "PDF", "file-pdf-o", "http://www.printfriendly.com/print?url={url}", "#E61B2E", "" ],
+        "pinterest": [ "Pinterest", "pinterest", "http://www.pinterest.com/pin/create/button/?url={url}&amp;media={image}&amp;description={excerpt}", "#CB2027", "" ],
+        "pocket": [ "Pocket", "get-pocket", "https://getpocket.com/save?url={url}&title={title}", "#EF4056", "" ],
+        "print": [ "Print", "print", "http://www.printfriendly.com/print?url={url}", "#6D9F00", "" ],
+        "reddit": [ "Reddit", "reddit", "http://reddit.com/submit?url={url}&amp;title={title}", "#FF5600", "" ],
+        "rss": [ "RSS", "rss", "{rss-url}", "#FF7B0A", "" ],
+        "shortlink": [ "Short link", "link", "{url}", "#333", "socializer_shortlink( event, this )" ],
+        "soundcloud": [ "Soundcloud", "soundcloud", "https://soundcloud.com/", "#f50", "" ],
+        "stackoverflow": [ "StackOverflow", "stack-overflow", "http://stackoverflow.com/", "#F48024", "" ],
+        "stumbleupon": [ "StumbleUpon", "stumbleupon", "http://www.stumbleupon.com/submit?url={url}&amp;title={title}", "#EB4823", "" ],
+        "tumblr": [ "Tumblr", "tumblr", "http://www.tumblr.com/share?v=3&amp;u={url}&amp;t={title}&amp;s={excerpt}", "#314358", "" ],
+        "twitter": [ "Twitter", "twitter", "http://twitter.com/home?status={title}%20-%20{s-url}%20{twitter-username}", "#4da7de", "" ],
+        "vkontakte": [ "VKontakte", "vk", "http://vk.com/share.php?url={url}&title={title}&description={excerpt}", "#4C75A3", "" ],
+        "vine": [ "Vine", "vine", "https://vine.co", "#00bf8f", "" ],
+        "wechat": [ "wechat", "vk", "", "#7BB32E", "" ],
+        "whatsapp": [ "WhatsApp", "whatsapp", "", "#60b82d", "" ],
+        "xing": [ "Xing", "xing", "https://www.xing.com/spi/shares/new?url={url}", "#006567", "" ],
+        "yahoobookmarks": [ "Yahoo! Bookmarks", "yahoo", "http://bookmarks.yahoo.com/toolbar/savebm?u={url}&amp;t={title}&opener=bm&amp;ei=UTF-8&amp;d={excerpt}", "#4A00A1", "" ],
+        "youtube": [ "Youtube", "youtube", "http://youtube.com/", "#cc181e", "" ],
+        "more":[ "More", "share-alt", "#", "green", "" ]
+   },
+   "features":{
+      "sizes":{
+         "name":"Button sizes",
+         "desc":"",
+         "type":"select",
+         "options":{
+            "32px":"32px",
+            "16px":"16px",
+            "48px":"48px",
+            "64px":"64px"
+         }
+      },
+      "shapes":{
+         "name":"Button shapes",
+         "desc":"",
+         "type":"select",
+         "options":{
+            "":"Square",
+            "circle":"Circle",
+            "squircle":"Squircle",
+            "squircle-2":"Squircle 2",
+            "diamond":"Diamond",
+            "ribbon":"Ribbon",
+            "drop":"Drop"
+         }
+      },
+      "hover":{
+         "name":"Hover styles",
+         "desc":"",
+         "type":"select",
+         "options":{
+            "":"None",
+            "opcity":"Opacity",
+            "rotate":"Rotate",
+            "zoom":"Zoom",
+            "shrink":"Shrink",
+            "float":"Float",
+            "sink":"Sink",
+            "fade-white":"Fade to white",
+            "fade-black":"Fade to black"
+         }
+      },
+      "layouts":{
+         "name":"Layout styles",
+         "desc":"",
+         "type":"select",
+         "options":{
+            "":"Normal",
+            "fluid":"Fluid",
+            "vertical":"Vertical"
+         }
+      },
+      "text-styles":{
+         "name":"Text styles",
+         "desc":"",
+         "type":"select",
+         "options":{
+            "":"No text",
+            "text-in":"Besides icon",
+            "text-out":"Besides icon 2",
+            "text-below":"Below icon",
+            "text-hover":"Text on hover"
+         }
+      },
+      "font-size":{
+         "name":"Font sizes",
+         "desc":"",
+         "type":"select",
+         "options":{
+            "":"Normal",
+            "font-sm":"Small",
+            "font-lg":"Large"
+         }
+      },
+      "icon-color":{
+         "name":"Icon colors",
+         "desc":"",
+         "type":"select",
+         "options":{
+            "icon-white":"White icon",
+            "icon-dark":"Dark icon",
+            "icon-grey":"Grey icon",
+            "":"Color icon"
+         }
+      },
+      "border-color":{
+         "name":"Border colors",
+         "desc":"",
+         "type":"select",
+         "options":{
+            "bdr-white":"White border",
+            "bdr-dark":"Dark border",
+            "bdr-grey":"Grey border"
+         }
+      },
+      "background-color":{
+         "name":"Background colors",
+         "desc":"",
+         "type":"select",
+         "options":{
+            "":"Color background",
+            "bg-none":"Transparent background",
+            "bg-white":"White background",
+            "bg-dark":"Dark background",
+            "bg-grey":"Grey background"
+         }
+      },
+      "border-width":{
+         "name":"Border width",
+         "desc":"",
+         "type":"select",
+         "options":{
+            "":"No border",
+            "bdr-sm":"Small size border",
+            "bdr-md":"Medium size border",
+            "bdr-lg":"Large size border"
+         }
+      },
+      "shadow":{
+          "name":"Button shadow type",
+          "desc":"",
+          "type":"select",
+          "options":{
+              "": "No shadow",
+              "sw-1":"Type 1",
+              "sw-2":"Type 2",
+              "sw-3":"Type 3"
+          }
+      },
+      "gutters":{
+         "name":"Gutter between buttons",
+         "desc":"",
+         "type":"checkbox",
+         "class":"gutters"
+      },
+      "multiline":{
+         "name":"Multiline gutter",
+         "desc":"",
+         "type":"checkbox",
+         "class":"multiline"
+      }
+   }
+}

@@ -58,42 +58,42 @@
         },
         
         sites:{
-            addtofavorites: [ 'Add to favorites', 'star', '#" onclick="socializer_addbookmark(event)' ],
-            behance: [ 'Behance', 'behance', 'https://www.behance.net/' ],
-            blogger: [ 'Blogger', 'rss-square', 'https://www.blogger.com/blog_this.pyra?t&u={url}&n={title}&pli=1' ],
-            comments: [ 'Comments', 'comments', '#' ],
-            delicious: [ 'Delicious', 'delicious', 'https://delicious.com/post?url={url}&amp;title={title}&amp;notes={excerpt}' ],
-            digg: [ 'Digg', 'digg', 'https://digg.com/submit?phase=2&amp;url={url}&amp;title={title}&amp;bodytext={excerpt}' ],
-            dribbble: [ 'Dribbble', 'dribbble', 'https://dribbble.com/' ],
-            email: [ 'Email', 'envelope', 'mailto:?to=&subject={title}&body={excerpt}%20-%20{de-url}' ],
-            facebook: [ 'Facebook', 'facebook', 'http://www.facebook.com/share.php?u={url}&amp;t={title}' ],
-            flickr: [ 'Flickr', 'flickr', 'http://www.flickr.com' ],
-            github: [ 'Github', 'github', 'http://www.github.com/' ],
-            google: [ 'Google', 'google', 'http://www.google.com/bookmarks/mark?op=edit&amp;bkmk={url}&amp;title={title}&amp;annotation={excerpt}' ],
-            googleplus: [ 'Google Plus', 'google-plus', 'https://plus.google.com/share?url={url}' ],
-            hackernews: [ 'Hacker News', 'hacker-news', 'http://news.ycombinator.com/submitlink?u={url}&amp;t={title}' ],
-            instagram: [ 'Instagram', 'instagram', 'http://instagram.com' ],
-            linkedin: [ 'LinkedIn', 'linkedin', 'http://linkarena.com/bookmarks/addlink/?url={url}&amp;title={title}' ],
-            pdf: [ 'PDF', 'file-pdf-o', 'http://www.printfriendly.com/print?url={url}' ],
-            pinterest: [ 'Pinterest', 'pinterest', 'http://www.pinterest.com/pin/create/button/?url={url}&amp;media={image}&amp;description={excerpt}' ],
-            pocket: [ 'Pocket', 'get-pocket', 'https://getpocket.com/save?url={url}&title={title}' ],
-            print: [ 'Print', 'print', 'http://www.printfriendly.com/print?url={url}' ],
-            reddit: [ 'Reddit', 'reddit', 'http://reddit.com/submit?url={url}&amp;title={title}' ],
-            rss: [ 'RSS', 'rss', '{rss-url}' ],
-            shortlink: [ 'Short link', 'link', 'http://goog.gl/abcd" onclick="socializer_shortlink( event, this )' ],
-            soundcloud: [ 'Soundcloud', 'soundcloud', 'https://soundcloud.com/' ],
-            stackoverflow: [ 'StackOverflow', 'stack-overflow', 'http://stackoverflow.com/' ],
-            stumbleupon: [ 'StumbleUpon', 'stumbleupon', 'http://www.stumbleupon.com/submit?url={url}&amp;title={title}' ],
-            tumblr: [ 'Tumblr', 'tumblr', 'http://www.tumblr.com/share?v=3&amp;u={url}&amp;t={title}&amp;s={excerpt}' ],
-            twitter: [ 'Twitter', 'twitter', 'http://twitter.com/home?status={title}%20-%20{s-url}%20{twitter-username}' ],
-            vkontakte: [ 'VKontakte', 'vk', 'http://vk.com/share.php?url={url}&title={title}&description={excerpt}' ],
-            vine: [ 'Vine', 'vine', 'https://vine.co' ],
-            wechat: [ 'wechat', 'vk', '' ],
-            whatsapp: [ 'WhatsApp', 'whatsapp', '' ],
-            xing: [ 'Xing', 'xing', 'https://www.xing.com/spi/shares/new?url={url}' ],
-            yahoobookmarks: [ 'Yahoo! Bookmarks', 'yahoo', 'http://bookmarks.yahoo.com/toolbar/savebm?u={url}&amp;t={title}&opener=bm&amp;ei=UTF-8&amp;d={excerpt}' ],
-            youtube: [ 'Youtube', 'youtube', 'http://youtube.com/' ],
-            more: [ 'More', 'share-alt', '#' ]
+            addtofavorites: [ 'Add to favorites', 'star', '#', '#F9A600', 'socializer_addbookmark(event)' ],
+            behance: [ 'Behance', 'behance', 'https://www.behance.net/', '#1769ff', '' ],
+            blogger: [ 'Blogger', 'rss-square', 'https://www.blogger.com/blog_this.pyra?t&u={url}&n={title}&pli=1', '#FF6501', '' ],
+            comments: [ 'Comments', 'comments', '#', '#333', '' ],
+            delicious: [ 'Delicious', 'delicious', 'https://delicious.com/post?url={url}&amp;title={title}&amp;notes={excerpt}', '#3274D1', '' ],
+            digg: [ 'Digg', 'digg', 'https://digg.com/submit?phase=2&amp;url={url}&amp;title={title}&amp;bodytext={excerpt}', '#000', '' ],
+            dribbble: [ 'Dribbble', 'dribbble', 'https://dribbble.com/', '#ea4c89', '' ],
+            email: [ 'Email', 'envelope', 'mailto:?to=&subject={title}&body={excerpt}%20-%20{de-url}', '#000', '' ],
+            facebook: [ 'Facebook', 'facebook', 'http://www.facebook.com/share.php?u={url}&amp;t={title}', '#3e5b98', '' ],
+            flickr: [ 'Flickr', 'flickr', 'http://www.flickr.com', '#1c9be9', '' ],
+            github: [ 'Github', 'github', 'http://www.github.com/', '#333', '' ],
+            google: [ 'Google', 'google', 'http://www.google.com/bookmarks/mark?op=edit&amp;bkmk={url}&amp;title={title}&amp;annotation={excerpt}', '#3A7CEC', '' ],
+            googleplus: [ 'Google Plus', 'google-plus', 'https://plus.google.com/share?url={url}', '#DB483B', '' ],
+            hackernews: [ 'Hacker News', 'hacker-news', 'http://news.ycombinator.com/submitlink?u={url}&amp;t={title}', '#FF6500', '' ],
+            instagram: [ 'Instagram', 'instagram', 'http://instagram.com', '#0d3c5f', '' ],
+            linkedin: [ 'LinkedIn', 'linkedin', 'http://linkarena.com/bookmarks/addlink/?url={url}&amp;title={title}', '#0274B3', '' ],
+            pdf: [ 'PDF', 'file-pdf-o', 'http://www.printfriendly.com/print?url={url}', '#E61B2E', '' ],
+            pinterest: [ 'Pinterest', 'pinterest', 'http://www.pinterest.com/pin/create/button/?url={url}&amp;media={image}&amp;description={excerpt}', '#CB2027', '' ],
+            pocket: [ 'Pocket', 'get-pocket', 'https://getpocket.com/save?url={url}&title={title}', '#EF4056', '' ],
+            print: [ 'Print', 'print', 'http://www.printfriendly.com/print?url={url}', '#6D9F00', '' ],
+            reddit: [ 'Reddit', 'reddit', 'http://reddit.com/submit?url={url}&amp;title={title}', '#FF5600', '' ],
+            rss: [ 'RSS', 'rss', '{rss-url}', '#FF7B0A', '' ],
+            shortlink: [ 'Short link', 'link', '{url}', '#333', 'socializer_shortlink( event, this )' ],
+            soundcloud: [ 'Soundcloud', 'soundcloud', 'https://soundcloud.com/', '#f50', '' ],
+            stackoverflow: [ 'StackOverflow', 'stack-overflow', 'http://stackoverflow.com/', '#F48024', '' ],
+            stumbleupon: [ 'StumbleUpon', 'stumbleupon', 'http://www.stumbleupon.com/submit?url={url}&amp;title={title}', '#EB4823', '' ],
+            tumblr: [ 'Tumblr', 'tumblr', 'http://www.tumblr.com/share?v=3&amp;u={url}&amp;t={title}&amp;s={excerpt}', '#314358', '' ],
+            twitter: [ 'Twitter', 'twitter', 'http://twitter.com/home?status={title}%20-%20{s-url}%20{twitter-username}', '#4da7de', '' ],
+            vkontakte: [ 'VKontakte', 'vk', 'http://vk.com/share.php?url={url}&title={title}&description={excerpt}', '#4C75A3', '' ],
+            vine: [ 'Vine', 'vine', 'https://vine.co', '#00bf8f', '' ],
+            wechat: [ 'wechat', 'vk', '', '#7BB32E', '' ],
+            whatsapp: [ 'WhatsApp', 'whatsapp', '', '#60b82d', '' ],
+            xing: [ 'Xing', 'xing', 'https://www.xing.com/spi/shares/new?url={url}', '#006567', '' ],
+            yahoobookmarks: [ 'Yahoo! Bookmarks', 'yahoo', 'http://bookmarks.yahoo.com/toolbar/savebm?u={url}&amp;t={title}&opener=bm&amp;ei=UTF-8&amp;d={excerpt}', '#4A00A1', '' ],
+            youtube: [ 'Youtube', 'youtube', 'http://youtube.com/', '#cc181e', '' ],
+            more: [ 'More', 'share-alt', '#', 'green', '' ]
         },
         
         initOptions: function(){
@@ -155,7 +155,8 @@
                     var text = '<span class="text">' + this.sites[ site ][ 0 ] + '</span>',
                         textIn = textOut = '',
                         textClass = ' sr-text-' + showText,
-                        link = this.getLink( site );
+                        link = this.getLink( site ),
+                        onclick = ( this.sites[ site ][ 4 ] == '' ) ? '' : 'onclick="' + this.sites[ site ][ 4 ] + '"';
 
                     if( showText == 'in' )
                         textIn = text;
@@ -163,8 +164,8 @@
                         textClass = '';
                     else
                         textOut = text;
-
-                    html.push( '<' + child + ' class="sr-' + site + textClass + '"><a href="'+ link +'" target="_blank" title="' + this.sites[ site ][ 0 ] + '"><i class="fa fa-' + this.sites[ site ][ 1 ] + '"></i>' + textIn + '</a>' + textOut + moreHTML + '</' + child + '>' );
+                    
+                    html.push( '<' + child + ' class="sr-' + site + textClass + '"><a href="'+ link +'" target="_blank" ' + onclick + ' title="' + this.sites[ site ][ 0 ] + '"><i class="fa fa-' + this.sites[ site ][ 1 ] + '"></i>' + textIn + '</a>' + textOut + moreHTML + '</' + child + '>' );
                 }
             }, this);
 
