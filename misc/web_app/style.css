@@ -1,0 +1,136 @@
+body{
+    background-color: #f7f7f7;
+}
+.app_wrap{
+    width:750px;
+    margin: 0 auto;
+}
+.app_left{
+    float: left;
+    width: 40%;
+    border: 1px solid #dfdfdf;
+    padding-right: 15px;
+    box-sizing: border-box;
+    min-height: 400px;
+    position: relative;
+}
+
+.scr_sites_sel li {
+    list-style: none;
+    margin: 0 0 5px 0;
+    width: 100%;
+    background: #CDC9FF;
+    cursor: ns-resize;
+}
+
+.scr_sites_sel {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    max-height: 370px;
+    outline: 1px solid red;
+}
+
+.clearfix:after{
+    content: '';
+    display: block;
+    clear:both;
+}
+
+.scr_sites_sel li > * {
+    padding: 8px 10px;
+    display: inline-block;
+}
+
+
+.scr_add_site_wrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 15px;
+    /* display: table; */
+    /* width: 100%; */
+}
+
+.scr_add_site_wrap > * {
+    box-sizing: border-box;
+}
+
+.app_section {
+    margin: 0 0 15px 0;
+}
+
+.app_right {
+    float: left;
+    width: 60%;
+    box-sizing: border-box;
+    padding-left: 15px;
+}
+
+.app_row {
+    padding: 15px 0;
+    /* outline: 1px solid red; */
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.app_row:first-child {
+    padding-top: 0;
+}
+
+.app_col {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 15px 0 0;
+}
+
+.app_row:after {content: '';display: block;clear: both;}
+
+.app_row h5 {
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+}
+
+.app_wrap select {
+    border: 1px solid #333;
+    padding: 5px;
+    border-radius: 3px;
+    border-radius: 0;
+}
+
+.sortable-ghost{
+    color: red;
+}
+
+.scr_sites_sel .site_action {
+    float: right;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.scr_sites {
+    width: 75%;
+}
+
+.scr_add_site {
+    width: 25%;
+    padding: 5px;
+}
+
+.scr_sites_sel .site_action:hover {
+    opacity: 1;
+}
+
+.scr_sites_sel .site_settings_wrap {
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, 0.45);
+    padding: 10px;
+    display: none;
+}
+
+.site_settings_wrap input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+}
