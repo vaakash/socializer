@@ -3,7 +3,7 @@ $(document).ready(function(){
     api = {};
     page_vals = {};
     $site_list_tmpl = $( '<li><span></span><i class="fa fa-cog site_action site_settings"></i><i class="fa fa-trash-o site_action site_delete"></i><div class="site_settings_wrap"><input type="text" class="site_meta" placeholder="Custom site URL" /></div></li>' );
-    window.default_values = {
+    default_values = {
         'sites': [ 'facebook', 'googleplus', 'print', 'email', 'rss' ],
         'sizes': '32px',
         'shapes': 'circle',
@@ -16,14 +16,16 @@ $(document).ready(function(){
         'background-color': '',
         'border-width': '',
         'shadow': '',
-        'gutters': 1,
-        'multiline': 0
+        'gutters': 'gutters',
+        'multiline': '',
+        'more-count': 0
     };
     $sites_sel_list = $('.scr_sites_sel');
     $preview = $( '.app_preview .socializer' );
     values = {};
+    hashValues = {};
     
-    $.getJSON( 'https://cdn.rawgit.com/vaakash/socializer/master/misc/api.json', function(data){
+    $.getJSON( 'https://api.myjson.com/bins/4150q', function(data){
         api = data;
         init();
     });
@@ -54,159 +56,173 @@ $(document).ready(function(){
         }
     }
     
-    var generateSelect = function( ele, items, value ){
+    var generateSelect = function( ele, items, value, group ){
         $.each( items, function( id, name ){
             ele.append( '<option value="' + id + '">' + name + '</option>' );
         });
         ele.find( 'option[value="' + value + '"]' ).attr( 'selected', 'selected' );
+        ele.attr( 'data-group', group );
     }
     
-    var generateCheckbox = function( ele, feature, value ){
-        var tmpl = $( '<input type="checkbox" value="1" data-feature="' + feature + '" />' );
-        if( value == 1 ){
-            tmpl.attr( 'checked', true );
-        }
-        ele.replaceWith( tmpl.clone() );
-    }
-    
-    var generateSitesVal = function(){
-        var t_list = [];
-        $sites_sel_list.children().each(function(){
-            t_list.push( $(this).data( 'site' ) );
+    var getFeaturesValue = function(){
+        groupVal = [];
+        $( '.app_wrap [data-group="features"]' ).each(function(){
+            feature = $(this).data( 'setting' );
+            featVal = $(this).val();
+            if( featVal != '' ){
+                groupVal.push( featVal );
+            }
+            
+            // Add to hash
+            if( featVal != default_values[ feature ] ){
+                hashValues[ feature ] = featVal
+            }else{
+                delete hashValues[ feature ];
+            }
+            
         });
-        $( '.app_wrap [data-feature="sites"]' ).val( t_list.join(',') ).trigger( 'change' );
+        
+        return groupVal.join( ',' );
+    }
+    
+    var getTextValue = function(){
+        textVal = $( '.app_wrap [data-group="text"]' ).val();
+        
+        // Add to hash
+        if( textVal != '' ){
+            hashValues[ 'text-styles' ] = textVal;
+        }else{
+            delete hashValues[ 'text-styles' ];
+        }
+        
+        return textVal;
+    }
+    
+    var getSitesValue = function(){
+        siteList = [];
+        $sites_sel_list.children().each(function(){
+            siteList.push( $(this).data( 'site' ) );
+        });
+        
+        moreCount = parseInt( $( '.more-sites' ).val() );
+        if( isNaN( moreCount ) || moreCount == 0 ){
+            moreCount = -siteList.length;
+        }
+        
+        activeSites = siteList.slice( 0, -moreCount );
+        moreSites = siteList.slice( -moreCount );
+        
+        if( moreCount > 0 && $.inArray( 'more', siteList ) == -1 )
+            activeSites.push( 'more' );
+        
+        // Add to hash
+        if( siteList.length > 0 )
+            hashValues[ 'sites' ] = siteList;
+        else
+            delete hashValues[ 'sites' ]
+        
+        if( moreCount > 0 )
+            hashValues[ 'more-count' ] = moreCount;
+        else
+            delete hashValues[ 'more-count' ]
+        
+        return {
+            'active': activeSites.join( ',' ),
+            'more': moreSites.join( ',' ),
+        };
+    }
+    
+    var getMetaValues = function(){
+        metas = {};
+        $sites_sel_list.children().each(function(){
+            site = $(this).data( 'site' );
+            metaVal = $(this).find( '.site_meta' ).val();
+            metas[ site ] = metaVal;
+        });
+        return metas;
+    }
+    
+    var getAllValues = function(){
+        allValues =  {
+            'features': getFeaturesValue(),
+            'text': getTextValue(),
+            'sites': getSitesValue()[ 'active' ],
+            'more': getSitesValue()[ 'more' ],
+            'meta': getMetaValues()
+        }
+        window.location.hash = JSON.stringify( hashValues );
+        return allValues;
+    }
+    
+    var setPreviewData = function( attrName, attrVal ){
+        if( attrVal != '' ){
+            $preview.attr( attrName, attrVal );
+        }else{
+            $preview.removeAttr( attrName );
+        }
+    }
+    
+    var refreshPreview = function(){
+        all = getAllValues();
+        console.log( all );
+        
+        setPreviewData( 'data-features', all[ 'features' ] );
+        setPreviewData( 'data-sites', all[ 'sites' ] );
+        setPreviewData( 'data-text', all[ 'text' ] );
+        setPreviewData( 'data-more', all[ 'more' ] );
+        
+        $.each( all[ 'meta' ], function( metaSiteName, metaSiteVal ){
+            setPreviewData( 'data-meta-' + metaSiteName , metaSiteVal );
+        });
+        socializer( '.socializer' );
     }
     
     var init = function(){
         
         values = $.extend( {}, default_values,  parseHash() );
         
-        Sortable.create( $sites_sel_list[0],{
-            onEnd: generateSitesVal,
+        Sortable.create( $sites_sel_list[0], {
+            onEnd: refreshPreview
         });
         
         $.each( values[ 'sites' ], function( i ){
             var site = values[ 'sites' ][ i ];
             addSite( $sites_sel_list, site );
         });
-
+        
         $.each( api[ 'sites' ], function( i, site ){
             $('.scr_sites').append( '<option value="'+ i +'">' + site[0] + '</option>' );
         });
 
-        $( '.app_wrap [data-feature]' ).each(function(){
-            var feature = $(this).data( 'feature' );
+        $( '.app_wrap [data-setting]' ).each(function(){
+            var feature = $(this).data( 'setting' );
             if( feature != 'sites' ){
-                var type = api['features'][ feature ][ 'type' ];
-                
-                if ( type == 'select' ){
-                    generateSelect( $(this), api['features'][ feature ][ 'options' ], values[ feature ] );
-                }else if( type == 'checkbox' ){
-                    generateCheckbox( $(this), feature, values[ feature ] );
+                var config = api['settings'][ feature ];
+                if ( config[ 'type' ] == 'select' ){
+                    generateSelect( $(this), config[ 'options' ], values[ feature ], config[ 'group' ] );
                 }
-                
             }
         });
+        
+        $( '.more-sites' ).val( values[ 'more-count' ] );
+        
+        refreshPreview();
         
     }
     
-    $( document ).on( 'change', '.app_wrap [data-feature]', function(){
-        $(this).each(function(){
-            
-            var feature = $(this).data( 'feature' );
-            
-            if( feature != 'sites' ){
-            
-                var feature_type = api[ 'features' ][ feature ][ 'type' ];
-                var feature_val = '';
-                
-                if( feature_type == 'select' ){
-                    feature_val = $(this).val();
-                }else if( feature_type == 'checkbox' ){
-                    if ( $(this).is( ':checked' ) ){
-                        feature_val = 1;
-                    }else{
-                        feature_val = 0;
-                    }
-                }
-                
-                if( feature_val != default_values[ feature ] ){
-                    page_vals[ feature ] = feature_val;
-                }else{
-                    if( feature in page_vals )
-                        delete page_vals[ feature ];
-                }
-                
-            }else if( feature == 'sites' ){
-                page_vals[ feature ] = $(this).val().split(',');
-            }
-            
-        });
-        
-        if( Object.keys( page_vals ).length > 0 ){
-            
-            window.location.hash = JSON.stringify( page_vals );
-            
-            values = $.extend( {}, default_values,  parseHash() );
-            console.log( values );
-            
-            // Grouping for preview
-            var preview_datas = {
-                'features': [],
-                'sites': [],
-                'text': ''
-            };
-            
-            for( var key in values ){
-                if( values.hasOwnProperty( key ) ) {
-                    if( key != 'text-styles' && key != 'sites' ){
-                        console.log( key );
-                        if( api[ 'features' ][ key ][ 'type' ] == 'select' ){
-                            if( values[ key ] != '' ){
-                                preview_datas[ 'features' ].push( values[ key ] );
-                            }
-                        }else{
-                            if( values[ key ] == 1 ){
-                                preview_datas[ 'features' ].push( key );
-                            }
-                        }
-                    }else if( key == 'sites' ){
-                        preview_datas[ 'sites' ] = values[ key ];
-                    }else if( key == 'text-styles' ){
-                        preview_datas[ 'text' ] = values[ key ].replace( 'text-', '' );
-                    }
-                }
-            }
-            
-            for( var key in preview_datas ){
-                if( preview_datas.hasOwnProperty( key ) ) {
-                    var data_val = preview_datas[ key ];
-                    if( typeof preview_datas[ key ] == 'object' ){
-                        data_val = Array.prototype.join.call( data_val, ',' );
-                    }
-                    if( data_val != '' ){
-                        $preview.attr( 'data-' + key, data_val );
-                    }else{
-                         $preview.removeAttr( 'data-' + key );
-                    }
-                }
-            }
-            socializer( '.socializer' );
-            
-        }else{
-            window.location.hash = '';
-        }
+    $( document ).on( 'change', '[data-setting], .more-count', function(){
+        refreshPreview();
     });
     
     $( document ).on( 'click', '.scr_add_site', function(){
         var site = $('.scr_sites').val();
         addSite( $sites_sel_list, site );
-        generateSitesVal();
+        refreshPreview();
     });
     
     $( document ).on( 'click', '.site_delete', function(){
         $(this).parent().remove();
-        generateSitesVal();
+        refreshPreview();
     });
     
     $( document ).on( 'click', '.site_settings', function(){

@@ -9,19 +9,18 @@
         <div class="app_left">
             <ul class="scr_sites_sel"></ul>
             <div class="scr_add_site_wrap"><select class="scr_sites"></select><button class="scr_add_site">Add</button></div>
-            <input type="hidden" data-feature="sites" />
         </div>
         <div class="app_right">
             <div class="app_row">
             
                 <div class="app_col">
                     <h5>Button size</h5>
-                    <select data-feature="sizes"></select>
+                    <select data-setting="sizes"></select>
                 </div>
             
                 <div class="app_col">
                     <h5>Button shape</h5>
-                    <select data-feature="shapes"></select>
+                    <select data-setting="shapes"></select>
                 </div>
                 
             </div>
@@ -30,12 +29,12 @@
             
                 <div class="app_col">
                     <h5>Layout</h5>
-                    <select data-feature="layouts"></select>
+                    <select data-setting="layouts"></select>
                 </div>
             
                 <div class="app_col">
                     <h5>Hover effects</h5>
-                    <select data-feature="hover"></select>
+                    <select data-setting="hover"></select>
                 </div>
             
             </div>
@@ -44,12 +43,12 @@
             
                 <div class="app_col">
                     <h5>Text type</h5>
-                    <select data-feature="text-styles"></select>
+                    <select data-setting="text-styles"></select>
                 </div>
             
                 <div class="app_col">
                     <h5>Font Size</h5>
-                    <select data-feature="font-size"></select>
+                    <select data-setting="font-size"></select>
                 </div>
             
             </div>
@@ -58,12 +57,12 @@
             
                 <div class="app_col">
                     <h5>Icon color</h5>
-                    <select data-feature="icon-color"></select>
+                    <select data-setting="icon-color"></select>
                 </div>
             
                 <div class="app_col">
                     <h5>Border Color</h5>
-                    <select data-feature="border-color"></select>
+                    <select data-setting="border-color"></select>
                 </div>
             
             </div>
@@ -72,12 +71,12 @@
             
                 <div class="app_col">
                     <h5>Background color</h5>
-                    <select data-feature="background-color"></select>
+                    <select data-setting="background-color"></select>
                 </div>
             
                 <div class="app_col">
                     <h5>Border width</h5>
-                    <select data-feature="border-width"></select>
+                    <select data-setting="border-width"></select>
                 </div>
             
             </div>
@@ -86,14 +85,16 @@
             
                 <div class="app_col">
                     <h5>Shadow type</h5>
-                    <select data-feature="shadow"></select>
+                    <select data-setting="shadow"></select>
                 </div>
             
                 <div class="app_col">
                     <h5>Padding</h5>
-                    <select data-feature="gutters"></select>
+                    <select data-setting="gutters"></select>
                 </div>
-            
+                
+                <input type="text" class="more-sites" />
+                
             </div>
             
         </div>
@@ -108,8 +109,3 @@
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../../js/socializer.js"></script>
 <script src="script.js"></script>
-<script>
-(function(){
-    var s = socializer( '.socializer' );    
-}());
-</script>
