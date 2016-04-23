@@ -178,14 +178,14 @@
               "sw-3":"Type 3"
           }
       },
-      "gutters":{
+      "pad":{
          "name":"Gutter between buttons",
          "desc":"",
          "type":"select",
          "group": "features",
          "options":{
             "": "No",
-            "gutters": "yes"
+            "pad": "yes"
          }
       },
       "multiline":{

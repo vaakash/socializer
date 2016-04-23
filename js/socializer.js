@@ -279,10 +279,10 @@
             
         },
 
-        extend: function(out) {
+        extend: function(out){
             out = out || {};
 
-            for (var i = 1; i < arguments.length; i++) {
+            for (var i = 1; i < arguments.length; i++){
                 if (!arguments[i])
                   continue;
 
@@ -295,18 +295,18 @@
             return out;
         },
         
-        nest: function( base, array, value ) {
+        nest: function( base, array, value ){
             for( var i = 0; i < array.length; i++ ) {
                 base = base[ array[i] ] = base[ array[i] ] || ( i == array.length-1 ? value: {} );
             }
         },
         
-        popup: function( url, title, w, h ) {
+        popup: function( url, title, w, h ){
             var left = ( screen.width/2 )-( w/2 ),
                 top = ( screen.height/2 )-( h/2 );
                 
             return window.open( url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left );
-        } 
+        },
 
     };
     

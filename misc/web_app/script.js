@@ -16,7 +16,7 @@ $(document).ready(function(){
         'background-color': '',
         'border-width': '',
         'shadow': '',
-        'gutters': 'gutters',
+        'pad': 'pad',
         'multiline': '',
         'more-count': 0
     };
@@ -25,7 +25,7 @@ $(document).ready(function(){
     values = {};
     hashValues = {};
     
-    $.getJSON( 'https://api.myjson.com/bins/4150q', function(data){
+    $.getJSON( 'https://api.myjson.com/bins/21vzm', function(data){
         api = data;
         init();
     });
@@ -35,6 +35,7 @@ $(document).ready(function(){
         if( hash.length > 0 ){
             var the_json = hash.substr( 1 );
             try{
+                the_json = atob( the_json );
                 page_vals = JSON.parse( the_json );
                 return page_vals;
             }catch(err){
@@ -104,7 +105,7 @@ $(document).ready(function(){
             siteList.push( $(this).data( 'site' ) );
         });
         
-        moreCount = parseInt( $( '.more-sites' ).val() );
+        moreCount = parseInt( $( '.more_sites' ).val() );
         if( isNaN( moreCount ) || moreCount == 0 ){
             moreCount = -siteList.length;
         }
@@ -150,7 +151,8 @@ $(document).ready(function(){
             'more': getSitesValue()[ 'more' ],
             'meta': getMetaValues()
         }
-        window.location.hash = JSON.stringify( hashValues );
+        //window.location.hash = JSON.stringify( hashValues );
+        
         return allValues;
     }
     
@@ -162,19 +164,73 @@ $(document).ready(function(){
         }
     }
     
+    var setCode = function(){
+        var $withjsclone = $preview.clone();
+        var $withoutjsclone = $preview.clone();
+        var toRemove = [ 'data-sites', 'data-features', 'data-text' ];
+        
+        for( var i = 0, atts = $preview[0].attributes, n = atts.length, arr = []; i < n; i++ ){
+            var attr = atts[i].nodeName;
+            if( $.inArray( attr, toRemove ) != -1 || attr.search( 'meta' ) != -1 ){
+                $withoutjsclone.removeAttr( attr );
+            }
+        }
+        
+        $( '.withoutjs_code' ).text( $withoutjsclone[0].outerHTML );
+        
+        $withjsclone.attr( 'class', 'socializer' );
+        $( '.withjs_code' ).text( $withjsclone.empty()[0].outerHTML );
+    }
+    
     var refreshPreview = function(){
+        
         all = getAllValues();
-        console.log( all );
+        setCodeTypeFields();
         
         setPreviewData( 'data-features', all[ 'features' ] );
         setPreviewData( 'data-sites', all[ 'sites' ] );
         setPreviewData( 'data-text', all[ 'text' ] );
         setPreviewData( 'data-more', all[ 'more' ] );
         
+        
+        if( !$( '.page_info_auto' ).is( ':checked' ) ){
+            $preview.attr( 'data-meta-link', $( '.page_url' ).val() );
+            $preview.attr( 'data-meta-title', $( '.page_title' ).val() );
+        }else{
+            $preview.removeAttr( 'data-meta-link' );
+            $preview.removeAttr( 'data-meta-title' );
+        }
+        
         $.each( all[ 'meta' ], function( metaSiteName, metaSiteVal ){
             setPreviewData( 'data-meta-' + metaSiteName , metaSiteVal );
         });
+        
         socializer( '.socializer' );
+        
+        setCode();
+    }
+    
+    var setCodeTypeFields = function(){
+        
+        if( $( '.code_type' ).val() == 'js' ){
+            $( '.page_details' ).show();
+            $( '.page_info_auto_wrap' ).show();
+        }else{
+            $( '.page_details' ).show();
+            $( '.page_info_auto' ).removeAttr( 'checked' )
+            $( '.page_info_auto_wrap' ).hide();
+        }
+        
+        if( $( '.page_info_auto' ).is( ':checked' ) ){
+            $( '.page_details' ).hide();
+        }else{
+            $( '.page_details' ).show();
+        }
+        
+    }
+    
+    var getShareUrl = function(){
+        return [location.protocol, '//', location.host, location.pathname].join('') + '#' + btoa( JSON.stringify( hashValues ) );
     }
     
     var init = function(){
@@ -204,10 +260,26 @@ $(document).ready(function(){
             }
         });
         
-        $( '.more-sites' ).val( values[ 'more-count' ] );
+        $( '.more_sites' ).val( values[ 'more-count' ] );
         
         refreshPreview();
         
+    }
+    
+    var getShortUrl = function( url ){
+        var surl = '';
+        $.ajax({
+            type: 'POST',
+            url: 'https://www.googleapis.com/urlshortener/v1/url?key=',
+            data: '{"longUrl": "' + url + '"}',
+            success: function(data){
+                surl = data[ 'id' ];
+            },
+            contentType: "application/json",
+            dataType: 'json'
+        });
+        
+        return ( surl == '' ) ? url : surl;
     }
     
     $( document ).on( 'change', '[data-setting], .more-count', function(){
@@ -232,6 +304,27 @@ $(document).ready(function(){
     $( document ).on( 'change', '.site_meta', function(){
         var $li = $(this).closest( 'li' );
         $li.attr( 'data-meta', $(this).val() );
+    });
+    
+    $( document ).on( 'change', '.site_meta, .code_type, .page_info_auto, .page_url, .page_title', function(){
+        refreshPreview();
+    });
+    
+    $( document ).on( 'change', '.more_sites', function(){
+        var val = $(this).val();
+        var msg = '';
+        if( val == 0 ){
+            msg = 'No grouping';
+        }else{
+            msg = 'Group last ' + val + ' sites';
+        }
+        $( '.more_sites_text' ).html( msg );
+        refreshPreview();
+    });
+    
+    $( document ).on( 'click', '.shortner_btn', function(){
+        var shortUrl = getShortUrl( getShareUrl() );
+        $( '.shortner_url' ).val( shortUrl );
     });
     
 });

@@ -66,10 +66,10 @@
             line-height: $size;
             font-size: $size/2;
         }
-        &.sr-font-small a{
+        &.sr-font-sm a{
             font-size: ($size/2)-($size/6);
         }
-        &.sr-font-huge a{
+        &.sr-font-lg a{
             font-size: ($size/2)+($size/6);
         }
     }

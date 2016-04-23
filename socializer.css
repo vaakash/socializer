@@ -43,9 +43,9 @@
     height: 16px;
     line-height: 16px;
     font-size: 8px; }
-  .sr-16px.sr-font-small a {
+  .sr-16px.sr-font-sm a {
     font-size: 5.3333333333px; }
-  .sr-16px.sr-font-huge a {
+  .sr-16px.sr-font-lg a {
     font-size: 10.6666666667px; }
 
 .sr-32px {
@@ -55,9 +55,9 @@
     height: 32px;
     line-height: 32px;
     font-size: 16px; }
-  .sr-32px.sr-font-small a {
+  .sr-32px.sr-font-sm a {
     font-size: 10.6666666667px; }
-  .sr-32px.sr-font-huge a {
+  .sr-32px.sr-font-lg a {
     font-size: 21.3333333333px; }
 
 .sr-48px {
@@ -67,9 +67,9 @@
     height: 48px;
     line-height: 48px;
     font-size: 24px; }
-  .sr-48px.sr-font-small a {
+  .sr-48px.sr-font-sm a {
     font-size: 16px; }
-  .sr-48px.sr-font-huge a {
+  .sr-48px.sr-font-lg a {
     font-size: 32px; }
 
 .sr-64px {
@@ -79,9 +79,9 @@
     height: 64px;
     line-height: 64px;
     font-size: 32px; }
-  .sr-64px.sr-font-small a {
+  .sr-64px.sr-font-sm a {
     font-size: 21.3333333333px; }
-  .sr-64px.sr-font-huge a {
+  .sr-64px.sr-font-lg a {
     font-size: 42.6666666667px; }
 
 .sr-addtofavorites a {

@@ -90,20 +90,71 @@
             
                 <div class="app_col">
                     <h5>Padding</h5>
-                    <select data-setting="gutters"></select>
+                    <select data-setting="pad"></select>
                 </div>
                 
-                <input type="text" class="more-sites" />
+                <input type="range" class="more_sites" min="0" value="0" max="10" step="1" />
+                <span class="more_sites_text"></span>
                 
             </div>
             
         </div>
     </div>
-
+    
+    <div class="shortener">
+        <h4>Share this design</h4>
+        <input type="text" class="shortner_url" onclick="this.select();" /><button class="shortner_btn">Get url</button>
+    </div>
+    
     <div class="app_preview">
         <div class="socializer" data-features="32px,icon-white,pad"></div>
     </div>
-
+    
+    <select class="code_type">
+        <option value="nojs">Without JS</option>
+        <option value="js">With JS</option>
+    </select>
+    
+    <label class="page_info_auto_wrap"><input type="checkbox" class="page_info_auto" /> Use current page</label>
+    <div class="page_details">
+        <input type="text" class="page_url" />
+        <input type="text" class="page_title" />
+    </div>
+    
+<h3>Code</h3>
+    <h4>With JS</h4>
+    <div>
+        <p>In header</p>
+        <pre>
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.rawgit.com/vaakash/socializer/master/socializer.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css&quot;&gt;
+        </pre>
+        
+        <p>In body</p>
+        <pre><span class="withjs_code"></span></pre>
+        
+        <p>Before &lt;/body&gt;</p>
+        <pre>
+&lt;script src="https://cdn.rawgit.com/vaakash/socializer/master/js/socializer.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    (function(){
+        socializer( '.socializer' );
+    }());
+&lt;/script&gt;
+        </pre>
+    </div>
+    
+    <h4>Without JS</h4>
+    <div>
+        <p>In header</p>
+        <pre>
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.rawgit.com/vaakash/socializer/master/socializer.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css&quot;&gt;
+        </pre>
+        
+        <p>In body</p>
+        <pre><span class="withoutjs_code"></span></pre>
+    </div>
 </div>
 
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
