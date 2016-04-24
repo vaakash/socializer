@@ -1,11 +1,13 @@
-// Gutters
+// Gutter
 .sr-pad >*{
     margin-right: 0.5em;
 }
 .sr-multiline >*{
     margin-bottom: 0.5em;
 }
-
+.sr-no-icon i{
+    display: none;
+}
 
 // More menu
 .sr-more{
@@ -32,13 +34,13 @@
             clear: both;
             display: block;
         }
-    }
-    
-    >*{
-        margin: 0 0 0.5em 0;
         
-        &:last-child{
-            margin-bottom: 0;
+        li{
+            margin: 0 0 0.5em 0;
+            
+            &:last-child{
+                margin-bottom: 0;
+            }
         }
     }
     

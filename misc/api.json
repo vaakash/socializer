@@ -117,6 +117,16 @@
             "font-lg":"Large"
          }
       },
+      "icon-display":{
+         "name":"Icon display",
+         "desc":"",
+         "type":"select",
+         "group": "features",
+         "options":{
+            "":"Show icon",
+            "no-icon":"Hide icon"
+         }
+      },
       "icon-color":{
          "name":"Icon colors",
          "desc":"",

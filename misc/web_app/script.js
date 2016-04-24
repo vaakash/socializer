@@ -2,7 +2,7 @@ $(document).ready(function(){
     
     api = {};
     page_vals = {};
-    $site_list_tmpl = $( '<li><span></span><i class="fa fa-cog site_action site_settings"></i><i class="fa fa-trash-o site_action site_delete"></i><div class="site_settings_wrap"><input type="text" class="site_meta" placeholder="Custom site URL" /></div></li>' );
+    $site_list_tmpl = $( '<li><span></span><i class="fa fa-cog site_action site_settings" title="Button settings"></i><i class="fa fa-trash-o site_action site_delete" title="Delete button"></i><div class="site_settings_wrap"><input type="text" class="site_meta" placeholder="Enter custom button URL. Use {url}, {title} as placeholders" /></div></li>' );
     default_values = {
         'sites': [ 'facebook', 'googleplus', 'print', 'email', 'rss' ],
         'sizes': '32px',
@@ -25,7 +25,7 @@ $(document).ready(function(){
     values = {};
     hashValues = {};
     
-    $.getJSON( 'https://api.myjson.com/bins/21vzm', function(data){
+    $.getJSON( 'https://api.myjson.com/bins/43aw2', function(data){
         api = data;
         init();
     });
@@ -212,13 +212,17 @@ $(document).ready(function(){
     
     var setCodeTypeFields = function(){
         
+        $( '.code_withjs, .code_withoutjs' ).hide();
+        
         if( $( '.code_type' ).val() == 'js' ){
             $( '.page_details' ).show();
             $( '.page_info_auto_wrap' ).show();
+            $( '.code_withjs' ).show();
         }else{
             $( '.page_details' ).show();
             $( '.page_info_auto' ).removeAttr( 'checked' )
             $( '.page_info_auto_wrap' ).hide();
+            $( '.code_withoutjs' ).show();
         }
         
         if( $( '.page_info_auto' ).is( ':checked' ) ){
@@ -325,6 +329,14 @@ $(document).ready(function(){
     $( document ).on( 'click', '.shortner_btn', function(){
         var shortUrl = getShortUrl( getShareUrl() );
         $( '.shortner_url' ).val( shortUrl );
+    });
+    
+    var allPanels = $('.acc_section > .acc_inner').hide();
+
+    $('.acc_section h4').click(function() {
+        allPanels.slideUp();
+        $(this).next().slideDown();
+        return false;
     });
     
 });

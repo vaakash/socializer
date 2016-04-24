@@ -12,14 +12,17 @@
         width: 100%;
         box-sizing: border-box;
         overflow: hidden;
+        padding: 0 0.5em;
     }
     &.sr-pad{
         border-spacing: 0.25em;
     }
     & .sr-text-in a, &.sr-text-in a{
-        padding: 0;
         &>*{
             margin-right: 0.5em;
+        }
+        &>*:last-child{
+            margin-right: 0;
         }
         &:last-child{
             margin: 0;
@@ -30,6 +33,10 @@
     }
     &.sr-squircle-2 a{
         border-radius: 0 0.5em 0 0.5em;
+    }
+    .sr-more li{
+        display: block;
+        width: 100%;
     }
 }
 

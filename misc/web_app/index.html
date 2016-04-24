@@ -7,154 +7,115 @@
 
     <div class="app_section clearfix">
         <div class="app_left">
+            <h4>Buttons</h4>
             <ul class="scr_sites_sel"></ul>
             <div class="scr_add_site_wrap"><select class="scr_sites"></select><button class="scr_add_site">Add</button></div>
         </div>
         <div class="app_right">
-            <div class="app_row">
-            
-                <div class="app_col">
-                    <h5>Button size</h5>
-                    <select data-setting="sizes"></select>
+        
+            <div class="acc_section">
+                <h4>Size, shape and hover effects</h4>
+                <div class="acc_inner">
+                    <div class="app_row"><span>Button size</span><span><select data-setting="sizes"></select></span></div>
+                    <div class="app_row"><span>Button shape</span><span><select data-setting="shapes"></select></span></div>
+                    <div class="app_row"><span>Hover effects</span><span><select data-setting="hover"></select></span></div>
                 </div>
+            </div>
             
-                <div class="app_col">
-                    <h5>Button shape</h5>
-                    <select data-setting="shapes"></select>
+            <div class="acc_section">
+                <h4>Layouts, text and icon</h4>
+                <div class="acc_inner">
+                    <div class="app_row"><span>Layout</span><span><select data-setting="layouts"></select></span></div>
+                    <div class="app_row"><span>Text styles</span><span><select data-setting="text-styles"></select></span></div>
+                    <div class="app_row"><span>Font size</span><span><select data-setting="font-size"></select></span></div>
+                    <div class="app_row"><span>Icon display</span><span><select data-setting="icon-display"></select></span></div>
                 </div>
-                
+            </div>
+            
+            <div class="acc_section">
+                <h4>Styles and colors</h4>
+                <div class="acc_inner">
+                    <div class="app_row"><span>Icon color</span><span><select data-setting="icon-color"></select></span></div>
+                    <div class="app_row"><span>Border width</span><span><select data-setting="border-width"></select></span></div>
+                    <div class="app_row"><span>Border color</span><span><select data-setting="border-color"></select></span></div>
+                    <div class="app_row"><span>Background color</span><span><select data-setting="background-color"></select></span></div>
+                    <div class="app_row"><span>Shadow</span><span><select data-setting="shadow"></select></span></div>
+                </div>
+            </div>
+            
+            <div class="acc_section">
+                <h4>Other settings</h4>
+                <div class="acc_inner">
+                    <div class="app_row"><span>Gutters</span><span><select data-setting="pad"></select></span></div>
+                    <div class="app_row"><span>Group sites</span><span><input type="range" class="more_sites" min="0" value="0" max="10" step="1" /><br/><span class="more_sites_text"></span></span></div>
+                </div>
             </div>
 
-            <div class="app_row">
-            
-                <div class="app_col">
-                    <h5>Layout</h5>
-                    <select data-setting="layouts"></select>
-                </div>
-            
-                <div class="app_col">
-                    <h5>Hover effects</h5>
-                    <select data-setting="hover"></select>
-                </div>
-            
-            </div>
-            
-            <div class="app_row">
-            
-                <div class="app_col">
-                    <h5>Text type</h5>
-                    <select data-setting="text-styles"></select>
-                </div>
-            
-                <div class="app_col">
-                    <h5>Font Size</h5>
-                    <select data-setting="font-size"></select>
-                </div>
-            
-            </div>
-            
-            <div class="app_row">
-            
-                <div class="app_col">
-                    <h5>Icon color</h5>
-                    <select data-setting="icon-color"></select>
-                </div>
-            
-                <div class="app_col">
-                    <h5>Border Color</h5>
-                    <select data-setting="border-color"></select>
-                </div>
-            
-            </div>
-            
-            <div class="app_row">
-            
-                <div class="app_col">
-                    <h5>Background color</h5>
-                    <select data-setting="background-color"></select>
-                </div>
-            
-                <div class="app_col">
-                    <h5>Border width</h5>
-                    <select data-setting="border-width"></select>
-                </div>
-            
-            </div>
-            
-            <div class="app_row">
-            
-                <div class="app_col">
-                    <h5>Shadow type</h5>
-                    <select data-setting="shadow"></select>
-                </div>
-            
-                <div class="app_col">
-                    <h5>Padding</h5>
-                    <select data-setting="pad"></select>
-                </div>
-                
-                <input type="range" class="more_sites" min="0" value="0" max="10" step="1" />
-                <span class="more_sites_text"></span>
-                
-            </div>
-            
         </div>
+    </div>
+    
+    <div class="app_box">
+        <h4>Preview</h4>
+        <div class="app_preview">
+            <div class="socializer" data-features="32px,icon-white,pad"></div>
+        </div>
+    </div>
+    
+    <div class="app_box">
+    
+        <h4>Code</h4>
+        
+        <select class="code_type">
+            <option value="js" checked="checked">With JS</option>
+            <option value="nojs">Without JS</option>
+        </select>
+        
+        <h5>Page details</h5>
+        <label class="page_info_auto_wrap"><input type="checkbox" class="page_info_auto" /> Automatically use current page details</label>
+        <div class="page_details app_row">
+            <span>Page URL: <input type="text" class="page_url" placeholder="Page URL"/></span>
+            <span>Page title: <input type="text" class="page_title" placeholder="Page title"/></span>
+        </div>
+        
+        <div class="code_withjs">
+            <h5>In header</h5>
+            <pre>
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.rawgit.com/vaakash/socializer/master/socializer.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css&quot;&gt;
+            </pre>
+            
+            <h5>In body</h5>
+            <pre><span class="withjs_code"></span></pre>
+            
+            <h5>Before &lt;/body&gt;</h5>
+            <pre>
+&lt;script src="https://cdn.rawgit.com/vaakash/socializer/master/js/socializer.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+(function(){
+    socializer( '.socializer' );
+}());
+&lt;/script&gt;
+            </pre>
+        </div>
+        
+        <div class="code_withoutjs">
+            <h5>In header</h5>
+            <pre>
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.rawgit.com/vaakash/socializer/master/socializer.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css&quot;&gt;
+            </pre>
+            
+            <h5>In body</h5>
+            <pre><span class="withoutjs_code"></span></pre>
+        </div>
+        
     </div>
     
     <div class="shortener">
         <h4>Share this design</h4>
         <input type="text" class="shortner_url" onclick="this.select();" /><button class="shortner_btn">Get url</button>
     </div>
-    
-    <div class="app_preview">
-        <div class="socializer" data-features="32px,icon-white,pad"></div>
-    </div>
-    
-    <select class="code_type">
-        <option value="nojs">Without JS</option>
-        <option value="js">With JS</option>
-    </select>
-    
-    <label class="page_info_auto_wrap"><input type="checkbox" class="page_info_auto" /> Use current page</label>
-    <div class="page_details">
-        <input type="text" class="page_url" />
-        <input type="text" class="page_title" />
-    </div>
-    
-<h3>Code</h3>
-    <h4>With JS</h4>
-    <div>
-        <p>In header</p>
-        <pre>
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.rawgit.com/vaakash/socializer/master/socializer.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css&quot;&gt;
-        </pre>
-        
-        <p>In body</p>
-        <pre><span class="withjs_code"></span></pre>
-        
-        <p>Before &lt;/body&gt;</p>
-        <pre>
-&lt;script src="https://cdn.rawgit.com/vaakash/socializer/master/js/socializer.js"&gt;&lt;/script&gt;
-&lt;script&gt;
-    (function(){
-        socializer( '.socializer' );
-    }());
-&lt;/script&gt;
-        </pre>
-    </div>
-    
-    <h4>Without JS</h4>
-    <div>
-        <p>In header</p>
-        <pre>
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.rawgit.com/vaakash/socializer/master/socializer.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css&quot;&gt;
-        </pre>
-        
-        <p>In body</p>
-        <pre><span class="withoutjs_code"></span></pre>
-    </div>
+
 </div>
 
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>

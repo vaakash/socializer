@@ -65,7 +65,7 @@
             delicious: [ 'Delicious', 'delicious', 'https://delicious.com/post?url={url}&amp;title={title}&amp;notes={excerpt}', '#3274D1', '' ],
             digg: [ 'Digg', 'digg', 'https://digg.com/submit?phase=2&amp;url={url}&amp;title={title}&amp;bodytext={excerpt}', '#000', '' ],
             dribbble: [ 'Dribbble', 'dribbble', 'https://dribbble.com/', '#ea4c89', '' ],
-            email: [ 'Email', 'envelope', 'mailto:?to=&subject={title}&body={excerpt}%20-%20{de-url}', '#000', '' ],
+            email: [ 'Email', 'envelope', 'mailto:?to=&subject={title}&body={excerpt}%20-%20{url}', '#000', '' ],
             facebook: [ 'Facebook', 'facebook', 'http://www.facebook.com/share.php?u={url}&amp;t={title}', '#3e5b98', '' ],
             flickr: [ 'Flickr', 'flickr', 'http://www.flickr.com', '#1c9be9', '' ],
             github: [ 'Github', 'github', 'http://www.github.com/', '#333', '' ],
@@ -135,7 +135,8 @@
         getHTML: function( sites, tag, showText ){
             
             var child = ( tag == 'UL' ) ? 'li' : 'span',
-                html = [];
+                html = [],
+                opts = this.ele.socializer;
                 
             sites.forEach( function( site ){
                 
@@ -165,7 +166,9 @@
                     else
                         textOut = text;
                     
-                    html.push( '<' + child + ' class="sr-' + site + textClass + '"><a href="'+ link +'" target="_blank" ' + onclick + ' title="' + this.sites[ site ][ 0 ] + '"><i class="fa fa-' + this.sites[ site ][ 1 ] + '"></i>' + textIn + '</a>' + textOut + moreHTML + '</' + child + '>' );
+                    icon = ( opts.features.search( 'no-icon' ) == -1 ) ? '<i class="fa fa-' + this.sites[ site ][ 1 ] + '"></i>' : '';
+                    
+                    html.push( '<' + child + ' class="sr-' + site + textClass + '"><a href="'+ link +'" target="_blank" ' + onclick + ' title="' + this.sites[ site ][ 0 ] + '">' + icon + textIn + '</a>' + textOut + moreHTML + '</' + child + '>' );
                 }
             }, this);
 

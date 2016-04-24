@@ -266,7 +266,8 @@
 
 .sr-text-in a {
   width: auto;
-  padding: 0 0.5em; }
+  padding: 0 0.5em;
+  overflow: hidden; }
   .sr-text-in a > * {
     padding-right: 0.5em; }
     .sr-text-in a > *:last-child {
@@ -417,19 +418,23 @@
   .sr-fluid a {
     width: 100%;
     box-sizing: border-box;
-    overflow: hidden; }
+    overflow: hidden;
+    padding: 0 0.5em; }
   .sr-fluid.sr-pad {
     border-spacing: 0.25em; }
-  .sr-fluid .sr-text-in a, .sr-fluid.sr-text-in a {
-    padding: 0; }
-    .sr-fluid .sr-text-in a > *, .sr-fluid.sr-text-in a > * {
-      margin-right: 0.5em; }
-    .sr-fluid .sr-text-in a:last-child, .sr-fluid.sr-text-in a:last-child {
-      margin: 0; }
+  .sr-fluid .sr-text-in a > *, .sr-fluid.sr-text-in a > * {
+    margin-right: 0.5em; }
+  .sr-fluid .sr-text-in a > *:last-child, .sr-fluid.sr-text-in a > *:last-child {
+    margin-right: 0; }
+  .sr-fluid .sr-text-in a:last-child, .sr-fluid.sr-text-in a:last-child {
+    margin: 0; }
   .sr-fluid.sr-squircle a {
     border-radius: 0.5em; }
   .sr-fluid.sr-squircle-2 a {
     border-radius: 0 0.5em 0 0.5em; }
+  .sr-fluid .sr-more li {
+    display: block;
+    width: 100%; }
 
 .sr-vertical {
   width: 16px; }
@@ -536,6 +541,9 @@
 .sr-multiline > * {
   margin-bottom: 0.5em; }
 
+.sr-no-icon i {
+  display: none; }
+
 .sr-more ul {
   background: #fff;
   padding: 0.5em;
@@ -555,11 +563,10 @@
     content: '';
     clear: both;
     display: block; }
-
-.sr-more > * {
-  margin: 0 0 0.5em 0; }
-  .sr-more > *:last-child {
-    margin-bottom: 0; }
+  .sr-more ul li {
+    margin: 0 0 0.5em 0; }
+    .sr-more ul li:last-child {
+      margin-bottom: 0; }
 
 .sr-more:hover ul {
   display: block; }

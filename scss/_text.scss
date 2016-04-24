@@ -1,6 +1,7 @@
 .sr-text-in a{
     width: auto;
     padding: 0 0.5em;
+    overflow: hidden;
     &>*{
       padding-right: 0.5em;
       &:last-child{
