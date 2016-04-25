@@ -268,6 +268,7 @@ $(document).ready(function(){
         
         refreshPreview();
         
+        socializer( '.socializer_share' );
     }
     
     var getShortUrl = function( url ){

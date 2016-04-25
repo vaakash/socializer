@@ -143,7 +143,7 @@ body{
 }
 
 .app_row {
-    padding: 8px 15px;
+    padding: 10px 15px;
 }
 
 .acc_section{
@@ -155,6 +155,7 @@ body{
     background: #fff;
     box-shadow: 0 3px 6px -4px;
     padding: 15px;
+    position: relative;
 }
 .app_box h4{margin: -15px -15px 15px -15px;background: #FFFFFF;color: #000;}
 
@@ -189,12 +190,74 @@ body{
     padding: 10px 0;
 }
 
-.code_type {
-    float: right;
-    margin: -46px 0 0 0;
-    background: #fff !important;
+select.code_type {
+    background: #000 !important;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 0 0 5px;
+    padding: 10px;
+    border: 0;
 }
 
 .app_wrap pre {
     overflow: auto;
+}
+
+.page_details span {
+    padding: 15px 0;
+    display: inline-block;
+}
+
+.code_box h5 {
+    margin: 20px 0;
+}
+
+.code_box h5:before {
+    content: attr(data-step);
+    display: inline-block;
+    padding: 0 5px;
+    margin: 0 5px 0 0;
+    border-radius: 50%;
+    background: #00BCD4;
+    color: #fff;
+}
+
+.preview_sharebox {
+    position: absolute;
+    top: 0;
+    right): 0;
+    right: 0;
+    background: #3F51B5;
+    border-radius: 0 0 0 5px;
+    padding: 10px;
+    color: #fff;
+    z-index: 999;
+}
+
+.share_box {
+    display: none;
+}
+
+.share_box_head {
+    display: inline-block;
+}
+
+.preview_sharebox:hover{
+    box-shadow: 0 3px 6px -4px #000;
+    background: #fff;
+    color: #000;
+}
+.preview_sharebox:hover .share_box {
+    display: block;
+}
+.preview_sharebox:hover .share_box_head {
+    margin: 0 0 10px 0;
+}
+
+.app_wrap input[type="text"] {
+    padding: 5px 10px;
+    border: 1px solid #90A4AE;
+    box-shadow: 0 2px 6px -4px #000;
 }

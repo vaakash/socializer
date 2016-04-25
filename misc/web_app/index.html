@@ -56,12 +56,21 @@
     
     <div class="app_box">
         <h4>Preview</h4>
+        <div class="preview_sharebox">
+            <span class="share_box_head">Share this design</span>
+            <div class="share_box">
+                <h5>Copy URL:</h5>
+                <input type="text" class="shortner_url" onclick="this.select();" /><button class="shortner_btn">Get url</button>
+                <h5>Share with friends:</h5>
+                <div class="socializer_share" data-features="32px,circle,icon-white,pad" data-sites="twitter,facebook,googleplus,pocket,stumbleupon,email" data-meta-link="http://www.aakashweb.com/social-buttons-generator" data-meta-title="Social media sites generator" data-text="hover"></div>
+            </div>
+        </div>
         <div class="app_preview">
             <div class="socializer" data-features="32px,icon-white,pad"></div>
         </div>
     </div>
     
-    <div class="app_box">
+    <div class="app_box code_box">
     
         <h4>Code</h4>
         
@@ -70,24 +79,24 @@
             <option value="nojs">Without JS</option>
         </select>
         
-        <h5>Page details</h5>
+        <h5 data-step="1">Page details</h5>
         <label class="page_info_auto_wrap"><input type="checkbox" class="page_info_auto" /> Automatically use current page details</label>
-        <div class="page_details app_row">
-            <span>Page URL: <input type="text" class="page_url" placeholder="Page URL"/></span>
-            <span>Page title: <input type="text" class="page_title" placeholder="Page title"/></span>
+        <div class="page_details">
+            <span><input type="text" class="page_url" placeholder="Page URL"/></span>
+            <span><input type="text" class="page_title" placeholder="Page title"/></span>
         </div>
         
         <div class="code_withjs">
-            <h5>In header</h5>
+            <h5 data-step="2">In header</h5>
             <pre>
 &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.rawgit.com/vaakash/socializer/master/socializer.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css&quot;&gt;
             </pre>
             
-            <h5>In body</h5>
+            <h5 data-step="3">In body</h5>
             <pre><span class="withjs_code"></span></pre>
             
-            <h5>Before &lt;/body&gt;</h5>
+            <h5 data-step="4">Before &lt;/body&gt;</h5>
             <pre>
 &lt;script src="https://cdn.rawgit.com/vaakash/socializer/master/js/socializer.js"&gt;&lt;/script&gt;
 &lt;script&gt;
@@ -99,21 +108,16 @@
         </div>
         
         <div class="code_withoutjs">
-            <h5>In header</h5>
+            <h5 data-step="2">In header</h5>
             <pre>
 &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.rawgit.com/vaakash/socializer/master/socializer.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css&quot;&gt;
             </pre>
             
-            <h5>In body</h5>
+            <h5 data-step="3">In body</h5>
             <pre><span class="withoutjs_code"></span></pre>
         </div>
         
-    </div>
-    
-    <div class="shortener">
-        <h4>Share this design</h4>
-        <input type="text" class="shortner_url" onclick="this.select();" /><button class="shortner_btn">Get url</button>
     </div>
 
 </div>
