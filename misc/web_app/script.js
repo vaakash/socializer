@@ -24,6 +24,7 @@ $(document).ready(function(){
     $preview = $( '.app_preview .socializer' );
     values = {};
     hashValues = {};
+    previewCount = 0;
     
     $.getJSON( 'https://api.myjson.com/bins/43aw2', function(data){
         api = data;
@@ -208,6 +209,8 @@ $(document).ready(function(){
         socializer( '.socializer' );
         
         setCode();
+        
+        previewCount++;
     }
     
     var setCodeTypeFields = function(){
@@ -267,18 +270,27 @@ $(document).ready(function(){
         $( '.more_sites' ).val( values[ 'more-count' ] );
         
         refreshPreview();
-        
-        socializer( '.socializer_share' );
     }
     
     var getShortUrl = function( url ){
         var surl = '';
+        var $shareBoxWrap = $( '.preview_sharebox' );
+        var $shareBox = $( '.share_box' ).fadeTo( 'fast', 0.2 );
+        
+        $shareBoxWrap.addClass( 'preview_loading' );
+        
         $.ajax({
             type: 'POST',
             url: 'https://www.googleapis.com/urlshortener/v1/url?key=',
             data: '{"longUrl": "' + url + '"}',
             success: function(data){
                 surl = data[ 'id' ];
+                $shareBoxWrap.removeClass( 'preview_loading' );
+                $shareBox.fadeTo( 'slow', 1 );
+            },
+            error: function( data ){
+                $shareBoxWrap.removeClass( 'preview_loading' );
+                $shareBox.fadeTo( 'slow', 1 );
             },
             contentType: "application/json",
             dataType: 'json'
@@ -326,10 +338,29 @@ $(document).ready(function(){
         $( '.more_sites_text' ).html( msg );
         refreshPreview();
     });
-    
-    $( document ).on( 'click', '.shortner_btn', function(){
-        var shortUrl = getShortUrl( getShareUrl() );
-        $( '.shortner_url' ).val( shortUrl );
+
+    $( document ).on( 'mouseenter', '.preview_sharebox', function(){
+        var lastUpdate = $(this).data( 'last-preview' );
+        console.log( lastUpdate );
+        console.log( previewCount );
+        
+        if( typeof lastUpdate == 'undefined' ){
+            lastUpdate = previewCount-1;
+            $(this).data( 'last-preview', lastUpdate );
+        }
+        
+        if( lastUpdate != previewCount ){
+            var shortUrl = getShortUrl( getShareUrl() )
+            $( '.shortner_url' ).val( shortUrl );
+            $(this).data( 'last-preview', ++lastUpdate );
+            socializer( '.socializer_share', {
+                meta: {
+                    title: 'Generate attractive social button icons for your website, check out my design ! @vaakash',
+                    link: shortUrl
+                }
+            });
+        }
+        
     });
     
     var allPanels = $('.acc_section > .acc_inner').hide();

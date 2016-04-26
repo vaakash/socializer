@@ -53,8 +53,11 @@
     box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.3);
 }
 .sr-sw-2 a{
-    box-shadow: 0 -0.1em 0.1em rgba(0,0,0,0.3);
+    box-shadow: inset 0 -0.1em 0.1em rgba(0,0,0,0.3);
 }
 .sr-sw-3 a{
-    box-shadow: inset 0 -0.1em 0.1em rgba(0,0,0,0.3);
+    box-shadow: 0 -0.1em 0.1em rgba(0,0,0,0.3);
+}
+.sr-sw-icon-1 a i{
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5)
 }

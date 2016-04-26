@@ -85,7 +85,7 @@
             stackoverflow: [ 'StackOverflow', 'stack-overflow', 'http://stackoverflow.com/', '#F48024', '' ],
             stumbleupon: [ 'StumbleUpon', 'stumbleupon', 'http://www.stumbleupon.com/submit?url={url}&amp;title={title}', '#EB4823', '' ],
             tumblr: [ 'Tumblr', 'tumblr', 'http://www.tumblr.com/share?v=3&amp;u={url}&amp;t={title}&amp;s={excerpt}', '#314358', '' ],
-            twitter: [ 'Twitter', 'twitter', 'http://twitter.com/home?status={title}%20-%20{s-url}%20{twitter-username}', '#4da7de', '' ],
+            twitter: [ 'Twitter', 'twitter', 'http://twitter.com/home?status={title}%20-%20{url}', '#4da7de', '' ],
             vkontakte: [ 'VKontakte', 'vk', 'http://vk.com/share.php?url={url}&title={title}&description={excerpt}', '#4C75A3', '' ],
             vine: [ 'Vine', 'vine', 'https://vine.co', '#00bf8f', '' ],
             wechat: [ 'wechat', 'vk', '', '#7BB32E', '' ],
