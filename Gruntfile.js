@@ -34,6 +34,7 @@ module.exports = function(grunt) {
                 'scss/_text.scss',
                 'scss/_styles.scss',
                 'scss/_types.scss',
+                'scss/_sharebar.scss',
             ],
 			tasks: [ 'sass' ]
 		}

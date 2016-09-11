@@ -2,7 +2,7 @@ $(document).ready(function(){
     
     api = {};
     page_vals = {};
-    $site_list_tmpl = $( '<li><span></span><i class="fa fa-cog site_action site_settings" title="Button settings"></i><i class="fa fa-trash-o site_action site_delete" title="Delete button"></i><div class="site_settings_wrap"><input type="text" class="site_meta" placeholder="Enter custom button URL. Use {url}, {title} as placeholders" /></div></li>' );
+    $site_list_tmpl = $( '<li><span></span><i class="fa fa-cog site_action site_settings" title="Button settings"></i><i class="fa fa-trash-o site_action site_delete" title="Delete button"></i><div class="site_settings_wrap"><input type="text" class="site_meta form-control" placeholder="Enter custom button URL. Use {url}, {title} as placeholders" /></div></li>' );
     default_values = {
         'sites': [ 'facebook', 'googleplus', 'print', 'email', 'rss' ],
         'sizes': '32px',
@@ -18,15 +18,19 @@ $(document).ready(function(){
         'shadow': '',
         'pad': 'pad',
         'multiline': '',
-        'more-count': 0
+        'more-count': 0,
+        'sharebar-orientation': 'hl-top',
+        'sharebar-theme': '',
+        'btn-type': 'hbar'
     };
     $sites_sel_list = $('.scr_sites_sel');
     $preview = $( '.app_preview .socializer' );
     values = {};
     hashValues = {};
     previewCount = 0;
+    btnType = 'hBar';
     
-    $.getJSON( 'https://api.myjson.com/bins/43aw2', function(data){
+    $.getJSON( 'https://api.myjson.com/bins/1gtbg', function(data){
         api = data;
         init();
     });
@@ -69,8 +73,8 @@ $(document).ready(function(){
     var getFeaturesValue = function(){
         groupVal = [];
         $( '.app_wrap [data-group="features"]' ).each(function(){
-            feature = $(this).data( 'setting' );
-            featVal = $(this).val();
+            var feature = $(this).data( 'setting' );
+            var featVal = $(this).val();
             if( featVal != '' ){
                 groupVal.push( featVal );
             }
@@ -98,6 +102,55 @@ $(document).ready(function(){
         }
         
         return textVal;
+    }
+    
+    var getSharebarValues = function(){
+        var classes = [];
+        var prevType = btnType;
+        var type = getButtonType();
+        var $layoutSetting = $( '[data-setting=layouts]' );
+        
+        $( '.app_wrap [data-group="sharebar"]' ).each(function(){
+            var sbSetting = $(this).data( 'setting' );
+            var sbVal = $(this).val();
+            
+            // value = hl-top => sr-sb-hl sr-sb-top
+            if( sbSetting == 'sharebar-orientation' ){
+                var valSplit = sbVal.split( '-' );
+                var orientation = valSplit[0];
+                var side = valSplit[1];
+                
+                if( prevType != type || type == 'vbar' ){
+                    if( orientation == 'hl' ){
+                        $layoutSetting.val( '' );
+                    }else{
+                        $layoutSetting.val( 'vertical' );
+                    }
+                }
+                
+                classes.push( 'sr-sb-' + orientation );
+                classes.push( 'sr-sb-' + side );
+            }else{
+                if( sbVal != '' ){
+                    classes.push( 'sr-sb-' + sbVal );
+                }
+            }
+            
+            if( sbVal != default_values[ sbSetting ] ){
+                hashValues[ sbSetting ] = sbVal;
+            }else{
+                delete hashValues[ 'text-styles' ];
+            }
+            
+        });
+        
+        if( type != default_values[ 'btn-type' ] ){
+            hashValues[ 'btn-type' ] = type;
+        }else{
+            delete hashValues[ 'btn-type' ];
+        }
+        
+        return classes.join( ' ' );
     }
     
     var getSitesValue = function(){
@@ -157,6 +210,37 @@ $(document).ready(function(){
         return allValues;
     }
     
+    var getButtonType = function(){
+        return $( '.scr_btn_sel:checked' ).val();
+    }
+    
+    var setButtonType = function(){
+        var type = getButtonType();
+        var $sbSection = $( '.sb_section' );
+        var $layoutsRow = $( '.layouts_row' );
+        var sbClasses = getSharebarValues();
+        var $sbPreviewTxt = $( '.sbPreviewTxt' );
+        
+        if( type == 'hbar' ){
+            $sbSection.hide();
+            $layoutsRow.slideDown();
+            $sbPreviewTxt.hide();
+            if( $preview.parent().hasClass( 'sr-sharebar' ) ){
+                $preview.unwrap( 'div' );
+            }
+        }else{
+            $sbSection.slideDown();
+            $layoutsRow.slideUp();
+            $sbPreviewTxt.show();
+            if( !$preview.parent().hasClass( 'sr-sharebar' ) ){
+                $sbWrap = $preview.wrap( '<div></div>' );
+            }
+            $preview.parent().attr( 'class', 'sr-sharebar ' + sbClasses );
+        }
+        
+        btnType = type;
+    }
+    
     var setPreviewData = function( attrName, attrVal ){
         if( attrVal != '' ){
             $preview.attr( attrName, attrVal );
@@ -166,25 +250,28 @@ $(document).ready(function(){
     }
     
     var setCode = function(){
-        var $withjsclone = $preview.clone();
-        var $withoutjsclone = $preview.clone();
+        var $appPreviewWithJS = $( '.app_preview' ).clone();
+        var $appPreviewWithoutJS = $( '.app_preview' ).clone();
+        var $scrWithJS = $appPreviewWithJS.find( '.socializer' );
+        var $scrWithoutJS = $appPreviewWithoutJS.find( '.socializer' );
         var toRemove = [ 'data-sites', 'data-features', 'data-text' ];
         
+        // Remove these in HTML mode
         for( var i = 0, atts = $preview[0].attributes, n = atts.length, arr = []; i < n; i++ ){
             var attr = atts[i].nodeName;
             if( $.inArray( attr, toRemove ) != -1 || attr.search( 'meta' ) != -1 ){
-                $withoutjsclone.removeAttr( attr );
+                $scrWithoutJS.removeAttr( attr );
             }
         }
+        $( '.withoutjs_code' ).text( $.trim( $appPreviewWithoutJS.html() ) );
         
-        $( '.withoutjs_code' ).text( $withoutjsclone[0].outerHTML );
-        
-        $withjsclone.attr( 'class', 'socializer' );
-        $( '.withjs_code' ).text( $withjsclone.empty()[0].outerHTML );
+        $scrWithJS.empty().attr( 'class', 'socializer' );
+        $( '.withjs_code' ).text( $.trim( $appPreviewWithJS.html() ) );
     }
     
     var refreshPreview = function(){
         
+        setButtonType();
         all = getAllValues();
         setCodeTypeFields();
         
@@ -192,7 +279,6 @@ $(document).ready(function(){
         setPreviewData( 'data-sites', all[ 'sites' ] );
         setPreviewData( 'data-text', all[ 'text' ] );
         setPreviewData( 'data-more', all[ 'more' ] );
-        
         
         if( !$( '.page_info_auto' ).is( ':checked' ) ){
             $preview.attr( 'data-meta-link', $( '.page_url' ).val() );
@@ -211,13 +297,14 @@ $(document).ready(function(){
         setCode();
         
         previewCount++;
+        
     }
     
     var setCodeTypeFields = function(){
         
         $( '.code_withjs, .code_withoutjs' ).hide();
         
-        if( $( '.code_type' ).val() == 'js' ){
+        if( $( '.code_type:checked' ).val() == 'js' ){
             $( '.page_details' ).show();
             $( '.page_info_auto_wrap' ).show();
             $( '.code_withjs' ).show();
@@ -267,8 +354,13 @@ $(document).ready(function(){
             }
         });
         
+        $btnType = $( '.scr_btn_sel[value="' + values[ 'btn-type' ] + '"]' );
+        $btnType.attr( 'checked', 'checked' );
+        $btnType.parent().addClass( 'active' );
+        
         $( '.more_sites' ).val( values[ 'more-count' ] );
         
+        moreSitesChange();
         refreshPreview();
     }
     
@@ -299,6 +391,17 @@ $(document).ready(function(){
         return ( surl == '' ) ? url : surl;
     }
     
+    var moreSitesChange = function(){
+        var val = $( '.more_sites' ).val();
+        var msg = '';
+        if( val == 0 ){
+            msg = 'No grouping';
+        }else{
+            msg = 'Group last ' + val + ' sites';
+        }
+        $( '.more_sites_text' ).html( msg );
+    }
+    
     $( document ).on( 'change', '[data-setting], .more-count', function(){
         refreshPreview();
     });
@@ -323,26 +426,21 @@ $(document).ready(function(){
         $li.attr( 'data-meta', $(this).val() );
     });
     
-    $( document ).on( 'change', '.site_meta, .code_type, .page_info_auto, .page_url, .page_title', function(){
+    $( document ).on( 'change', '.site_meta, .code_type, .page_info_auto, .page_url, .page_title, .scr_btn_sel', function(){
         refreshPreview();
     });
     
     $( document ).on( 'change', '.more_sites', function(){
-        var val = $(this).val();
-        var msg = '';
-        if( val == 0 ){
-            msg = 'No grouping';
-        }else{
-            msg = 'Group last ' + val + ' sites';
-        }
-        $( '.more_sites_text' ).html( msg );
+        moreSitesChange();
         refreshPreview();
     });
-
-    $( document ).on( 'mouseenter', '.preview_sharebox', function(){
+    
+    $( document ).on( 'click', '.togglePreview', function(){
+        
+        $( '.preview_sharebox' ).show();
+        $( '.app_wrap' ).addClass( 'share_on' );
+        
         var lastUpdate = $(this).data( 'last-preview' );
-        console.log( lastUpdate );
-        console.log( previewCount );
         
         if( typeof lastUpdate == 'undefined' ){
             lastUpdate = previewCount-1;
@@ -350,7 +448,7 @@ $(document).ready(function(){
         }
         
         if( lastUpdate != previewCount ){
-            var shortUrl = getShortUrl( getShareUrl() )
+            var shortUrl = getShortUrl( getShareUrl() );
             $( '.shortner_url' ).val( shortUrl );
             $(this).data( 'last-preview', ++lastUpdate );
             socializer( '.socializer_share', {
@@ -361,6 +459,11 @@ $(document).ready(function(){
             });
         }
         
+    });
+    
+    $( document ).on( 'click', '.previewClose', function(){
+        $( '.preview_sharebox' ).hide();
+        $( '.app_wrap' ).removeClass( 'share_on' );
     });
     
     var allPanels = $('.acc_section > .acc_inner').hide();

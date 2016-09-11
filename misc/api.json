@@ -185,7 +185,7 @@
               "": "No shadow",
               "sw-1":"Type 1",
               "sw-2":"Type 2",
-              "sw-3":"Type 3"
+              "sw-3":"Type 3",
               "sw-icon-1":"Icon shadow 1"
           }
       },
@@ -207,6 +207,29 @@
          "options":{
             "":"No",
             "multiline":"yes"
+         }
+      },
+      "sharebar-orientation":{
+         "name": "Sharebr orientation",
+         "desc": "",
+         "type": "select",
+         "group": "sharebar",
+         "options":{
+            "hl-top": "Horizontal - Top",
+            "hl-bottom": "Horizontal - Bottom",
+            "vl-left": "Vertical - Left",
+            "vl-right": "Vertical - Right"
+         }
+      },
+      "sharebar-theme":{
+         "name": "Sharebr theme",
+         "desc": "",
+         "type": "select",
+         "group": "sharebar",
+         "options":{
+            "": "Transparent",
+            "white": "White background",
+            "dark": "Dark background"
          }
       }
    }

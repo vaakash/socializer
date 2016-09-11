@@ -1,128 +1,189 @@
 <!doctype html>
+<link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="../../socializer.css">
 <link rel="stylesheet" type="text/css" href="../../bower_components/font-awesome/css/font-awesome.min.css">
 
-<div class="app_wrap">
-
-    <div class="app_section clearfix">
-        <div class="app_left">
-            <h4>Buttons</h4>
-            <ul class="scr_sites_sel"></ul>
-            <div class="scr_add_site_wrap"><select class="scr_sites"></select><button class="scr_add_site">Add</button></div>
-        </div>
-        <div class="app_right">
-        
-            <div class="acc_section">
-                <h4>Size, shape and hover effects</h4>
-                <div class="acc_inner">
-                    <div class="app_row"><span>Button size</span><span><select data-setting="sizes"></select></span></div>
-                    <div class="app_row"><span>Button shape</span><span><select data-setting="shapes"></select></span></div>
-                    <div class="app_row"><span>Hover effects</span><span><select data-setting="hover"></select></span></div>
-                </div>
-            </div>
-            
-            <div class="acc_section">
-                <h4>Layouts, text and icon</h4>
-                <div class="acc_inner">
-                    <div class="app_row"><span>Layout</span><span><select data-setting="layouts"></select></span></div>
-                    <div class="app_row"><span>Text styles</span><span><select data-setting="text-styles"></select></span></div>
-                    <div class="app_row"><span>Font size</span><span><select data-setting="font-size"></select></span></div>
-                    <div class="app_row"><span>Icon display</span><span><select data-setting="icon-display"></select></span></div>
-                </div>
-            </div>
-            
-            <div class="acc_section">
-                <h4>Styles and colors</h4>
-                <div class="acc_inner">
-                    <div class="app_row"><span>Icon color</span><span><select data-setting="icon-color"></select></span></div>
-                    <div class="app_row"><span>Border width</span><span><select data-setting="border-width"></select></span></div>
-                    <div class="app_row"><span>Border color</span><span><select data-setting="border-color"></select></span></div>
-                    <div class="app_row"><span>Background color</span><span><select data-setting="background-color"></select></span></div>
-                    <div class="app_row"><span>Shadow</span><span><select data-setting="shadow"></select></span></div>
-                </div>
-            </div>
-            
-            <div class="acc_section">
-                <h4>Other settings</h4>
-                <div class="acc_inner">
-                    <div class="app_row"><span>Gutters</span><span><select data-setting="pad"></select></span></div>
-                    <div class="app_row"><span>Group sites</span><span><input type="range" class="more_sites" min="0" value="0" max="10" step="1" /><br/><span class="more_sites_text"></span></span></div>
-                </div>
-            </div>
-
+<div class="app_wrap container">
+    
+    <div class="scr_btn_sel_wrap text-center">
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-success">
+                <input type="radio" name="scr_btn_sel" class="scr_btn_sel" value="hbar"> Horizontal social media buttons
+            </label>
+            <label class="btn btn-success">
+                <input type="radio" name="scr_btn_sel" class="scr_btn_sel" value="vbar"> Sharebar
+            </label>
         </div>
     </div>
     
-    <div class="app_box">
-        <h4>Preview</h4>
-        <div class="preview_sharebox">
-            <span class="share_box_head">Share this design</span>
-            <div class="share_box">
-                <h5>Share:</h5>
-                <div class="socializer_share" data-features="32px,circle,icon-white,pad" data-sites="twitter,facebook,googleplus,pocket,stumbleupon,email" data-text="hover"></div>
-                <h5>or copy URL:</h5>
-                <input type="text" class="shortner_url" onclick="this.select();" />
+    <div class="row app_section">
+    
+        <div class="col-md-5">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Buttons</h3>
+                </div>
+                <div class="panel-body scr_site_sel_wrap">
+                    <ul class="scr_sites_sel"></ul>
+                </div>
+                <div class="panel-footer">
+                    
+                    <div class="input-group">
+                        <select class="scr_sites form-control"></select>
+                        <span class="input-group-btn">
+                            <button class="scr_add_site btn btn-primary">Add</button>
+                        </span>
+                    </div>
+                    
+                </div>
             </div>
-            <div class="spinner"></div>
         </div>
-        <div class="app_preview">
-            <div class="socializer" data-features="32px,icon-white,pad"></div>
+        
+        <div class="col-md-7">
+        
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Settings</h3>
+                </div>
+                <div class="panel-body">
+                    
+                    <div class="acc_section sb_section">
+                        <h4>Sharebar settings</h4>
+                        <div class="acc_inner">
+                            <div class="app_row"><span>Orientation</span><span><select data-setting="sharebar-orientation"></select></span></div>
+                            <div class="app_row"><span>Theme</span><span><select data-setting="sharebar-theme"></select></span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="acc_section">
+                        <h4>Size, shape and hover effects</h4>
+                        <div class="acc_inner">
+                            <div class="app_row"><span>Button size</span><span><select data-setting="sizes"></select></span></div>
+                            <div class="app_row"><span>Button shape</span><span><select data-setting="shapes"></select></span></div>
+                            <div class="app_row"><span>Hover effects</span><span><select data-setting="hover"></select></span></div>
+                        </div>
+                    </div>
+
+                    <div class="acc_section">
+                        <h4><span class="layouts_row">Layouts, </span>text and icon</h4>
+                        <div class="acc_inner">
+                            <div class="app_row layouts_row"><span>Layout</span><span><select data-setting="layouts"></select></span></div>
+                            <div class="app_row"><span>Text styles</span><span><select data-setting="text-styles"></select></span></div>
+                            <div class="app_row"><span>Font size</span><span><select data-setting="font-size"></select></span></div>
+                            <div class="app_row"><span>Icon display</span><span><select data-setting="icon-display"></select></span></div>
+                        </div>
+                    </div>
+
+                    <div class="acc_section">
+                        <h4>Styles and colors</h4>
+                        <div class="acc_inner">
+                            <div class="app_row"><span>Icon color</span><span><select data-setting="icon-color"></select></span></div>
+                            <div class="app_row"><span>Border width</span><span><select data-setting="border-width"></select></span></div>
+                            <div class="app_row"><span>Border color</span><span><select data-setting="border-color"></select></span></div>
+                            <div class="app_row"><span>Background color</span><span><select data-setting="background-color"></select></span></div>
+                            <div class="app_row"><span>Shadow</span><span><select data-setting="shadow"></select></span></div>
+                        </div>
+                    </div>
+
+                    <div class="acc_section">
+                        <h4>Other settings</h4>
+                        <div class="acc_inner">
+                            <div class="app_row"><span>Gutters</span><span><select data-setting="pad"></select></span></div>
+                            <div class="app_row"><span>Group sites</span><span><input type="range" class="more_sites" min="0" value="0" max="10" step="1" /><br/><span class="more_sites_text"></span></span></div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
         </div>
     </div>
     
-    <div class="app_box code_box">
-    
-        <h4>Code</h4>
-        
-        <select class="code_type">
-            <option value="js" checked="checked">With JS</option>
-            <option value="nojs">Without JS</option>
-        </select>
-        
-        <h5 data-step="1">Page details</h5>
-        <label class="page_info_auto_wrap"><input type="checkbox" class="page_info_auto" /> Automatically use current page details</label>
-        <div class="page_details">
-            <span><input type="text" class="page_url" placeholder="Page URL"/></span>
-            <span><input type="text" class="page_title" placeholder="Page title"/></span>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Preview</h3>
         </div>
-        
-        <div class="code_withjs">
-            <h5 data-step="2">In header</h5>
-            <pre>
+        <div class="panel-body">
+            <span class="sbPreviewTxt">Sharebar preview is displayed near the sides of window.</span>
+            <div class="app_preview">
+                <div class="socializer" data-features="32px,icon-white,pad"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Code</h3>
+        </div>
+        <div class="panel-body">
+            
+            <div class="btn-group pull-right" data-toggle="buttons">
+                <label class="btn btn-success active">
+                    <input type="radio" name="code_type" class="code_type" value="js" checked> With JS
+                </label>
+                <label class="btn btn-success">
+                    <input type="radio" name="code_type" class="code_type" value="nojs"> Without JS
+                </label>
+            </div>
+            
+            <h4 data-step="1">Page details</h4>
+            <label class="page_info_auto_wrap"><input type="checkbox" class="page_info_auto" /> Automatically use current page details</label>
+            <div class="page_details">
+                <span><input type="text" class="page_url form-control" placeholder="Page URL"/></span>
+                <span><input type="text" class="page_title form-control" placeholder="Page title"/></span>
+            </div>
+
+            <div class="code_withjs">
+                <h4 data-step="2">In header</h4>
+                <pre>
 &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.rawgit.com/vaakash/socializer/master/socializer.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css&quot;&gt;
-            </pre>
-            
-            <h5 data-step="3">In body</h5>
-            <pre><span class="withjs_code"></span></pre>
-            
-            <h5 data-step="4">Before &lt;/body&gt;</h5>
-            <pre>
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css&quot;&gt;</pre>
+                
+                <h4 data-step="3">In body</h4>
+                <pre><span class="withjs_code"></span></pre>
+                
+                <h4 data-step="4">Before &lt;/body&gt;</h4>
+                <pre>
 &lt;script src="https://cdn.rawgit.com/vaakash/socializer/master/js/socializer.js"&gt;&lt;/script&gt;
 &lt;script&gt;
 (function(){
     socializer( '.socializer' );
 }());
 &lt;/script&gt;
-            </pre>
-        </div>
-        
-        <div class="code_withoutjs">
-            <h5 data-step="2">In header</h5>
-            <pre>
+                </pre>
+            </div>
+
+            <div class="code_withoutjs">
+                <h4 data-step="2">In header</h4>
+                <pre>
 &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.rawgit.com/vaakash/socializer/master/socializer.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css&quot;&gt;
-            </pre>
+                </pre>
+                
+                <h4 data-step="3">In body</h4>
+                <pre><span class="withoutjs_code"></span></pre>
+            </div>
             
-            <h5 data-step="3">In body</h5>
-            <pre><span class="withoutjs_code"></span></pre>
         </div>
-        
     </div>
-
+    
+    <div class="preview_sharebox">
+        <i class="fa fa-times-circle previewClose pull-right"></i>
+        <div class="share_box">
+            <h5>Share:</h5>
+            <div class="socializer_share" data-features="32px,circle,icon-white,pad" data-sites="twitter,facebook,googleplus,pocket,reddit,stumbleupon,email" data-text="hover"></div>
+            <h5>or copy URL:</h5>
+            <input type="text" class="shortner_url form-control" onclick="this.select();" />
+        </div>
+        <div class="spinner"></div>
+    </div>
+    
+    <button class="btn btn-primary togglePreview" title="Close"><i class="fa fa-share-alt"></i> Share this design</button>
+    
 </div>
 
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../../bower_components/bootstrap/bootstrap.min.js"></script>
 <script src="../../js/socializer.js"></script>
 <script src="script.js"></script>

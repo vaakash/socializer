@@ -586,3 +586,44 @@
   z-index: 99;
   color: #fff;
   font-style: normal; }
+
+.sr-sharebar {
+  position: fixed;
+  z-index: 9999; }
+  .sr-sharebar .socializer > *:last-child {
+    margin: 0; }
+
+/** Vertical SB **/
+.sr-sb-vl {
+  top: 50%;
+  transform: translateY(-50%); }
+
+.sr-sb-left {
+  left: 30px; }
+
+.sr-sb-right {
+  right: 30px; }
+
+/** Horizontal SB **/
+.sr-sb-hl {
+  left: 50%;
+  transform: translateX(-50%); }
+
+.sr-sb-top {
+  top: 30px; }
+
+.sr-sb-bottom {
+  bottom: 30px; }
+
+/** Themes **/
+.sr-sb-white {
+  background: #fff;
+  box-shadow: 0 1px 4px -2px;
+  padding: 10px; }
+
+.sr-sb-dark {
+  background: #333;
+  box-shadow: 0 1px 4px -2px;
+  padding: 10px; }
+  .sr-sb-dark .text {
+    color: #fff; }
