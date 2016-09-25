@@ -4,119 +4,121 @@
 <link rel="stylesheet" href="../../socializer.css">
 <link rel="stylesheet" type="text/css" href="../../bower_components/font-awesome/css/font-awesome.min.css">
 
-<div class="app_wrap container">
+<div class="app_wrap">
     
-    <div class="scr_btn_sel_wrap text-center">
-        <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-success">
-                <input type="radio" name="scr_btn_sel" class="scr_btn_sel" value="hbar"> Horizontal social media buttons
-            </label>
-            <label class="btn btn-success">
-                <input type="radio" name="scr_btn_sel" class="scr_btn_sel" value="vbar"> Sharebar
-            </label>
-        </div>
+    <div class="tmpl_list">
+        <h4>Select a style to apply for sharebar <i class="fa fa-times-circle pull-right closeBtn tmpl_list_close"></i></h4>
     </div>
     
-    <div class="row app_section">
-    
-        <div class="col-md-5">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Buttons</h3>
-                </div>
-                <div class="panel-body scr_site_sel_wrap">
-                    <ul class="scr_sites_sel"></ul>
-                </div>
-                <div class="panel-footer">
-                    
-                    <div class="input-group">
-                        <select class="scr_sites form-control"></select>
-                        <span class="input-group-btn">
-                            <button class="scr_add_site btn btn-primary">Add</button>
-                        </span>
-                    </div>
-                    
-                </div>
+    <section>
+        <div class="container">
+            <h3 data-step="1">Sharebar type</h3>
+            
+            <ul class="sb_types_list list-unstyled clearfix">
+                <li><label class="sb_type" for="scr_type_hbar"><div class="sb_type_img"></div></label><p>Inline horizontal sharebar</p></li>
+                <li><label class="sb_type vbar" for="scr_type_vbar"><div class="sb_type_img"></div></label><p>Floating sharebar</p></li>
+            </ul>
+            
+            <div class="hidden">
+                <input type="radio" name="scr_btn_sel" class="scr_btn_sel" id="scr_type_hbar" value="hbar">
+                <input type="radio" name="scr_btn_sel" class="scr_btn_sel" id="scr_type_vbar" value="vbar">
             </div>
         </div>
-        
-        <div class="col-md-7">
-        
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Settings</h3>
-                </div>
-                <div class="panel-body">
-                    
-                    <div class="acc_section sb_section">
-                        <h4>Sharebar settings</h4>
-                        <div class="acc_inner">
-                            <div class="app_row"><span>Orientation</span><span><select data-setting="sharebar-orientation"></select></span></div>
-                            <div class="app_row"><span>Theme</span><span><select data-setting="sharebar-theme"></select></span></div>
-                        </div>
-                    </div>
-                    
-                    <div class="acc_section">
-                        <h4>Size, shape and hover effects</h4>
-                        <div class="acc_inner">
-                            <div class="app_row"><span>Button size</span><span><select data-setting="sizes"></select></span></div>
-                            <div class="app_row"><span>Button shape</span><span><select data-setting="shapes"></select></span></div>
-                            <div class="app_row"><span>Hover effects</span><span><select data-setting="hover"></select></span></div>
-                        </div>
-                    </div>
-
-                    <div class="acc_section">
-                        <h4><span class="layouts_row">Layouts, </span>text and icon</h4>
-                        <div class="acc_inner">
-                            <div class="app_row layouts_row"><span>Layout</span><span><select data-setting="layouts"></select></span></div>
-                            <div class="app_row"><span>Text styles</span><span><select data-setting="text-styles"></select></span></div>
-                            <div class="app_row"><span>Font size</span><span><select data-setting="font-size"></select></span></div>
-                            <div class="app_row"><span>Icon display</span><span><select data-setting="icon-display"></select></span></div>
-                        </div>
-                    </div>
-
-                    <div class="acc_section">
-                        <h4>Styles and colors</h4>
-                        <div class="acc_inner">
-                            <div class="app_row"><span>Icon color</span><span><select data-setting="icon-color"></select></span></div>
-                            <div class="app_row"><span>Border width</span><span><select data-setting="border-width"></select></span></div>
-                            <div class="app_row"><span>Border color</span><span><select data-setting="border-color"></select></span></div>
-                            <div class="app_row"><span>Background color</span><span><select data-setting="background-color"></select></span></div>
-                            <div class="app_row"><span>Shadow</span><span><select data-setting="shadow"></select></span></div>
-                        </div>
-                    </div>
-
-                    <div class="acc_section">
-                        <h4>Other settings</h4>
-                        <div class="acc_inner">
-                            <div class="app_row"><span>Gutters</span><span><select data-setting="pad"></select></span></div>
-                            <div class="app_row"><span>Group sites</span><span><input type="range" class="more_sites" min="0" value="0" max="10" step="1" /><br/><span class="more_sites_text"></span></span></div>
-                        </div>
-                    </div>
-                    
+    </section>
+    
+    <section class="app_section">
+        <div class="container">
+            <h3 data-step="2">Select buttons</h3>
+            <p>Add social buttons to the sharebar. Use the gear icon to set custom share/profile URL for the social button. You can also drag and drop to re-arrange the buttons in sharebar.</p>
+            
+            <ul class="scr_sites_sel clearfix"></ul>
+            
+            <div class="input-group">
+                <select class="scr_sites form-control">
+                    <option>Select a button to add ...</option>
+                </select>
+                <span class="input-group-btn">
+                    <button class="scr_add_site btn btn-primary">Add</button>
+                </span>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <div class="container">
+            <h3 data-step="3">Customize the sharebar</h3>
+            <p>Select a handful of predefined styles from the below list or create your own sharebar design. You can also select a style and customize it manually.</p>
+            <button class="btn btn-success tmpl_list_open"><i class="fa fa-bars" aria-hidden="true"></i> Open list of button styles</button>
+            <button class="btn btn-primary open_settings pull-right">Open more settings <span class="caret"></span></button>
+        </div>
+    </section>
+    
+    <section class="manual_settings">
+        <div class="container">
+            <h3>Manual settings</h3>
+            
+            <div class="acc_section sb_section">
+                <h4>Sharebar settings</h4>
+                <div class="acc_inner">
+                    <div class="app_row"><span>Orientation</span><span><select data-setting="sharebar-orientation"></select></span></div>
+                    <div class="app_row"><span>Theme</span><span><select data-setting="sharebar-theme"></select></span></div>
                 </div>
             </div>
             
+            <div class="acc_section">
+                <h4>Size, shape and hover effects</h4>
+                <div class="acc_inner">
+                    <div class="app_row"><span>Button size</span><span><select data-setting="sizes"></select></span></div>
+                    <div class="app_row"><span>Button shape</span><span><select data-setting="shapes"></select></span></div>
+                    <div class="app_row"><span>Hover effects</span><span><select data-setting="hover"></select></span></div>
+                </div>
+            </div>
+
+            <div class="acc_section">
+                <h4><span class="layouts_row">Layouts, </span>text and icon</h4>
+                <div class="acc_inner">
+                    <div class="app_row layouts_row"><span>Layout</span><span><select data-setting="layouts"></select></span></div>
+                    <div class="app_row"><span>Text styles</span><span><select data-setting="text-styles"></select></span></div>
+                    <div class="app_row"><span>Font size</span><span><select data-setting="font-size"></select></span></div>
+                    <div class="app_row"><span>Icon display</span><span><select data-setting="icon-display"></select></span></div>
+                </div>
+            </div>
+
+            <div class="acc_section">
+                <h4>Styles and colors</h4>
+                <div class="acc_inner">
+                    <div class="app_row"><span>Icon color</span><span><select data-setting="icon-color"></select></span></div>
+                    <div class="app_row"><span>Border width</span><span><select data-setting="border-width"></select></span></div>
+                    <div class="app_row"><span>Border color</span><span><select data-setting="border-color"></select></span></div>
+                    <div class="app_row"><span>Background color</span><span><select data-setting="background-color"></select></span></div>
+                    <div class="app_row"><span>Shadow</span><span><select data-setting="shadow"></select></span></div>
+                </div>
+            </div>
+
+            <div class="acc_section">
+                <h4>Other settings</h4>
+                <div class="acc_inner">
+                    <div class="app_row"><span>Gutters</span><span><select data-setting="pad"></select></span></div>
+                    <div class="app_row"><span>Group sites</span><span><input type="range" class="more_sites" min="0" value="0" max="10" step="1" /><br/><span class="more_sites_text"></span></span></div>
+                </div>
+            </div>
+
         </div>
-    </div>
+    </section>
     
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">Preview</h3>
-        </div>
-        <div class="panel-body">
+    <section>
+        <div class="container">
+            <h3 data-step="4">Preview</h3>
+            
             <span class="sbPreviewTxt">Sharebar preview is displayed near the sides of window.</span>
             <div class="app_preview">
                 <div class="socializer" data-features="32px,icon-white,pad"></div>
             </div>
         </div>
-    </div>
+    </section>
     
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">Code</h3>
-        </div>
-        <div class="panel-body">
+    <section>
+        <div class="container">
             
             <div class="btn-group pull-right" data-toggle="buttons">
                 <label class="btn btn-success active">
@@ -127,11 +129,15 @@
                 </label>
             </div>
             
-            <h4 data-step="1">Page details</h4>
-            <label class="page_info_auto_wrap"><input type="checkbox" class="page_info_auto" /> Automatically use current page details</label>
-            <div class="page_details">
-                <span><input type="text" class="page_url form-control" placeholder="Page URL"/></span>
-                <span><input type="text" class="page_title form-control" placeholder="Page title"/></span>
+            <h3 data-step="5">Copy code</h3>
+            
+            <h4 data-step="1">Page information</h4>
+            <div class="well">
+                <label class="page_info_auto_wrap"><input type="checkbox" class="page_info_auto" /> Automatically use active page details</label>
+                <div class="page_details">
+                    <span><input type="text" class="page_url form-control" placeholder="Page URL"/></span>
+                    <span><input type="text" class="page_title form-control" placeholder="Page title"/></span>
+                </div>
             </div>
 
             <div class="code_withjs">
@@ -166,10 +172,10 @@
             </div>
             
         </div>
-    </div>
+    </section>
     
     <div class="preview_sharebox">
-        <i class="fa fa-times-circle previewClose pull-right"></i>
+        <i class="fa fa-times-circle closeBtn previewClose pull-right"></i>
         <div class="share_box">
             <h5>Share:</h5>
             <div class="socializer_share" data-features="32px,circle,icon-white,pad" data-sites="twitter,facebook,googleplus,pocket,reddit,stumbleupon,email" data-text="hover"></div>
@@ -186,4 +192,5 @@
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../../bower_components/bootstrap/bootstrap.min.js"></script>
 <script src="../../js/socializer.js"></script>
+<script src="templates.js"></script>
 <script src="script.js"></script>

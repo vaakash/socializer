@@ -2,16 +2,16 @@ $(document).ready(function(){
     
     api = {};
     page_vals = {};
-    $site_list_tmpl = $( '<li><span></span><i class="fa fa-cog site_action site_settings" title="Button settings"></i><i class="fa fa-trash-o site_action site_delete" title="Delete button"></i><div class="site_settings_wrap"><input type="text" class="site_meta form-control" placeholder="Enter custom button URL. Use {url}, {title} as placeholders" /></div></li>' );
+    $site_list_tmpl = $( '<li><span></span><i class="fa fa-cog site_action site_settings" title="Button settings"></i><i class="fa fa-trash-o site_action site_delete" title="Delete button"></i><div class="site_settings_wrap"><p>Enter custom button URL. Use {url}, {title} as placeholders</p><input type="text" class="site_meta form-control"/></div></li>' );
     default_values = {
         'sites': [ 'facebook', 'googleplus', 'print', 'email', 'rss' ],
         'sizes': '32px',
-        'shapes': 'circle',
+        'shapes': '',
         'hover': '',
         'layouts': '',
         'text-styles': '',
         'font-size': '',
-        'icon-color': 'icon-white',
+        'icon-color': '',
         'border-color': '',
         'background-color': '',
         'border-width': '',
@@ -19,7 +19,7 @@ $(document).ready(function(){
         'pad': 'pad',
         'multiline': '',
         'more-count': 0,
-        'sharebar-orientation': 'hl-top',
+        'sharebar-orientation': 'vl-left',
         'sharebar-theme': '',
         'btn-type': 'hbar'
     };
@@ -29,9 +29,11 @@ $(document).ready(function(){
     hashValues = {};
     previewCount = 0;
     btnType = 'hBar';
+    $tmplList = $( '.tmpl_list' );
     
     $.getJSON( 'https://api.myjson.com/bins/1gtbg', function(data){
         api = data;
+        console.log(api);
         init();
     });
     
@@ -47,6 +49,8 @@ $(document).ready(function(){
                 console.error( err );
                 return {};
             }
+        }else{
+            return {}
         }
     }
     
@@ -57,7 +61,8 @@ $(document).ready(function(){
             
             item.find( 'span' ).text( site_prop[ 0 ] );
             item.attr( 'data-site', site );
-
+            item.css( 'background-color', site_prop[ 3 ] );
+            
             ele.append( item.clone() );
         }
     }
@@ -124,7 +129,11 @@ $(document).ready(function(){
                     if( orientation == 'hl' ){
                         $layoutSetting.val( '' );
                     }else{
-                        $layoutSetting.val( 'vertical' );
+                        if( type == 'vbar' ){
+                            $layoutSetting.val( 'vertical' );
+                        }else{
+                            $layoutSetting.val( '' );
+                        }
                     }
                 }
                 
@@ -228,6 +237,7 @@ $(document).ready(function(){
             if( $preview.parent().hasClass( 'sr-sharebar' ) ){
                 $preview.unwrap( 'div' );
             }
+            $( '.scr_tmpl.sr-fluid').parent().show();
         }else{
             $sbSection.slideDown();
             $layoutsRow.slideUp();
@@ -236,6 +246,7 @@ $(document).ready(function(){
                 $sbWrap = $preview.wrap( '<div></div>' );
             }
             $preview.parent().attr( 'class', 'sr-sharebar ' + sbClasses );
+            $( '.scr_tmpl.sr-fluid').parent().hide();
         }
         
         btnType = type;
@@ -327,9 +338,19 @@ $(document).ready(function(){
         return [location.protocol, '//', location.host, location.pathname].join('') + '#' + btoa( JSON.stringify( hashValues ) );
     }
     
+    var loadTemplates = function(){
+        
+        $.each( scr_templates, function( idx, tmpl ){
+            $tmplList.append( '<div class="scr_tmpl_wrap" data-tmpl-id="' + idx + '"><div class="scr_tmpl" data-sites="facebook,twitter,rss,googleplus,print" data-features="' + tmpl[1] + '" data-text="' + tmpl[2] + '" ></div><small>' + tmpl[0] + '</small></div>' );
+        });
+        
+        socializer( '.scr_tmpl' );
+    }
+    
     var init = function(){
         
-        values = $.extend( {}, default_values,  parseHash() );
+        hashValues = parseHash();
+        values = $.extend( {}, default_values, hashValues  );
         
         Sortable.create( $sites_sel_list[0], {
             onEnd: refreshPreview
@@ -356,12 +377,19 @@ $(document).ready(function(){
         
         $btnType = $( '.scr_btn_sel[value="' + values[ 'btn-type' ] + '"]' );
         $btnType.attr( 'checked', 'checked' );
-        $btnType.parent().addClass( 'active' );
+        $( '[for="scr_type_' + values[ 'btn-type' ] + '"]' ).addClass( 'active' );
         
         $( '.more_sites' ).val( values[ 'more-count' ] );
         
+        if( $.isEmptyObject( hashValues )){
+            $( '[data-setting="icon-color"]' ).val( 'icon-white' );
+        }
+        
         moreSitesChange();
         refreshPreview();
+        
+        loadTemplates();
+        
     }
     
     var getShortUrl = function( url ){
@@ -402,6 +430,37 @@ $(document).ready(function(){
         $( '.more_sites_text' ).html( msg );
     }
     
+    var setTemplate = function( id ){
+        var tmpl = scr_templates[ id ];
+        var features = tmpl[1];
+        var text = tmpl[2];
+        var featSplit = features.split( ',' );
+        
+        $( '[data-setting]' ).each(function(){
+            $(this).val( default_values[$(this).data( 'setting' )] );
+        });
+        
+        $.each( featSplit, function( idx, featVal ){
+            for( setting in api.settings ){
+                if( api.settings.hasOwnProperty(setting) ){
+                    if( featVal in api.settings[ setting ][ 'options' ] ){
+                        $( '[data-setting="' + setting + '"]' ).val( featVal );
+                    }
+                }
+            }
+        });
+        
+        $( '[data-setting="text-styles"]' ).val( text );
+        
+        refreshPreview();
+        $tmplList.fadeOut();
+    }
+    
+    var openSettings = function(){
+        $( '.manual_settings' ).slideDown();
+        $( '.open_settings' ).fadeOut();
+    }
+    
     $( document ).on( 'change', '[data-setting], .more-count', function(){
         refreshPreview();
     });
@@ -418,7 +477,11 @@ $(document).ready(function(){
     });
     
     $( document ).on( 'click', '.site_settings', function(){
-        $(this).siblings( '.site_settings_wrap' ).toggle();
+        $setgsWrap = $(this).siblings( '.site_settings_wrap' );
+        if( !$setgsWrap.is( ':visible' ) ){
+            $( '.site_settings_wrap' ).hide();
+        }
+        $setgsWrap.fadeToggle();
     });
     
     $( document ).on( 'change', '.site_meta', function(){
@@ -461,9 +524,30 @@ $(document).ready(function(){
         
     });
     
+    $( document ).on( 'click', '.open_settings', function(){
+        openSettings();
+    });
+    
+    $( document ).on( 'click', '.scr_tmpl_wrap', function(){
+        setTemplate( $(this).data( 'tmpl-id' ) );
+    });
+    
+    $( document ).on( 'click', '.sb_type', function(){
+        $( '.sb_type' ).removeClass( 'active' );
+        $(this).addClass( 'active' );
+    })
+    
     $( document ).on( 'click', '.previewClose', function(){
         $( '.preview_sharebox' ).hide();
         $( '.app_wrap' ).removeClass( 'share_on' );
+    });
+    
+    $( document ).on( 'click', '.tmpl_list_open', function(){
+        $tmplList.show();
+    });
+    
+    $( document ).on( 'click', '.tmpl_list_close', function(){
+        $tmplList.hide();
     });
     
     var allPanels = $('.acc_section > .acc_inner').hide();
