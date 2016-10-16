@@ -278,6 +278,7 @@ $(document).ready(function(){
         
         $scrWithJS.empty().attr( 'class', 'socializer' );
         $( '.withjs_code' ).text( $.trim( $appPreviewWithJS.html() ) );
+        
     }
     
     var refreshPreview = function(){

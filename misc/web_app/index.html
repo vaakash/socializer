@@ -6,12 +6,28 @@
 
 <div class="app_wrap">
     
+    <section>
+        <div class="container">
+            <h2>Free social buttons sharebar generator</h2>
+            <p>Create awesome fully customizable social media buttons here including floating sharebars. The sharebar in this page is based on the <code>socializer.css</code> library and fontawesome font icons.</p>
+            <h4>Share and contribute</h4>
+            <p>
+            <iframe src="https://ghbtns.com/github-btn.html?user=vaakash&repo=socializer&type=star&count=true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+            <iframe src="https://ghbtns.com/github-btn.html?user=vaakash&repo=socializer&type=fork&count=true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+            <div class="addthis_inline_share_toolbox_420n"></div>
+            </p>
+        </div>
+    </section>
+
     <div class="tmpl_list">
         <h4>Select a style to apply for sharebar <i class="fa fa-times-circle pull-right closeBtn tmpl_list_close"></i></h4>
     </div>
     
     <section>
         <div class="container">
+            
+            <!--<span class="pull-right"><?php top_ad(); ?></span>-->
+            
             <h3 data-step="1">Sharebar type</h3>
             
             <ul class="sb_types_list list-unstyled clearfix">
@@ -139,7 +155,9 @@
                     <span><input type="text" class="page_title form-control" placeholder="Page title"/></span>
                 </div>
             </div>
-
+            
+            <!-- <?php middle_ad(); ?> -->
+            
             <div class="code_withjs">
                 <h4 data-step="2">In header</h4>
                 <pre>
@@ -147,7 +165,7 @@
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css&quot;&gt;</pre>
                 
                 <h4 data-step="3">In body</h4>
-                <pre><span class="withjs_code"></span></pre>
+                <pre class="withjs_code"></pre>
                 
                 <h4 data-step="4">Before &lt;/body&gt;</h4>
                 <pre>
@@ -168,9 +186,23 @@
                 </pre>
                 
                 <h4 data-step="3">In body</h4>
-                <pre><span class="withoutjs_code"></span></pre>
+                <pre class="withoutjs_code"></pre>
             </div>
             
+        </div>
+    </section>
+    
+    <section>
+        <div class="container">
+            
+            <!-- <span class="pull-right"><?php bottom_ad(); ?></span> -->
+            
+            <h3>Docs, API, Contribute</h3>
+            <ul>
+                <li><a href="/docs/socializer-css-docs/">Socializer.css docs</a></li>
+                <li><a href="/docs/socializer-js-docs/">Socializer.js docs</a></li>
+                <li><a href="/wordpress-plugins/wp-socializer/">WP Socializer</a> - a social media plugin for WordPress which uses <code>socializer.css</code></li>
+            </ul>
         </div>
     </section>
     
@@ -188,6 +220,18 @@
     <button class="btn btn-primary togglePreview" title="Close"><i class="fa fa-share-alt"></i> Share this design</button>
     
 </div>
+
+<style>
+#at4-share, #at4-follow{
+   display: none !important;
+}
+</style>
+
+<script type="text/javascript">
+var addthis_config = addthis_config||{};
+    addthis_config.data_track_clickback = false;
+    addthis_config.data_track_addressbar = false;
+</script>
 
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../../bower_components/bootstrap/bootstrap.min.js"></script>
