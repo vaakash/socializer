@@ -31,7 +31,7 @@ $(document).ready(function(){
     btnType = 'hBar';
     $tmplList = $( '.tmpl_list' );
     
-    $.getJSON( 'https://api.myjson.com/bins/1gtbg', function(data){
+    $.getJSON( 'https://cdn.rawgit.com/vaakash/socializer/master/misc/api.json', function(data){
         api = data;
         console.log(api);
         init();
@@ -278,7 +278,6 @@ $(document).ready(function(){
         
         $scrWithJS.empty().attr( 'class', 'socializer' );
         $( '.withjs_code' ).text( $.trim( $appPreviewWithJS.html() ) );
-        
     }
     
     var refreshPreview = function(){
@@ -393,31 +392,48 @@ $(document).ready(function(){
         
     }
     
-    var getShortUrl = function( url ){
-        var surl = '';
+    var setShortUrl = function( url ){
+        
         var $shareBoxWrap = $( '.preview_sharebox' );
         var $shareBox = $( '.share_box' ).fadeTo( 'fast', 0.2 );
+        var sTitle = 'Generate attractive social button icons for your website, check out my design ! @vaakash';
         
         $shareBoxWrap.addClass( 'preview_loading' );
         
-        $.ajax({
+        var ajaxReq = $.ajax({
             type: 'POST',
-            url: 'https://www.googleapis.com/urlshortener/v1/url?key=',
+            url: 'https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyCSgFWmIdYfusNP7ZAVHWVdR4U2qpnwZbo',
             data: '{"longUrl": "' + url + '"}',
-            success: function(data){
-                surl = data[ 'id' ];
-                $shareBoxWrap.removeClass( 'preview_loading' );
-                $shareBox.fadeTo( 'slow', 1 );
-            },
-            error: function( data ){
-                $shareBoxWrap.removeClass( 'preview_loading' );
-                $shareBox.fadeTo( 'slow', 1 );
-            },
             contentType: "application/json",
             dataType: 'json'
         });
         
-        return ( surl == '' ) ? url : surl;
+        ajaxReq.done(function(data){
+            surl = data[ 'id' ];
+            $( '.shortner_url' ).val( surl );
+            socializer( '.socializer_share', {
+                meta: {
+                    title: sTitle,
+                    link: surl
+                }
+            });
+        });
+        
+        ajaxReq.fail(function(data){
+            $( '.shortner_url' ).val( url );
+            socializer( '.socializer_share', {
+                meta: {
+                    title: sTitle,
+                    link: url
+                }
+            });
+        });
+        
+        ajaxReq.always(function(){
+            $shareBoxWrap.removeClass( 'preview_loading' );
+            $shareBox.fadeTo( 'slow', 1 );
+        });
+        
     }
     
     var moreSitesChange = function(){
@@ -512,15 +528,8 @@ $(document).ready(function(){
         }
         
         if( lastUpdate != previewCount ){
-            var shortUrl = getShortUrl( getShareUrl() );
-            $( '.shortner_url' ).val( shortUrl );
+            setShortUrl( getShareUrl() );
             $(this).data( 'last-preview', ++lastUpdate );
-            socializer( '.socializer_share', {
-                meta: {
-                    title: 'Generate attractive social button icons for your website, check out my design ! @vaakash',
-                    link: shortUrl
-                }
-            });
         }
         
     });

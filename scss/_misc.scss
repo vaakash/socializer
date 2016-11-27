@@ -50,16 +50,16 @@
 }
 
 // Counters
-.sr-count-1{
-    a em{
+.socializer{
+    a em.ctext{
         background: #F00;
         position: absolute;
         top: -0.5em;
         right: -0.5em;
         border-radius: 1em;
-        font-size: 0.8em;
+        font-size: 0.5em;
         line-height: 1;
-        padding: 5px;
+        padding: 2px 4px;
         z-index: 99;
         color: #fff;
         font-style: normal;
