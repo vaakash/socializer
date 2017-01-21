@@ -94,10 +94,20 @@
   border-color: #1769ff;
   background-color: #1769ff; }
 
+.sr-bitbucket a {
+  color: #205081;
+  border-color: #205081;
+  background-color: #205081; }
+
 .sr-blogger a {
   color: #FF6501;
   border-color: #FF6501;
   background-color: #FF6501; }
+
+.sr-codepen a {
+  color: #000;
+  border-color: #000;
+  background-color: #000; }
 
 .sr-comments a {
   color: #333;
@@ -108,6 +118,11 @@
   color: #3274D1;
   border-color: #3274D1;
   background-color: #3274D1; }
+
+.sr-deviantart a {
+  color: #475c4d;
+  border-color: #475c4d;
+  background-color: #475c4d; }
 
 .sr-digg a {
   color: #000;
@@ -128,6 +143,11 @@
   color: #3e5b98;
   border-color: #3e5b98;
   background-color: #3e5b98; }
+
+.sr-fbmessenger a {
+  color: #2998ff;
+  border-color: #2998ff;
+  background-color: #2998ff; }
 
 .sr-flickr a {
   color: #1c9be9;
@@ -164,6 +184,16 @@
   border-color: #0274B3;
   background-color: #0274B3; }
 
+.sr-medium a {
+  color: #02b875;
+  border-color: #02b875;
+  background-color: #02b875; }
+
+.sr-paypal a {
+  color: #0070ba;
+  border-color: #0070ba;
+  background-color: #0070ba; }
+
 .sr-pdf a {
   color: #E61B2E;
   border-color: #E61B2E;
@@ -199,6 +229,11 @@
   border-color: #333;
   background-color: #333; }
 
+.sr-snapchat a {
+  color: #FFFC00;
+  border-color: #FFFC00;
+  background-color: #FFFC00; }
+
 .sr-soundcloud a {
   color: #f50;
   border-color: #f50;
@@ -214,6 +249,16 @@
   border-color: #EB4823;
   background-color: #EB4823; }
 
+.sr-quora a {
+  color: #b92b27;
+  border-color: #b92b27;
+  background-color: #b92b27; }
+
+.sr-telegram a {
+  color: #179cde;
+  border-color: #179cde;
+  background-color: #179cde; }
+
 .sr-tumblr a {
   color: #314358;
   border-color: #314358;
@@ -224,15 +269,15 @@
   border-color: #4da7de;
   background-color: #4da7de; }
 
+.sr-vimeo a {
+  color: #00ADEF;
+  border-color: #00ADEF;
+  background-color: #00ADEF; }
+
 .sr-vkontakte a {
   color: #4C75A3;
   border-color: #4C75A3;
   background-color: #4C75A3; }
-
-.sr-vine a {
-  color: #00bf8f;
-  border-color: #00bf8f;
-  background-color: #00bf8f; }
 
 .sr-wechat a {
   color: #7BB32E;
