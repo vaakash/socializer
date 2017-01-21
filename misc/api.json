@@ -12,7 +12,7 @@
         "dribbble": [ "Dribbble", "dribbble", "https://dribbble.com/", "#ea4c89", "" ],
         "email": [ "Email", "envelope", "mailto:?to=&subject={title}&body={excerpt}%20-%20{url}", "#000", "" ],
         "facebook": [ "Facebook", "facebook", "https://www.facebook.com/share.php?u={url}&amp;t={title}", "#3e5b98", "" ],
-        "fbmessenger": [ "Facebook messenger", "chat", "fb-messenger://share?link={url}", "#2998ff", "" ],
+        "fbmessenger": [ "Facebook messenger", "comment", "fb-messenger://share?link={url}", "#2998ff", "" ],
         "flickr": [ "Flickr", "flickr", "https://www.flickr.com", "#1c9be9", "" ],
         "github": [ "Github", "github", "https://www.github.com/", "#333", "" ],
         "google": [ "Google", "google", "https://www.google.com/bookmarks/mark?op=edit&amp;bkmk={url}&amp;title={title}&amp;annotation={excerpt}", "#3A7CEC", "" ],

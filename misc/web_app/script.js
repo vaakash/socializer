@@ -31,7 +31,7 @@ $(document).ready(function(){
     btnType = 'hBar';
     $tmplList = $( '.tmpl_list' );
     
-    $.getJSON( 'https://cdn.rawgit.com/vaakash/socializer/master/misc/api.json', function(data){
+    $.getJSON( 'https://rawgit.com/vaakash/socializer/master/misc/api.json', function(data){
         api = data;
         console.log(api);
         init();
