@@ -392,13 +392,13 @@
 .sr-bg-none a {
   background-color: transparent; }
 
-.sr-icon-white a {
+.sr-icon-white a, .sr-icon-white a:link, .sr-icon-white a:visited {
   color: #fff; }
 
-.sr-icon-dark a {
+.sr-icon-dark a, .sr-icon-dark a:link, .sr-icon-dark a:visited {
   color: #333; }
 
-.sr-icon-grey a {
+.sr-icon-grey a, .sr-icon-grey a:link, .sr-icon-grey a:visited {
   color: #ccc; }
 
 .sr-sw-1 a {
