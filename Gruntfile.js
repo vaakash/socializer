@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     cssmin: {
         build: {
             files: {
-                'css/socializer.min.css': 'socializer.css'
+                'css/socializer.min.css': 'css/socializer.css'
             }
         }
     },
