@@ -7,7 +7,7 @@ module.exports = function(grunt) {
     sass: {
         main: {
             files: {
-                'socializer.css': 'scss/socializer.scss',
+                'css/socializer.css': 'scss/socializer.scss',
             }
         }
     },
