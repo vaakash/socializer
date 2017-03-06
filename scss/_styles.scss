@@ -1,63 +1,63 @@
 // Border width
-.sr-bdr-sm a{
+.sr-bdr-sm.socializer a{
     border: 1px solid;
 }
-.sr-bdr-md a{
+.sr-bdr-md.socializer a{
     border: 2px solid;
 }
-.sr-bdr-lg a{
+.sr-bdr-lg.socializer a{
     border: 3px solid;
 }
-.sr-bdr-none a{
+.sr-bdr-none.socializer a{
     border: 0;
 }
 
 // Border
-.sr-bdr-white a{
+.sr-bdr-white.socializer a{
     border-color: #fff;
 }
-.sr-bdr-dark a{
+.sr-bdr-dark.socializer a{
     border-color: #000;
 }
-.sr-bdr-grey a{
+.sr-bdr-grey.socializer a{
     border-color: #ccc;
 }
 
 // Background
-.sr-bg-white a{
+.sr-bg-white.socializer a{
     background-color: #fff;
 }
-.sr-bg-dark a{
+.sr-bg-dark.socializer a{
     background-color: #333;
 }
-.sr-bg-grey a{
+.sr-bg-grey.socializer a{
     background-color: #ccc;
 }
-.sr-bg-none a{
+.sr-bg-none.socializer a{
     background-color: transparent;
 }
 
 // Icon
-.sr-icon-white a, .sr-icon-white a:link, .sr-icon-white a:visited{
+.sr-icon-white.socializer a, .sr-icon-white.socializer a:link, .sr-icon-white.socializer a:visited{
     color: #fff;
 }
-.sr-icon-dark a, .sr-icon-dark a:link, .sr-icon-dark a:visited{
+.sr-icon-dark.socializer a, .sr-icon-dark.socializer a:link, .sr-icon-dark.socializer a:visited{
     color: #333;
 }
-.sr-icon-grey a, .sr-icon-grey a:link, .sr-icon-grey a:visited{
+.sr-icon-grey.socializer a, .sr-icon-grey.socializer a:link, .sr-icon-grey.socializer a:visited{
     color: #ccc;
 }
 
 // Button Shadow
-.sr-sw-1 a{
+.sr-sw-1.socializer a{
     box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.3);
 }
-.sr-sw-2 a{
+.sr-sw-2.socializer a{
     box-shadow: inset 0 -0.1em 0.1em rgba(0,0,0,0.3);
 }
-.sr-sw-3 a{
+.sr-sw-3.socializer a{
     box-shadow: 0 -0.1em 0.1em rgba(0,0,0,0.3);
 }
-.sr-sw-icon-1 a i{
+.sr-sw-icon-1.socializer a i{
     text-shadow: 0 1px 1px rgba(0,0,0,0.5)
 }

@@ -77,13 +77,13 @@
  
 // Site colors
 @each $site, $prop in $sites{
-    .sr-#{$site} a{
+    .socializer .sr-#{$site} a, .socializer .sr-#{$site} a:visited{
         color: map-get($prop, 'color');
         border-color: map-get($prop, 'color');
         background-color: map-get($prop, 'color');
     }
 }
-.sr-more > a{
+.socializer .sr-more > a, .socializer .sr-more > a:visited{
     color: green;
     border-color: green;
     background-color: green;
