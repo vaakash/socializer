@@ -4,28 +4,37 @@ module.exports = function(grunt) {
 
     pkg: grunt.file.readJSON('package.json'),
 
-	sass: {
-		main: {
-			files: {
-				'socializer.css': 'scss/socializer.scss',
-			}
-		}
-	},
-	
-	cssmin: {
-		options: {
-			banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
-		},
-		build: {
-			files: {
-				'css/socializer.min.css': 'socializer.css'
-			}
-		}
-	},
-	
-	watch:{
-		scripts: {
-			files: [ 
+    sass: {
+        main: {
+            files: {
+                'socializer.css': 'scss/socializer.scss',
+            }
+        }
+    },
+    
+    cssmin: {
+        build: {
+            files: {
+                'css/socializer.min.css': 'socializer.css'
+            }
+        }
+    },
+    
+    
+    uglify: {
+        options: {
+            banner: '/* Socializer.js - aakashweb.com - Aakash Chakravarthy - MIT License */',
+        },
+        my_target: {
+            files: {
+                'js/socializer.min.js': [ 'js/socializer.js' ]
+            }
+        }
+    },
+    
+    watch:{
+        scripts: {
+            files: [ 
                 'scss/socializer.scss',
                 'scss/_config.scss',
                 'scss/_hover.scss',
@@ -36,9 +45,9 @@ module.exports = function(grunt) {
                 'scss/_types.scss',
                 'scss/_sharebar.scss',
             ],
-			tasks: [ 'sass' ]
-		}
-	}
+            tasks: [ 'sass' ]
+        }
+    }
 
   });
 
