@@ -372,34 +372,34 @@
 .sr-bdr-none.socializer a {
   border: 0; }
 
-.sr-bdr-white.socializer a {
+.sr-bdr-white.socializer a, .sr-bdr-white.socializer a:visited {
   border-color: #fff; }
 
-.sr-bdr-dark.socializer a {
+.sr-bdr-dark.socializer a, .sr-bdr-dark.socializer a:visited {
   border-color: #000; }
 
-.sr-bdr-grey.socializer a {
+.sr-bdr-grey.socializer a, .sr-bdr-grey.socializer a:visited {
   border-color: #ccc; }
 
-.sr-bg-white.socializer a {
+.sr-bg-white.socializer a, .sr-bg-white.socializer a:visited {
   background-color: #fff; }
 
-.sr-bg-dark.socializer a {
+.sr-bg-dark.socializer a, .sr-bg-dark.socializer a:visited {
   background-color: #333; }
 
-.sr-bg-grey.socializer a {
+.sr-bg-grey.socializer a, .sr-bg-grey.socializer a:visited {
   background-color: #ccc; }
 
-.sr-bg-none.socializer a {
+.sr-bg-none.socializer a, .sr-bg-none.socializer a:visited {
   background-color: transparent; }
 
-.sr-icon-white.socializer a, .sr-icon-white.socializer a:link, .sr-icon-white.socializer a:visited {
+.sr-icon-white.socializer a, .sr-icon-white.socializer a:visited {
   color: #fff; }
 
-.sr-icon-dark.socializer a, .sr-icon-dark.socializer a:link, .sr-icon-dark.socializer a:visited {
+.sr-icon-dark.socializer a, .sr-icon-dark.socializer a:visited {
   color: #333; }
 
-.sr-icon-grey.socializer a, .sr-icon-grey.socializer a:link, .sr-icon-grey.socializer a:visited {
+.sr-icon-grey.socializer a, .sr-icon-grey.socializer a:visited {
   color: #ccc; }
 
 .sr-sw-1.socializer a {
