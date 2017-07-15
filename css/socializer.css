@@ -630,7 +630,8 @@
   line-height: 1;
   padding: 0.3em 0.5em;
   z-index: 99;
-  color: #fff; }
+  color: #fff;
+  box-shadow: 0 1px 3px -1px #000; }
 
 .sr-count-2 span.ctext {
   font-size: 0.8em;
