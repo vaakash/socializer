@@ -36,6 +36,7 @@
         "quora": [ "Quora", "quora", "https://www.quora.com", "#b92b27", "" ],
         "telegram": [ "Telegram", "telegram", "https://telegram.me/share/url?url={url}&amp;text={title}", "#179cde", "" ],
         "tumblr": [ "Tumblr", "tumblr", "https://www.tumblr.com/share?v=3&amp;u={url}&amp;t={title}&amp;s={excerpt}", "#314358", "" ],
+        "twitch": [ "Twitch", "twitch", "https://www.twitch.tv", "#4b367c", "" ],
         "twitter": [ "Twitter", "twitter", "https://twitter.com/home?status={title}%20-%20{url}", "#4da7de", "" ],
         "vimeo": [ "Vimeo", "vimeo", "https://vimeo.com", "#00ADEF", "" ],
         "vkontakte": [ "VKontakte", "vk", "https://vk.com/share.php?url={url}&amp;title={title}&amp;description={excerpt}", "#4C75A3", "" ],
@@ -43,7 +44,7 @@
         "whatsapp": [ "WhatsApp", "whatsapp", "whatsapp://send?text={url}", "#60b82d", "" ],
         "xing": [ "Xing", "xing", "https://www.xing.com/app/user?op=share&amp;url={url}", "#006567", "" ],
         "yahoomail": [ "Yahoo! Bookmarks", "yahoo", "https://compose.mail.yahoo.com/?body={excerpt}%20-%20{url}&amp;subject={title}", "#4A00A1", "" ],
-        "youtube": [ "Youtube", "youtube", "https://youtube.com/", "#cc181e", "" ],
+        "youtube": [ "Youtube", "youtube-play", "https://youtube.com/", "#cc181e", "" ],
         "more": [ "More", "share-alt", "#", "green", "" ]
    },
    "settings":{

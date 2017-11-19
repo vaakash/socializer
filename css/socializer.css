@@ -265,6 +265,11 @@
   border-color: #314358;
   background-color: #314358; }
 
+.socializer .sr-twitch a, .socializer .sr-twitch a:visited {
+  color: #4b367c;
+  border-color: #4b367c;
+  background-color: #4b367c; }
+
 .socializer .sr-twitter a, .socializer .sr-twitter a:visited {
   color: #4da7de;
   border-color: #4da7de;
