@@ -9,13 +9,13 @@
     <section>
         <div class="container">
             <h2>Free social buttons sharebar generator</h2>
-            <p>Create awesome fully customizable social media buttons here including floating sharebars. The sharebar in this page is based on the <code>socializer.css</code> library and fontawesome font icons.</p>
+            <p>Create awesome fully customizable social media buttons here including floating sharebars. The sharebar in this page is based on the <a href="/css-libraries/socializer/">socializer.css</a> library and fontawesome font icons.</p><br/>
             <h4>Share and contribute</h4>
             <p>
             <iframe src="https://ghbtns.com/github-btn.html?user=vaakash&repo=socializer&type=star&count=true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
             <iframe src="https://ghbtns.com/github-btn.html?user=vaakash&repo=socializer&type=fork&count=true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
-            <div class="addthis_inline_share_toolbox_420n"></div>
             </p>
+            <div class="addthis_inline_share_toolbox_420n"></div>
         </div>
     </section>
 
@@ -26,7 +26,7 @@
     <section>
         <div class="container">
             
-            <!--<span class="pull-right"><?php top_ad(); ?></span>-->
+            <span class="pull-right"><?php ad( 'top' ); ?></span>
             
             <h3 data-step="1">Sharebar type</h3>
             
@@ -54,7 +54,7 @@
                     <option>Select a button to add ...</option>
                 </select>
                 <span class="input-group-btn">
-                    <button class="scr_add_site btn btn-primary">Add</button>
+                    <button class="scr_add_site btn btn-primary"><i class="fa fa-plus"></i> Add</button>
                 </span>
             </div>
         </div>
@@ -65,7 +65,7 @@
             <h3 data-step="3">Customize the sharebar</h3>
             <p>Select a handful of predefined styles from the below list or create your own sharebar design. You can also select a style and customize it manually.</p>
             <button class="btn btn-success tmpl_list_open"><i class="fa fa-bars" aria-hidden="true"></i> Open list of button styles</button>
-            <button class="btn btn-primary open_settings pull-right">Open more settings <span class="caret"></span></button>
+            <button class="btn btn-primary open_settings"><i class="fa fa-cog"></i> Open more settings <span class="caret"></span></button>
         </div>
     </section>
     
@@ -122,10 +122,10 @@
         </div>
     </section>
     
-    <section>
+    <section class="preview_section">
         <div class="container">
-            <h3 data-step="4">Preview</h3>
-            
+            <h3 data-step="4">Preview <button class="btn btn-outline-primary btn-sm pull-right toggle_preview_bg">Toggle background</button></h3>
+            <p class="dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec ante posuere odio pulvinar efficitur. Fusce sed leo vel mi congue rhoncus in sed odio. In hac habitasse platea dictumst. In consectetur aliquet lectus, non mollis magna lobortis sit amet. Donec euismod felis a vestibulum laoreet. Praesent purus augue, facilisis vitae imperdiet vel, volutpat a purus. Pellentesque in semper libero, sollicitudin egestas metus.</p>
             <span class="sbPreviewTxt">Sharebar preview is displayed near the sides of window.</span>
             <div class="app_preview">
                 <div class="socializer" data-features="32px,icon-white,pad"></div>
@@ -147,7 +147,7 @@
             
             <h3 data-step="5">Copy code</h3>
             
-            <h4 data-step="1">Page information</h4>
+            <h4 data-step="a">Page information</h4>
             <div class="well">
                 <label class="page_info_auto_wrap"><input type="checkbox" class="page_info_auto" /> Automatically use active page details</label>
                 <div class="page_details">
@@ -156,46 +156,45 @@
                 </div>
             </div>
             
-            <!-- <?php middle_ad(); ?> -->
+            <?php ad( 'middle' ); ?>
             
             <div class="code_withjs">
-                <h4 data-step="2">In header</h4>
-                <pre>
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.rawgit.com/vaakash/socializer/master/socializer.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css&quot;&gt;</pre>
+                <h4 data-step="b">In header</h4>
+                <textarea class="form-control codeBox">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;<?php echo $sr_css; ?>&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;<?php echo $fa_css; ?>&quot;&gt;</textarea>
                 
-                <h4 data-step="3">In body</h4>
-                <pre class="withjs_code"></pre>
+                <h4 data-step="c">In body</h4>
+                <textarea class="withjs_code form-control codeBox"></textarea>
                 
-                <h4 data-step="4">Before &lt;/body&gt;</h4>
-                <pre>
-&lt;script src="https://cdn.rawgit.com/vaakash/socializer/master/js/socializer.js"&gt;&lt;/script&gt;
+                <h4 data-step="d">Before &lt;/body&gt;</h4>
+                <textarea class="form-control codeBox">
+&lt;script src="<?php echo $sr_js; ?>"&gt;&lt;/script&gt;
 &lt;script&gt;
 (function(){
     socializer( '.socializer' );
 }());
-&lt;/script&gt;
-                </pre>
+&lt;/script&gt;</textarea>
+
             </div>
 
             <div class="code_withoutjs">
-                <h4 data-step="2">In header</h4>
-                <pre>
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.rawgit.com/vaakash/socializer/master/socializer.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css&quot;&gt;
-                </pre>
+                <h4 data-step="b">In header</h4>
+                <textarea class="form-control codeBox">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;<?php echo $sr_css; ?>&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;<?php echo $fa_css; ?>&quot;&gt;</textarea>
                 
-                <h4 data-step="3">In body</h4>
-                <pre class="withoutjs_code"></pre>
+                <h4 data-step="c">In body</h4>
+                <textarea class="withoutjs_code form-control codeBox"></textarea>
             </div>
             
         </div>
     </section>
     
     <section>
-        <div class="container">
+        <div class="container clearfix">
             
-            <!-- <span class="pull-right"><?php bottom_ad(); ?></span> -->
+            <span class="pull-right"><?php ad( 'bottom' ); ?></span>
             
             <h3>Docs, API, Contribute</h3>
             <ul>
@@ -204,6 +203,31 @@
                 <li><a href="/wordpress-plugins/wp-socializer/">WP Socializer</a> - a social media plugin for WordPress which uses <code>socializer.css</code></li>
             </ul>
         </div>
+    </section>
+    
+    <section class="coffeWrapOut">
+    <div class="coffeeWrap container">
+<div class="coffeeBtns">
+<select class="coffeeAmt">
+<option value="2">$2</option>
+<option value="3">$3</option>
+<option value="4">$4</option>
+<option value="5" selected="selected">$5</option>
+<option value="6">$6</option>
+<option value="7">$7</option>
+<option value="8">$8</option>
+<option value="9">$9</option>
+<option value="10">$10</option>
+<option value="11">$11</option>
+<option value="12">$12</option>
+<option value="">Custom</option>
+</select>
+<a class="btn btn-primary buyCoffee" href="https://www.paypal.me/vaakash/5" data-link="https://www.paypal.me/vaakash/" target="_blank">Buy me a coffee !</a>
+</div>
+<h2>Buy me coffee !</h2>
+<p>If you like this work and found this useful buy me a coffee ! your donation will motivate me to develop and support this work.
+</p>
+    </div>
     </section>
     
     <div class="preview_sharebox">
@@ -217,9 +241,10 @@
         <div class="spinner"></div>
     </div>
     
-    <button class="btn btn-primary togglePreview" title="Close"><i class="fa fa-share-alt"></i> Share this design</button>
+    <button class="btn btn-danger togglePreview" title="Close"><i class="fa fa-share-alt"></i> Share this design</button>
     
 </div>
+
 
 <style>
 #at4-share, #at4-follow{

@@ -7,7 +7,7 @@ $(document).ready(function(){
         'sites': [ 'facebook', 'googleplus', 'print', 'email', 'rss' ],
         'sizes': '32px',
         'shapes': '',
-        'hover': '',
+        'hover': 'opacity',
         'layouts': '',
         'text-styles': '',
         'font-size': '',
@@ -31,7 +31,7 @@ $(document).ready(function(){
     btnType = 'hBar';
     $tmplList = $( '.tmpl_list' );
     
-    $.getJSON( '../api.json', function(data){
+    $.getJSON( 'https://cdn.rawgit.com/vaakash/socializer/master/misc/api.json', function(data){
         api = data;
         console.log(api);
         init();
@@ -274,16 +274,16 @@ $(document).ready(function(){
                 $scrWithoutJS.removeAttr( attr );
             }
         }
-        $( '.withoutjs_code' ).text( $.trim( $appPreviewWithoutJS.html() ) );
+        $( '.withoutjs_code' ).val( $.trim( $appPreviewWithoutJS.html() ) );
         
         $scrWithJS.empty().attr( 'class', 'socializer' );
-        $( '.withjs_code' ).text( $.trim( $appPreviewWithJS.html() ) );
+        $( '.withjs_code' ).val( $.trim( $appPreviewWithJS.html() ) );
     }
     
     var refreshPreview = function(){
         
         setButtonType();
-        all = getAllValues();
+        var all = getAllValues();
         setCodeTypeFields();
         
         setPreviewData( 'data-features', all[ 'features' ] );
@@ -303,7 +303,7 @@ $(document).ready(function(){
             setPreviewData( 'data-meta-' + metaSiteName , metaSiteVal );
         });
         
-        socializer( '.socializer' );
+        socializer( '.app_preview .socializer' );
         
         setCode();
         
@@ -470,7 +470,7 @@ $(document).ready(function(){
         $( '[data-setting="text-styles"]' ).val( text );
         
         refreshPreview();
-        $tmplList.fadeOut();
+        $tmplList.hide();
     }
     
     var openSettings = function(){
@@ -558,6 +558,20 @@ $(document).ready(function(){
     
     $( document ).on( 'click', '.tmpl_list_close', function(){
         $tmplList.hide();
+    });
+    
+    $( document ).on( 'click', '.codeBox', function(e){
+        e.preventDefault();
+        this.select();
+    });
+    
+    $( document ).on( 'change', '.coffeeAmt', function(){
+        var $coffeeLink = $( '.buyCoffee' ); 
+        $coffeeLink.attr( 'href', $coffeeLink.data( 'link' ) + $(this).val() );
+    });
+    
+    $( document ).on( 'click', '.toggle_preview_bg', function(){
+        $( '.preview_section' ).toggleClass( 'dark_bg' );
     });
     
     var allPanels = $('.acc_section > .acc_inner').hide();
