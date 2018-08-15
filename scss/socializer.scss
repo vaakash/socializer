@@ -9,7 +9,6 @@
 .socializer{
     padding: 0;
     margin: 0;
-    //border: 1px solid red;
     display: inline-block;
     
     // Default font-size
@@ -34,6 +33,8 @@
         height: $size;
         line-height: $size+2;
         font-size: $size/2;
+        border-style: solid;
+        box-sizing: content-box;
         
         transition: all 0.5s;
         -webkit-transition: all 0.2s;

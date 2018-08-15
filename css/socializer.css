@@ -24,6 +24,8 @@
     height: 16px;
     line-height: 18px;
     font-size: 8px;
+    border-style: solid;
+    box-sizing: content-box;
     transition: all 0.5s;
     -webkit-transition: all 0.2s;
     transition-timing-function: ease-out;
@@ -367,16 +369,16 @@
   display: block; }
 
 .sr-bdr-sm.socializer a {
-  border: 1px solid; }
+  border-width: 1px; }
 
 .sr-bdr-md.socializer a {
-  border: 2px solid; }
+  border-width: 2px; }
 
 .sr-bdr-lg.socializer a {
-  border: 3px solid; }
+  border-width: 3px; }
 
 .sr-bdr-none.socializer a {
-  border: 0; }
+  border-width: 0; }
 
 .sr-bdr-white.socializer a, .sr-bdr-white.socializer a:visited {
   border-color: #fff; }
