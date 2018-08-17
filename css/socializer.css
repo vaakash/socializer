@@ -435,21 +435,17 @@
   border-radius: 0 0.5em 0 0.5em; }
 
 .sr-diamond a {
-  -moz-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg); }
   .sr-diamond a > * {
-    -moz-transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg); }
 
 .sr-drop a {
-  -moz-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   border-radius: 50% 50% 0 50%; }
   .sr-drop a > * {
-    -moz-transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg); }
 
@@ -528,53 +524,43 @@
   opacity: 0.8; }
 
 .sr-rotate a:hover {
-  -moz-transform: rotate(15deg);
   -webkit-transform: rotate(15deg);
   transform: rotate(15deg); }
 
 .sr-rotate a:active {
-  -moz-transform: rotate(0);
   -webkit-transform: rotate(0);
   transform: rotate(0); }
 
 .sr-zoom a:hover {
-  -moz-transform: scale(1.2);
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
   z-index: 9999; }
 
 .sr-zoom a:active {
-  -moz-transform: scale(0.8);
   -webkit-transform: scale(0.8);
   transform: scale(0.8); }
 
 .sr-shrink a:hover {
-  -moz-transform: scale(0.8);
   -webkit-transform: scale(0.8);
   transform: scale(0.8); }
 
 .sr-shrink a:active {
-  -moz-transform: scale(0.6);
   -webkit-transform: scale(0.6);
   transform: scale(0.6); }
 
 .sr-float a:hover {
-  -moz-transform: translateY(-5px);
   -webkit-transform: translateY(-5px);
   transform: translateY(-5px); }
 
 .sr-float a:active {
-  -moz-transform: translateY(0);
   -webkit-transform: translateY(0);
   transform: translateY(0); }
 
 .sr-sink a:hover {
-  -moz-transform: translateY(5px);
   -webkit-transform: translateY(5px);
   transform: translateY(5px); }
 
 .sr-sink a:active {
-  -moz-transform: translateY(0);
   -webkit-transform: translateY(0);
   transform: translateY(0); }
 
@@ -601,6 +587,9 @@
 .sr-no-icon i {
   display: none; }
 
+.socializer.sr-pad > *:last-child {
+  margin: 0; }
+
 .sr-more ul {
   background: #fff;
   padding: 0.5em;
@@ -622,8 +611,6 @@
     display: block; }
   .sr-more ul li {
     margin: 0 0 0.5em 0; }
-    .sr-more ul li:last-child {
-      margin-bottom: 0; }
 
 .sr-more:hover ul {
   display: block; }
@@ -687,8 +674,6 @@
 .sr-sharebar {
   position: fixed;
   z-index: 9999; }
-  .sr-sharebar .socializer > *:last-child {
-    margin: 0; }
 
 /** Vertical SB **/
 .sr-sb-vl {
