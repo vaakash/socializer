@@ -458,7 +458,8 @@
 .sr-vertical.sr-count-2 span.ctext {
   display: block;
   font-size: 0.6em;
-  border-radius: 0; }
+  border-radius: 0;
+  padding: 0.5em; }
 
 .sr-vertical.sr-count-3 a {
   height: auto; }
@@ -588,12 +589,14 @@
       width: 64px; }
   .sr-vertical.sr-pad > * {
     margin: 0 0 0.5em 0; }
-  .sr-vertical.sr-text-in a, .sr-vertical .sr-text-in a {
-    padding: 0;
-    width: inherit; }
-    .sr-vertical.sr-text-in a > *, .sr-vertical .sr-text-in a > * {
-      padding: 0; }
-  .sr-vertical.sr-text-in .text, .sr-vertical .sr-text-in .text {
+  .sr-vertical .sr-text-in {
+    line-height: 1; }
+    .sr-vertical .sr-text-in a {
+      padding: 0;
+      width: inherit; }
+      .sr-vertical .sr-text-in a > * {
+        padding: 0; }
+  .sr-vertical .sr-text-in .text {
     display: none; }
 
 .sr-opacity a:hover {

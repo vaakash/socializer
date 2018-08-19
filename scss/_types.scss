@@ -42,6 +42,7 @@
 
 .sr-vertical{
     width: 16px;
+    
     @each $size in $size-list{
         &.sr-#{$size}{
             width: $size;
@@ -50,17 +51,24 @@
             }
         }
     }
+    
     &.sr-pad >*{
         margin: 0 0 0.5em 0;
-    }   
-    &.sr-text-in a, & .sr-text-in a{
-        padding: 0;
-        width: inherit;
-        &>*{
+    }
+    
+    .sr-text-in {
+        line-height: 1;
+        
+        a{
             padding: 0;
+            width: inherit;
+            &>*{
+                padding: 0;
+            }
         }
     }
-    &.sr-text-in .text, & .sr-text-in .text{ // Hack to hide text in vertical mode
+    
+    .sr-text-in .text{ // Hack to hide text in vertical mode
         display: none;
     }
 }
