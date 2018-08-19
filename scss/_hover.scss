@@ -16,19 +16,19 @@
 }
 .sr-zoom a{
     &:hover{
-        @include transform(scale(1.2));
+        @include transform(scale(1.1));
         z-index: 9999;
     }
     &:active{
-        @include transform(scale(0.8));
+        @include transform(scale(0.9));
     }
 }
 .sr-shrink a{
     &:hover{
-        @include transform(scale(0.8));
+        @include transform(scale(0.9));
     }
     &:active{
-        @include transform(scale(0.6));
+        @include transform(scale(0.7));
     }
 }
 .sr-float a{

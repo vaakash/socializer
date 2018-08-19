@@ -15,7 +15,7 @@
 
 // More menu
 .sr-more{
-    ul{
+    .socializer{
         background: #fff;
         padding: 0.5em;
         position: absolute;
@@ -39,74 +39,17 @@
             display: block;
         }
         
-        li{
+        > *{
             margin: 0 0 0.5em 0;
+            
+            &:last-child{
+                margin-bottom: 0;
+            }
+            
         }
     }
     
-    &:hover ul{
+    &:hover .socializer{
         display: block;
-    }
-}
-
-// Counters
-.sr-count-1 span.ctext{
-    background: #FF5722;
-    position: absolute;
-    top: -0.6em;
-    right: -0.6em;
-    border-radius: 1em;
-    font-size: 0.6em;
-    line-height: 1;
-    padding: 0.3em 0.5em;
-    z-index: 99;
-    color: #fff;
-    box-shadow: 0 1px 3px -1px #000;
-}
-.sr-count-2 span.ctext{
-    font-size: 0.8em;
-    margin: 0 0.5em 0 0;
-    font-weight: bold;
-}
-.sr-count-3 span.ctext{
-    font-size: 0.8em;
-    margin: 0 0.5em 0 0;
-    font-weight: bold;
-    line-height: 0.8em;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 0.5em;
-    border-radius: 1em;
-}
-.sr-count-4 span.ctext{
-    font-size: 0.8em;
-    margin: 0 0.5em 0 0;
-    font-weight: bold;
-    line-height: 0.8em;
-    border-left: 1px solid;
-    padding: 0 0 0 0.8em;
-}
-
-// Counters with bubble styles
-.sr-bb-1{
-    .sr-text-in{
-        margin-right: 3.5em;
-    }
-    a{
-        position: relative;
-        overflow: visible;
-    }
-    span.ctext{
-        font-size: 0.8em;
-        font-weight: bold;
-        background: #fff;
-        border-radius: 3px;
-        color: #333;
-        position: absolute;
-        width: 3em;
-        top: 0;
-        bottom: 0;
-        padding: 0;
-        right: -3.5em;
-        border: 1px solid #dfdfdf;
     }
 }

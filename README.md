@@ -68,8 +68,8 @@ Social bar is identified with the class `socializer`. All classes below should b
 
 | Sizes | Shapes     | Hover effects | Layout types | Text styles | Border colors | Background colors | Icon colors | Border styles | Others    |
 |-------|------------|---------------|--------------|-------------|---------------|-------------------|-------------|---------------|-----------|
-| 16px  | circle     | opacity       | fluid        | text-in     | bdr-white     | bg-white          | icon-white  | bdr-sm        | pad       |
-| 32px  | squircle   | rotate        | vertical     | text-out    | bdr-dark      | bg-dark           | icon-dark   | bdr-md        | multiline |
+| 32px  | circle     | opacity       | fluid        | text-in     | bdr-white     | bg-white          | icon-white  | bdr-sm        | pad       |
+| 40px  | squircle   | rotate        | vertical     | text-out    | bdr-dark      | bg-dark           | icon-dark   | bdr-md        | multiline |
 | 48px  | squircle-2 | zoom          |              | text-below  | bdr-grey      | bg-grey           | icon-grey   | bdr-lg        |           |
 | 64px  | diamond    | shrink        |              | text-hover  |               | bg-none           | icon-none   | bdr-none      |           |
 |       | drop       | float         |              |             |               |                   |             |               |           |

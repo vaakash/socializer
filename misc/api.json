@@ -55,7 +55,7 @@
          "group": "features",
          "options":{
             "32px":"32px",
-            "16px":"16px",
+            "40px":"40px",
             "48px":"48px",
             "64px":"64px"
          }

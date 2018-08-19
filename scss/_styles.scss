@@ -61,3 +61,99 @@
 .sr-sw-icon-1.socializer a i{
     text-shadow: 0 1px 1px rgba(0,0,0,0.5)
 }
+
+// Counters
+.sr-count-1 span.ctext{
+    background: #FF5722;
+    position: absolute;
+    top: -0.6em;
+    right: -0.6em;
+    border-radius: 1em;
+    font-size: 0.6em;
+    line-height: 1;
+    padding: 0.3em 0.5em;
+    z-index: 99;
+    color: #fff;
+    box-shadow: 0 1px 3px -1px #000;
+}
+.sr-count-2 span.ctext{
+    font-size: 0.8em;
+    margin: 0;
+    padding: 0.5em;
+    font-weight: bold;
+    line-height: 0.8em;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 1em;
+}
+.sr-count-3 span.ctext{
+    font-size: 0.8em;
+    margin: 0;
+    font-weight: bold;
+    line-height: 0.8em;
+    border-left: 1px solid;
+    padding: 0 0 0 0.8em;
+}
+
+// Counters in vertical mode
+
+.sr-vertical.sr-count-2{
+    a{
+        height: auto;
+    }
+    span.ctext{
+        display: block;
+        font-size: 0.6em;
+        border-radius: 0;
+    }
+}
+.sr-vertical.sr-count-3{
+    a{
+        height: auto;
+    }
+    span.ctext{
+        display: block;
+        font-size: 0.6em;
+        border-radius: 0;
+        border-top: 1px solid;
+        padding: 0.5em;
+    }
+}
+
+// Counters with bubble styles
+.sr-bb-1{
+    .sr-text-in{
+        margin-right: 3.5em;
+    }
+    a{
+        position: relative;
+        overflow: visible;
+    }
+    span.ctext{
+        font-size: 0.8em;
+        font-weight: bold;
+        background: #fff;
+        border-radius: 3px;
+        color: #333;
+        position: absolute;
+        width: 3em;
+        top: 0;
+        bottom: 0;
+        padding: 0;
+        right: -3.5em;
+        border: 1px solid #dfdfdf;
+    }
+}
+
+// Counters with bubble style in vertical mode
+.sr-vertical.sr-bb-1{
+    span.ctext{
+        display: block;
+        position: static;
+        width: 100%;
+        margin: 0;
+        font-size: 0.7em;
+        line-height: 1;
+        padding: 0.3em 0;
+        margin-top: -0.3em;
+    }
+}
