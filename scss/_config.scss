@@ -56,11 +56,20 @@ $sites: (
     instagram: (
         color: #0d3c5f
     ),
+    line: (
+        color: #00C300
+    ),
     linkedin: (
         color: #0274B3
     ),
     medium: (
         color: #02b875
+    ),
+    mix: (
+        color: #ff8226
+    ),
+    odnoklassniki: (
+        color: #F2720C
     ),
     paypal: (
         color: #0070ba
@@ -80,11 +89,17 @@ $sites: (
     reddit: (
         color: #FF5600
     ),
+    renren: (
+        color: #005EAC
+    ),
     rss: (
         color: #FF7B0A
     ),
     shortlink: (
         color: #333
+    ),
+    skype: (
+        color: #00AFF0
     ),
     snapchat: (
         color: #FFFC00
@@ -122,6 +137,9 @@ $sites: (
     wechat: (
         color: #7BB32E
     ),
+    weibo: (
+        color: #E6162D
+    ),
     whatsapp: (
         color: #60b82d
     ),
@@ -133,7 +151,7 @@ $sites: (
     ),
     youtube: (
         color: #cc181e
-    ),
+    )
 );
 
 $size-list: ( 32px, 40px, 48px, 64px );

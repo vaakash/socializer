@@ -183,6 +183,11 @@
   border-color: #0d3c5f;
   background-color: #0d3c5f; }
 
+.socializer .sr-line a, .socializer .sr-line a:visited {
+  color: #00C300;
+  border-color: #00C300;
+  background-color: #00C300; }
+
 .socializer .sr-linkedin a, .socializer .sr-linkedin a:visited {
   color: #0274B3;
   border-color: #0274B3;
@@ -192,6 +197,16 @@
   color: #02b875;
   border-color: #02b875;
   background-color: #02b875; }
+
+.socializer .sr-mix a, .socializer .sr-mix a:visited {
+  color: #ff8226;
+  border-color: #ff8226;
+  background-color: #ff8226; }
+
+.socializer .sr-odnoklassniki a, .socializer .sr-odnoklassniki a:visited {
+  color: #F2720C;
+  border-color: #F2720C;
+  background-color: #F2720C; }
 
 .socializer .sr-paypal a, .socializer .sr-paypal a:visited {
   color: #0070ba;
@@ -223,6 +238,11 @@
   border-color: #FF5600;
   background-color: #FF5600; }
 
+.socializer .sr-renren a, .socializer .sr-renren a:visited {
+  color: #005EAC;
+  border-color: #005EAC;
+  background-color: #005EAC; }
+
 .socializer .sr-rss a, .socializer .sr-rss a:visited {
   color: #FF7B0A;
   border-color: #FF7B0A;
@@ -232,6 +252,11 @@
   color: #333;
   border-color: #333;
   background-color: #333; }
+
+.socializer .sr-skype a, .socializer .sr-skype a:visited {
+  color: #00AFF0;
+  border-color: #00AFF0;
+  background-color: #00AFF0; }
 
 .socializer .sr-snapchat a, .socializer .sr-snapchat a:visited {
   color: #FFFC00;
@@ -292,6 +317,11 @@
   color: #7BB32E;
   border-color: #7BB32E;
   background-color: #7BB32E; }
+
+.socializer .sr-weibo a, .socializer .sr-weibo a:visited {
+  color: #E6162D;
+  border-color: #E6162D;
+  background-color: #E6162D; }
 
 .socializer .sr-whatsapp a, .socializer .sr-whatsapp a:visited {
   color: #60b82d;
