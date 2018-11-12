@@ -26,6 +26,7 @@
         "odnoklassniki": [ "Odnoklassniki", "odnoklassniki", "https://connect.ok.ru/dk?st.cmd=OAuth2Login&st.layout=w&st.redirect=%252Fdk%253Fcmd%253DWidgetSharePreview%2526amp%253Bst.cmd%253DWidgetSharePreview%2526amp%253Bst.shareUrl%253D{url}&st._wt=1&st.client_id=-1", "#F2720C", "" ],
         "paypal": [ "PayPal", "paypal", "https://paypal.com", "#0070ba", "" ],
         "pdf": [ "PDF", "file-pdf-o", "https://www.printfriendly.com/print?url={url}", "#E61B2E", "" ],
+        "phone": [ "Phone", "phone", "#", "#1A73E8", "" ],
         "pinterest": [ "Pinterest", "pinterest", "https://www.pinterest.com/pin/create/button/?url={url}&amp;media={image}&amp;description={excerpt}", "#CB2027", "" ],
         "pocket": [ "Pocket", "get-pocket", "https://getpocket.com/save?url={url}&amp;title={title}", "#EF4056", "" ],
         "print": [ "Print", "print", "https://www.printfriendly.com/print?url={url}", "#6D9F00", "" ],

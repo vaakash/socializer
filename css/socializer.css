@@ -218,6 +218,11 @@
   border-color: #E61B2E;
   background-color: #E61B2E; }
 
+.socializer .sr-phone a, .socializer .sr-phone a:visited {
+  color: #1A73E8;
+  border-color: #1A73E8;
+  background-color: #1A73E8; }
+
 .socializer .sr-pinterest a, .socializer .sr-pinterest a:visited {
   color: #CB2027;
   border-color: #CB2027;
