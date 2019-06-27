@@ -76,6 +76,7 @@
             google: [ 'Google', 'google', 'https://www.google.com/bookmarks/mark?op=edit&amp;bkmk={url}&amp;title={title}&amp;annotation={excerpt}', '#3A7CEC', '' ],
             googleplus: [ 'Google Plus', 'google-plus', 'https://plus.google.com/share?url={url}', '#DB483B', '' ],
             hackernews: [ 'Hacker News', 'hacker-news', 'https://news.ycombinator.com/submitlink?u={url}&amp;t={title}', '#FF6500', '' ],
+            houzz: [ 'Houzz', 'houzz', 'https://houzz.com', '#4dbc15', '' ],
             instagram: [ 'Instagram', 'instagram', 'https://instagram.com', '#0d3c5f', '' ],
             linkedin: [ 'LinkedIn', 'linkedin', 'https://www.linkedin.com/shareArticle?mini=true&amp;url={url}&amp;title={title}&amp;summary={excerpt}', '#0274B3', '' ],
             medium: [ 'Medium', 'medium', 'https://medium.com', '#02b875', '' ],

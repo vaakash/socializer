@@ -178,6 +178,11 @@
   border-color: #FF6500;
   background-color: #FF6500; }
 
+.socializer .sr-houzz a, .socializer .sr-houzz a:visited {
+  color: #4dbc15;
+  border-color: #4dbc15;
+  background-color: #4dbc15; }
+
 .socializer .sr-instagram a, .socializer .sr-instagram a:visited {
   color: #0d3c5f;
   border-color: #0d3c5f;
@@ -398,7 +403,7 @@
     left: 1em;
     width: 0;
     height: 0;
-    border-color: #000 transparent transparent transparent; }
+    border-color: #000 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0); }
 
 .sr-text-hover:hover > .text {
   display: block; }
@@ -572,7 +577,7 @@
   right: 0;
   border-style: solid;
   border-color: inherit;
-  border-bottom-color: transparent;
+  border-bottom-color: rgba(0, 0, 0, 0);
   border-width: 0em 1em 0.5em 1em; }
 
 .sr-fluid {
@@ -719,7 +724,7 @@
     display: inline-block;
     position: absolute;
     border: 0.25em solid;
-    border-color: transparent transparent #fff transparent;
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #fff rgba(0, 0, 0, 0);
     top: -0.5em;
     left: 0.5em; }
   .sr-more .socializer:after {

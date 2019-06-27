@@ -1,10 +1,15 @@
 module.exports = function(grunt) {
 
+  var sass = require('node-sass');
+
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
 
     sass: {
+        options: {
+            implementation: sass
+        },
         main: {
             files: {
                 'css/socializer.css': 'scss/socializer.scss',
@@ -54,6 +59,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   
   grunt.registerTask( 'default', [ 'sass', 'cssmin' ] );
   
