@@ -143,6 +143,11 @@
   border-color: #000;
   background-color: #000; }
 
+.socializer .sr-etsy a, .socializer .sr-etsy a:visited {
+  color: #f1641e;
+  border-color: #f1641e;
+  background-color: #f1641e; }
+
 .socializer .sr-facebook a, .socializer .sr-facebook a:visited {
   color: #3e5b98;
   border-color: #3e5b98;

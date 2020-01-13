@@ -11,6 +11,7 @@
         "digg": [ "Digg", "digg", "https://digg.com/submit?url={url}&amp;title={title}", "#000", "" ],
         "dribbble": [ "Dribbble", "dribbble", "https://dribbble.com/", "#ea4c89", "" ],
         "email": [ "Email", "envelope", "mailto:?to=&amp;subject={title}&amp;body={excerpt}%20-%20{url}", "#000", "" ],
+        "etsy": [ "Etsy", "etsy", "https://www.etsy.com/", "#f1641e", "" ],
         "facebook": [ "Facebook", "facebook", "https://www.facebook.com/share.php?u={url}&amp;t={title}", "#3e5b98", "" ],
         "fbmessenger": [ "Facebook messenger", "comment", "fb-messenger://share?link={url}", "#2998ff", "" ],
         "flickr": [ "Flickr", "flickr", "https://www.flickr.com", "#1c9be9", "" ],
