@@ -1,6 +1,6 @@
 /*!
  * Socializer - CSS library for social media buttons
- * Copyright (c) 2016 Aakash Chakravarthy - www.aakashweb.com
+ * Copyright (c) 2020 Aakash Chakravarthy - www.aakashweb.com
  * MIT license
  */
 .socializer {
@@ -514,7 +514,8 @@
   font-size: 0.6em;
   border-radius: 0;
   border-top: 1px solid;
-  padding: 0.5em; }
+  padding: 0.5em;
+  border-left: 0; }
 
 .sr-bb-1 .sr-text-in {
   margin-right: 3.5em; }

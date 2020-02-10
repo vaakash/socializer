@@ -50,7 +50,7 @@ module.exports = function(grunt) {
                 'scss/_types.scss',
                 'scss/_sharebar.scss',
             ],
-            tasks: [ 'sass' ]
+            tasks: [ 'sass', 'cssmin' ]
         }
     }
 
