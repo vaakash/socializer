@@ -149,9 +149,9 @@
   background-color: #f1641e; }
 
 .socializer .sr-facebook a, .socializer .sr-facebook a:visited {
-  color: #3e5b98;
-  border-color: #3e5b98;
-  background-color: #3e5b98; }
+  color: #1977f3;
+  border-color: #1977f3;
+  background-color: #1977f3; }
 
 .socializer .sr-fbmessenger a, .socializer .sr-fbmessenger a:visited {
   color: #2998ff;
@@ -189,9 +189,9 @@
   background-color: #4dbc15; }
 
 .socializer .sr-instagram a, .socializer .sr-instagram a:visited {
-  color: #0d3c5f;
-  border-color: #0d3c5f;
-  background-color: #0d3c5f; }
+  color: #e23367;
+  border-color: #e23367;
+  background-color: #e23367; }
 
 .socializer .sr-line a, .socializer .sr-line a:visited {
   color: #00C300;
@@ -314,9 +314,9 @@
   background-color: #4b367c; }
 
 .socializer .sr-twitter a, .socializer .sr-twitter a:visited {
-  color: #4da7de;
-  border-color: #4da7de;
-  background-color: #4da7de; }
+  color: #1da1f2;
+  border-color: #1da1f2;
+  background-color: #1da1f2; }
 
 .socializer .sr-vimeo a, .socializer .sr-vimeo a:visited {
   color: #00ADEF;
@@ -354,9 +354,9 @@
   background-color: #4A00A1; }
 
 .socializer .sr-youtube a, .socializer .sr-youtube a:visited {
-  color: #cc181e;
-  border-color: #cc181e;
-  background-color: #cc181e; }
+  color: #ff0000;
+  border-color: #ff0000;
+  background-color: #ff0000; }
 
 .socializer .sr-more > a, .socializer .sr-more > a:visited {
   color: green;
@@ -568,12 +568,7 @@
     transform: rotate(-45deg); }
 
 .sr-drop a {
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
   border-radius: 50% 50% 0 50%; }
-  .sr-drop a > * {
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg); }
 
 .sr-ribbon a:after {
   content: '';

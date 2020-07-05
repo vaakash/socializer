@@ -26,11 +26,7 @@
 }
 .sr-drop{
     a{
-        @include transform( rotate( 45deg ) );
         border-radius: 50% 50% 0 50%;
-        > *{
-            @include transform( rotate( -45deg ) );
-        }
     }
 }
 .sr-ribbon{
