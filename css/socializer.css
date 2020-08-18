@@ -133,6 +133,11 @@
   border-color: #000;
   background-color: #000; }
 
+.socializer .sr-discord a, .socializer .sr-discord a:visited {
+  color: #7289da;
+  border-color: #7289da;
+  background-color: #7289da; }
+
 .socializer .sr-dribbble a, .socializer .sr-dribbble a:visited {
   color: #ea4c89;
   border-color: #ea4c89;
@@ -217,6 +222,11 @@
   color: #F2720C;
   border-color: #F2720C;
   background-color: #F2720C; }
+
+.socializer .sr-patreon a, .socializer .sr-patreon a:visited {
+  color: #e85b46;
+  border-color: #e85b46;
+  background-color: #e85b46; }
 
 .socializer .sr-paypal a, .socializer .sr-paypal a:visited {
   color: #0070ba;
