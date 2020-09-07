@@ -328,6 +328,11 @@
   border-color: #1da1f2;
   background-color: #1da1f2; }
 
+.socializer .sr-viber a, .socializer .sr-viber a:visited {
+  color: #574e92;
+  border-color: #574e92;
+  background-color: #574e92; }
+
 .socializer .sr-vimeo a, .socializer .sr-vimeo a:visited {
   color: #00ADEF;
   border-color: #00ADEF;
@@ -592,11 +597,9 @@
   border-width: 0em 1em 0.5em 1em; }
 
 .sr-fluid {
-  display: table;
-  width: 100%;
-  table-layout: fixed; }
+  display: flex;
+  width: 100%; }
   .sr-fluid > * {
-    display: table-cell;
     float: none;
     width: 100%; }
   .sr-fluid a {

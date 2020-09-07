@@ -1,10 +1,8 @@
 .sr-fluid{
-    display: table;
+    display: flex;
     width: 100%;
-    table-layout: fixed;
     
     >*{
-        display: table-cell;
         float: none;
         width: 100%;
     }
