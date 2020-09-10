@@ -96,7 +96,7 @@
             telegram: [ 'Telegram', 'telegram', 'https://telegram.me/share/url?url={url}&amp;text={title}', '#179cde', '' ],
             tumblr: [ 'Tumblr', 'tumblr', 'https://www.tumblr.com/share?v=3&amp;u={url}&amp;t={title}&amp;s={excerpt}', '#314358', '' ],
             twitch: [ 'Twitch', 'twitch', 'https://www.twitch.tv', '#4b367c', '' ],
-            twitter: [ 'Twitter', 'twitter', 'https://twitter.com/home?status={title}%20-%20{url}', '#4da7de', '' ],
+            twitter: [ 'Twitter', 'twitter', 'https://twitter.com/intent/tweet?text={title}%20-%20{url}', '#4da7de', '' ],
             vimeo: [ 'Vimeo', 'vimeo', 'https://vimeo.com', '#00ADEF', '' ],
             vkontakte: [ 'VKontakte', 'vk', 'https://vk.com/share.php?url={url}&amp;title={title}&amp;description={excerpt}', '#4C75A3', '' ],
             wechat: [ 'WeChat', 'wechat', 'weixin://dl/chat?text={url}', '#7BB32E', '' ],
