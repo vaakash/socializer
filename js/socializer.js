@@ -76,7 +76,7 @@
             'flickr': [ 'Flickr', 'fab fa-flickr', 'https://www.flickr.com', '#1c9be9', '' ],
             'github': [ 'Github', 'fab fa-github', 'https://www.github.com/', '#333', '' ],
             'google': [ 'Google', 'fab fa-google', 'https://www.google.com/bookmarks/mark?op=edit&amp;bkmk={url}&amp;title={title}&amp;annotation={excerpt}', '#3A7CEC', '' ],
-            'googleplus': [ 'Google Plus', 'fa fa-google-plus', 'https://plus.google.com/share?url={url}', '#DB483B', '' ],
+            'googleplus': [ 'Google Plus', 'fab fa-google-plus', 'https://plus.google.com/share?url={url}', '#DB483B', '' ],
             'hackernews': [ 'Hacker News', 'fab fa-hacker-news', 'https://news.ycombinator.com/submitlink?u={url}&amp;t={title}', '#FF6500', '' ],
             'houzz': [ 'Houzz', 'fab fa-houzz', 'https://instagram.com', '#4dbc15', '' ],
             'instagram': [ 'Instagram', 'fab fa-instagram', 'https://instagram.com', '#e23367', '' ],
