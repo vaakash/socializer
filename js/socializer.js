@@ -210,12 +210,12 @@
             
             var opts = this.ele.socializer;
             
-            this.link = (typeof opts.meta.link === 'undefined' ? window.location.href : opts.meta.link);
-            this.title = (typeof opts.meta.title === 'undefined' ? document.title : opts.meta.title);
-            this.description = (typeof opts.meta.description === 'undefined' ? '' : opts.meta.description);
-            this.image = (typeof opts.meta.image === 'undefined' ? '' : opts.meta.image);
-            this.rss = (typeof opts.meta.rss === 'undefined' ? '' : opts.meta.rss);
-            this.twitterusername = (typeof opts.meta.twitterusername === 'undefined' ? '' : opts.meta.twitterusername);
+            this.link = (typeof opts.meta.link !== 'undefined' && opts.meta.link) ? opts.meta.link : window.location.href;
+            this.title = (typeof opts.meta.title !== 'undefined' && opts.meta.title) ? opts.meta.title : document.title;
+            this.description = (typeof opts.meta.description !== 'undefined' && opts.meta.description) ? opts.meta.description : '';
+            this.image = (typeof opts.meta.image !== 'undefined' && opts.meta.image) ? opts.meta.image : '';
+            this.rss = (typeof opts.meta.rss !== 'undefined' && opts.meta.rss) ? opts.meta.rss : '';
+            this.twitterusername = (typeof opts.meta.twitterusername !== 'undefined' && opts.meta.twitterusername) ? opts.meta.twitterusername : '';
             
         },
 
