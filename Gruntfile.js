@@ -25,7 +25,6 @@ module.exports = function(grunt) {
         }
     },
     
-    
     uglify: {
         options: {
             banner: '/* Socializer.js - aakashweb.com - Aakash Chakravarthy - MIT License */',
