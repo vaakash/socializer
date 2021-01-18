@@ -23,6 +23,8 @@
 	}
 </style>
 
+<div class="all_icons" data-features="32px,icon-white,pad" data-text="no" data-meta-title="From meta attr"></div><br/>
+
 <div class="hey socializer" data-features="32px,icon-white,pad" data-sites="facebook,twitter,rss,googleplus,print" data-text="no" data-meta-title="From meta attr"></div><br/>
 
 <div class="hey2 socializer" data-features="32px,icon-white" data-sites="facebook,twitter,rss,googleplus,print" data-text="no"></div><br/>
@@ -312,6 +314,10 @@
     socializer( '.hey', {meta: {title: 'From JS options', link: 'https://google.com/?s=aakash&t=1'}} );
     socializer( '.hey2' );
     
+    socializer( '.all_icons', {
+        sites: Object.keys(socializer().sites)
+    });
+
 }());</script>
 
 
