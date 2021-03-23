@@ -1,6 +1,6 @@
 /*!
  * Socializer - CSS library for social media buttons
- * Copyright (c) 2020 Aakash Chakravarthy - www.aakashweb.com
+ * Copyright (c) 2021 Aakash Chakravarthy - www.aakashweb.com
  * MIT license
  */
 .socializer {
@@ -312,6 +312,11 @@
   color: #179cde;
   border-color: #179cde;
   background-color: #179cde; }
+
+.socializer .sr-tiktok a, .socializer .sr-tiktok a:visited {
+  color: #010101;
+  border-color: #010101;
+  background-color: #010101; }
 
 .socializer .sr-tumblr a, .socializer .sr-tumblr a:visited {
   color: #314358;

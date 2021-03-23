@@ -44,6 +44,7 @@
         "stackoverflow": [ "StackOverflow", "fab fa-stack-overflow", "https://stackoverflow.com/", "#F48024", "" ],
         "quora": [ "Quora", "fab fa-quora", "https://www.quora.com", "#b92b27", "" ],
         "telegram": [ "Telegram", "fab fa-telegram-plane", "https://telegram.me/share/url?url={url}&text={title}", "#179cde", "" ],
+        "tiktok": [ "TikTok", "fab fa-tiktok", "https://www.tiktok.com/", "#010101", "" ],
         "tumblr": [ "Tumblr", "fab fa-tumblr", "https://www.tumblr.com/share?v=3&u={url}&t={title}&s={excerpt}", "#314358", "" ],
         "twitch": [ "Twitch", "fab fa-twitch", "https://www.twitch.tv", "#4b367c", "" ],
         "twitter": [ "Twitter", "fab fa-twitter", "https://twitter.com/intent/tweet?text={title}%20-%20{url}%20{twitter-username}", "#1da1f2", "" ],

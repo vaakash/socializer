@@ -1,6 +1,6 @@
 {
   "name": "socializer",
-  "version": "0.0.1",
+  "version": "1.52",
   "devDependencies": {
     "grunt": "^1.2.1",
     "grunt-contrib-cssmin": "^3.0.0",
