@@ -1,10 +1,10 @@
 # Socializer.css
 
-Socializer is a css library to create customizable social media sharing buttons and floating sharebars easily with handful of predefined classes and styles.
+Socializer is a CSS library to create customizable social media share buttons/icons and floating sharebars easily with handful of predefined classes and styles.
 
-[![Socializer CSS](misc/resources/socializer-css-banner.png)](http://http://www.aakashweb.com/demos/jquery-conditioner)
+[![Socializer CSS](misc/resources/socializer-css-banner.png)](https://www.aakashweb.com/css-libraries/socializer-css/)
 
-[Socializer button generator](http://www.aakashweb.com/apps/social-buttons-generator/)
+[Social buttons/icons generator](https://www.aakashweb.com/apps/social-buttons-generator/)
 
 ## Features
 
@@ -17,28 +17,28 @@ Socializer is a css library to create customizable social media sharing buttons 
 
 ## Usage
 
-Socializer css libary requires the following resources to be included and the HTML for the social button can be created either with or without socializer.js
+Socializer css library requires the following resources to be included and the HTML for the social button can be created either with or without socializer.js
 
-- The socializer css libary itself
+- The socializer css library itself
 - Fontawesome icon font or any other icon font or custom image icons
 - Socializer.js to automatically generate HTML on the fly, similar to a social button widget is required.
 
-There is a web app to [generate social buttons](http://www.aakashweb.com/apps/social-buttons-generator/) code for socializer CSS library.
+There is a web app to [generate social buttons](https://www.aakashweb.com/apps/social-buttons-generator/) code for socializer CSS library.
 
 ### Includes
 
 ```HTML
-<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/vaakash/socializer/master/socializer.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/vaakash/socializer@master/css/socializer.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
 ```
 
 ### With socializer.js
 
 ```HTML
 <!-- Turns into social sharebar -->
-<div class="socializer" data-features="32px,circle,icon-white,pad" data-sites="facebook,googleplus,print,email,rss"></div>
+<div class="socializer" data-features="32px,circle,icon-white,pad" data-sites="facebook,twitter,pinterest,print,email,rss"></div>
 
-<script src="https://cdn.rawgit.com/vaakash/socializer/master/js/socializer.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/vaakash/socializer@master/js/socializer.js"></script>
 <script>
 (function(){
     socializer( '.socializer' );
@@ -57,7 +57,7 @@ There is a web app to [generate social buttons](http://www.aakashweb.com/apps/so
         <a href="#"><i class="fa fa-facebook"></i></a>
     </li>
     <li class="sr-googleplus">
-        <a href="#"><i class="fa fa-google-plus"></i></a>
+        <a href="#"><i class="fa fa-pinterest"></i></a>
     </li>
 </ul>
 ```
@@ -100,12 +100,12 @@ Sharebar is identified with the `sr-sharebar` class assigned to the parent of th
 
 ### Documentation
 
-[Click here](http://www.aakashweb.com/docs/socializer-css/) to see the docs of this plugin.
+[Click here](https://www.aakashweb.com/docs/socializer-css/) to see the docs of this plugin.
 
 ### WordPress plugin
 
-WP Socializer is a wordpress plugin for social media buttons and it uses `socializer.css` for sharebar. [Check it out](http://www.aakashweb.com/wordpress-plugins/wp-socializer/)
+WP Socializer is a wordpress plugin for social media buttons and it uses `socializer.css` for sharebar. [Check it out](https://www.aakashweb.com/wordpress-plugins/wp-socializer/)
 
 ### License
 
-Copyright (c) 2016 [Aakash Chakravarthy](http://www.aakashweb.com/), released under the MIT License.
+Copyright (c) 2021 [Aakash Chakravarthy](https://www.aakashweb.com/), released under the MIT License.

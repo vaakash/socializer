@@ -69,7 +69,7 @@
             'digg': [ 'Digg', 'fab fa-digg', 'https://digg.com/submit?url={url}&title={title}', '#000', '' ],
             'discord': [ 'Discord', 'fab fa-discord', 'https://discord.com/', '#7289da', '' ],
             'dribbble': [ 'Dribbble', 'fab fa-dribbble', 'https://dribbble.com/', '#ea4c89', '' ],
-            'email': [ 'Email', 'fa fa-envelope', 'mailto:?to=&subject={title}&body={excerpt}%20-%20{url}', '#000', '' ],
+            'email': [ 'Email', 'fa fa-envelope', 'mailto:?subject={title}&body={excerpt}%20-%20{url}', '#000', '' ],
             'etsy': [ 'Etsy', 'fab fa-etsy', 'https://www.etsy.com/', '#f1641e', '' ],
             'facebook': [ 'Facebook', 'fab fa-facebook-f', 'https://www.facebook.com/share.php?u={url}&t={title}', '#1977f3', '' ],
             'fbmessenger': [ 'Facebook messenger', 'fa fa-comment', 'fb-messenger://share?link={url}', '#2998ff', '' ],
