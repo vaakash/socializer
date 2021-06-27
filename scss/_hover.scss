@@ -65,3 +65,11 @@
         opacity: 0.2;
     }
 }
+.sr-fade-dark a{
+    &:hover{
+        filter: brightness(0.8);
+    }
+    &:active{
+        filter: brightness(0.5);
+    }
+}

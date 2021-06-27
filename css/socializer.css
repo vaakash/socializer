@@ -6,14 +6,15 @@
 .socializer {
   padding: 0;
   margin: 0;
-  display: inline-block; }
+  display: inline-flex;
+  flex-wrap: wrap; }
   .socializer > * {
-    float: left;
     list-style: none;
     padding: 0;
     margin: 0;
     display: inline-block;
-    position: relative; }
+    position: relative;
+    line-height: 0; }
   .socializer a {
     font-family: sans-serif !important;
     display: inline-block;
@@ -392,11 +393,14 @@
     .sr-text-in a > *:last-child {
       padding-right: 0; }
 
+.sr-text-in .text {
+  font-size: 0.8em; }
+
 .sr-text-out a {
   vertical-align: middle; }
 
 .sr-text-out .text {
-  font-size: 12px;
+  font-size: 0.8em;
   margin-left: 0.5em;
   vertical-align: middle; }
 
@@ -404,7 +408,7 @@
   text-align: center; }
   .sr-text-below .text {
     display: block;
-    font-size: 12px;
+    font-size: 0.8em;
     margin-top: 0.5em; }
 
 .sr-text-hover .text {
@@ -603,7 +607,8 @@
 
 .sr-fluid {
   display: flex;
-  width: 100%; }
+  width: 100%;
+  flex-wrap: nowrap; }
   .sr-fluid > * {
     float: none;
     width: 100%; }
@@ -629,7 +634,8 @@
     width: 100%; }
 
 .sr-vertical {
-  width: 16px; }
+  width: 16px;
+  flex-direction: column; }
   .sr-vertical.sr-32px {
     width: 32px; }
     .sr-vertical.sr-32px > * {
@@ -718,6 +724,12 @@
 
 .sr-fade-black a:active {
   opacity: 0.2; }
+
+.sr-fade-dark a:hover {
+  filter: brightness(0.8); }
+
+.sr-fade-dark a:active {
+  filter: brightness(0.5); }
 
 .sr-pad > * {
   margin-right: 0.5em; }

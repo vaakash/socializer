@@ -9,7 +9,7 @@ Socializer is a CSS library to create customizable social media share buttons/ic
 ## Features
 
 - **35 icon color schemes** including all famous social media sites
-- 6 button shapes, 8 hover styles, 5 text styles, 3 layout types, 17 border, background and shadow styles in total = **12240 different customizations**. See below for the class names.
+- 6 button shapes, 9 hover styles, 5 text styles, 3 layout types, 17 border, background and shadow styles in total = **13770 different customizations**. See below for the class names.
 - Support for **vertical icons**
 - Support for **floating sharebar**, both vertical and horizontal.
 - Support for **more** menu
@@ -76,6 +76,7 @@ Social bar is identified with the class `socializer`. All classes below should b
 |       | ribbon     | sink          |              |             |               |                   |             |               |           |
 |       |            | fade-white    |              |             |               |                   |             |               |           |
 |       |            | fade-black    |              |             |               |                   |             |               |           |
+|       |            | fade-dark     |              |             |               |                   |             |               |           |
 
 ## Floating Sharebar
 

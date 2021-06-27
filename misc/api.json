@@ -101,7 +101,8 @@
             "float":"Float",
             "sink":"Sink",
             "fade-white":"Fade to white",
-            "fade-black":"Fade to black"
+            "fade-black":"Fade to black",
+            "fade-dark":"Fade to dark"
          }
       },
       "layouts":{

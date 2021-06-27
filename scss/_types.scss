@@ -1,6 +1,7 @@
 .sr-fluid{
     display: flex;
     width: 100%;
+    flex-wrap: nowrap;
     
     >*{
         float: none;
@@ -40,6 +41,7 @@
 
 .sr-vertical{
     width: 16px;
+    flex-direction: column;
     
     @each $size in $size-list{
         &.sr-#{$size}{

@@ -1,12 +1,17 @@
-.sr-text-in a{
-    width: auto;
-    padding: 0 1em;
-    overflow: hidden;
-    &>*{
-      padding-right: 0.5em;
-      &:last-child{
-        padding-right: 0;
-      }
+.sr-text-in{
+    a{
+        width: auto;
+        padding: 0 1em;
+        overflow: hidden;
+        &>*{
+            padding-right: 0.5em;
+            &:last-child{
+                padding-right: 0;
+            }
+        }
+    }
+    .text{
+        font-size: 0.8em;
     }
 }
 .sr-text-out{
@@ -14,7 +19,7 @@
         vertical-align: middle;
     }
     .text{
-        font-size: 12px;
+        font-size: 0.8em;
         margin-left: 0.5em;
         vertical-align: middle;
     }
@@ -24,7 +29,7 @@
     
     .text{
         display: block;
-        font-size: 12px;
+        font-size: 0.8em;
         margin-top: 0.5em;
     }
 }
