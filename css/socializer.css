@@ -284,6 +284,11 @@
   border-color: #00AFF0;
   background-color: #00AFF0; }
 
+.socializer .sr-sms a, .socializer .sr-sms a:visited {
+  color: #35d54f;
+  border-color: #35d54f;
+  background-color: #35d54f; }
+
 .socializer .sr-snapchat a, .socializer .sr-snapchat a:visited {
   color: #FFFC00;
   border-color: #FFFC00;

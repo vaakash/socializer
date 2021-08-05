@@ -39,6 +39,7 @@
         "rss": [ "RSS", "fa fa-rss", "{rss-url}", "#FF7B0A", "" ],
         "shortlink": [ "Short link", "fa fa-link", "{url}", "#333", "socializer_shortlink( event, this )" ],
         "skype": [ "Skype", "fab fa-skype", "https://web.skype.com/share?url={url}", "#00AFF0", "" ],
+        "sms": [ "SMS", "fa fa-sms", "sms:?&body={title}%20{url}", "#35d54f", "" ],
         "snapchat": [ "Snapchat", "fab fa-snapchat", "https://snapchat.com", "#FFFC00", "" ],
         "soundcloud": [ "Soundcloud", "fab fa-soundcloud", "https://soundcloud.com/", "#f50", "" ],
         "stackoverflow": [ "StackOverflow", "fab fa-stack-overflow", "https://stackoverflow.com/", "#F48024", "" ],
