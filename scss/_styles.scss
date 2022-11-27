@@ -71,7 +71,7 @@
     border-radius: 1em;
     font-size: 0.6em;
     line-height: 1;
-    padding: 0.3em 0.5em;
+    padding: 0.3em 0.5em !important;
     z-index: 99;
     color: #fff;
     box-shadow: 0 1px 3px -1px #000;
@@ -97,27 +97,28 @@
 // Counters in vertical mode
 
 .sr-vertical.sr-count-2{
-    a{
-        height: auto;
-    }
     span.ctext{
-        display: block;
         font-size: 0.6em;
         border-radius: 0;
         padding: 0.5em;
+        width: 100%;
     }
 }
 .sr-vertical.sr-count-3{
-    a{
-        height: auto;
-    }
     span.ctext{
-        display: block;
         font-size: 0.6em;
         border-radius: 0;
         border-top: 1px solid;
         padding: 0.5em;
         border-left: 0;
+        width: 100%;
+    }
+}
+
+.sr-vertical.sr-count-2 .sr-text-in a, .sr-vertical.sr-count-3 .sr-text-in a{
+    height: auto;
+    i{
+        margin: 0.5em 0;
     }
 }
 

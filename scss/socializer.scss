@@ -1,6 +1,6 @@
 /*!
  * Socializer - CSS library for social media buttons
- * Copyright (c) 2021 Aakash Chakravarthy - www.aakashweb.com
+ * Copyright (c) 2022 Aakash Chakravarthy - www.aakashweb.com
  * MIT license
  */
  
@@ -26,22 +26,20 @@
     
     a{
         font-family: sans-serif !important;
-        display: inline-block;
+        display: inline-flex;
         border: 0;
         text-align: center;
         text-decoration: none;
         width: $size;
         height: $size;
-        line-height: $size+2;
         font-size: $size/2;
         border-style: solid;
         box-sizing: content-box;
+        align-items: center;
+        justify-content: center;
         
         transition: all 0.5s;
-        -webkit-transition: all 0.2s;
-        
         transition-timing-function: ease-out;
-        -webkit-transition-timing-function: ease-out;
         
         &>*{
             display: inline-block;
@@ -67,7 +65,6 @@
         a{
             width: $size;
             height: $size;
-            line-height: $size;
             font-size: $size/2;
         }
         &.sr-font-sm a{
@@ -95,7 +92,6 @@
 
 // Mixins
 @mixin transform($transforms) {
-    -webkit-transform: $transforms;
     transform: $transforms;
 }
 

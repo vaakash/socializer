@@ -1,6 +1,6 @@
 # Socializer.css
 
-Socializer is a CSS library to create customizable social media share buttons/icons and floating sharebars easily with handful of predefined classes and styles.
+Socializer is a CSS library to create customizable social media share buttons/icons and floating sharebar easily with handful of predefined classes and styles.
 
 [![Socializer CSS](misc/resources/socializer-css-banner.png)](https://www.aakashweb.com/css-libraries/socializer-css/)
 
@@ -101,7 +101,7 @@ Sharebar is identified with the `sr-sharebar` class assigned to the parent of th
 
 ### Documentation
 
-[Click here](https://www.aakashweb.com/docs/socializer-css/) to see the docs of this plugin.
+[Click here](https://www.aakashweb.com/docs/socializer-css/) to see the docs of this library.
 
 ### WordPress plugin
 
@@ -109,4 +109,4 @@ WP Socializer is a wordpress plugin for social media buttons and it uses `social
 
 ### License
 
-Copyright (c) 2021 [Aakash Chakravarthy](https://www.aakashweb.com/), released under the MIT License.
+Copyright (c) 2022 [Aakash Chakravarthy](https://www.aakashweb.com/), released under the MIT License.

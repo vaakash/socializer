@@ -1,6 +1,6 @@
 /*!
  * Socializer - CSS library for social media buttons
- * Copyright (c) 2021 Aakash Chakravarthy - www.aakashweb.com
+ * Copyright (c) 2022 Aakash Chakravarthy - www.aakashweb.com
  * MIT license
  */
 .socializer {
@@ -17,20 +17,19 @@
     line-height: 0; }
   .socializer a {
     font-family: sans-serif !important;
-    display: inline-block;
+    display: inline-flex;
     border: 0;
     text-align: center;
     text-decoration: none;
     width: 16px;
     height: 16px;
-    line-height: 18px;
     font-size: 8px;
     border-style: solid;
     box-sizing: content-box;
+    align-items: center;
+    justify-content: center;
     transition: all 0.5s;
-    -webkit-transition: all 0.2s;
-    transition-timing-function: ease-out;
-    -webkit-transition-timing-function: ease-out; }
+    transition-timing-function: ease-out; }
     .socializer a > * {
       display: inline-block;
       vertical-align: middle;
@@ -46,7 +45,6 @@
   .sr-32px a {
     width: 32px;
     height: 32px;
-    line-height: 32px;
     font-size: 16px; }
   .sr-32px.sr-font-sm a {
     font-size: 10.6666666667px; }
@@ -58,7 +56,6 @@
   .sr-40px a {
     width: 40px;
     height: 40px;
-    line-height: 40px;
     font-size: 20px; }
   .sr-40px.sr-font-sm a {
     font-size: 13.3333333333px; }
@@ -70,7 +67,6 @@
   .sr-48px a {
     width: 48px;
     height: 48px;
-    line-height: 48px;
     font-size: 24px; }
   .sr-48px.sr-font-sm a {
     font-size: 16px; }
@@ -82,7 +78,6 @@
   .sr-64px a {
     width: 64px;
     height: 64px;
-    line-height: 64px;
     font-size: 32px; }
   .sr-64px.sr-font-sm a {
     font-size: 21.3333333333px; }
@@ -504,7 +499,7 @@
   border-radius: 1em;
   font-size: 0.6em;
   line-height: 1;
-  padding: 0.3em 0.5em;
+  padding: 0.3em 0.5em !important;
   z-index: 99;
   color: #fff;
   box-shadow: 0 1px 3px -1px #000; }
@@ -526,25 +521,24 @@
   border-left: 1px solid;
   padding: 0 0 0 0.8em; }
 
-.sr-vertical.sr-count-2 a {
-  height: auto; }
-
 .sr-vertical.sr-count-2 span.ctext {
-  display: block;
   font-size: 0.6em;
   border-radius: 0;
-  padding: 0.5em; }
-
-.sr-vertical.sr-count-3 a {
-  height: auto; }
+  padding: 0.5em;
+  width: 100%; }
 
 .sr-vertical.sr-count-3 span.ctext {
-  display: block;
   font-size: 0.6em;
   border-radius: 0;
   border-top: 1px solid;
   padding: 0.5em;
-  border-left: 0; }
+  border-left: 0;
+  width: 100%; }
+
+.sr-vertical.sr-count-2 .sr-text-in a, .sr-vertical.sr-count-3 .sr-text-in a {
+  height: auto; }
+  .sr-vertical.sr-count-2 .sr-text-in a i, .sr-vertical.sr-count-3 .sr-text-in a i {
+    margin: 0.5em 0; }
 
 .sr-bb-1 .sr-text-in {
   margin-right: 3.5em; }
@@ -590,10 +584,8 @@
   border-radius: 0 0.5em 0 0.5em; }
 
 .sr-diamond a {
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg); }
   .sr-diamond a > * {
-    -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg); }
 
 .sr-drop a {
@@ -659,6 +651,8 @@
       width: 64px; }
   .sr-vertical.sr-pad > * {
     margin: 0 0 0.5em 0; }
+  .sr-vertical a {
+    flex-direction: column; }
   .sr-vertical .sr-text-in {
     line-height: 1; }
     .sr-vertical .sr-text-in a {
@@ -676,44 +670,34 @@
   opacity: 0.8; }
 
 .sr-rotate a:hover {
-  -webkit-transform: rotate(15deg);
   transform: rotate(15deg); }
 
 .sr-rotate a:active {
-  -webkit-transform: rotate(0);
   transform: rotate(0); }
 
 .sr-zoom a:hover {
-  -webkit-transform: scale(1.1);
   transform: scale(1.1);
   z-index: 9999; }
 
 .sr-zoom a:active {
-  -webkit-transform: scale(0.9);
   transform: scale(0.9); }
 
 .sr-shrink a:hover {
-  -webkit-transform: scale(0.9);
   transform: scale(0.9); }
 
 .sr-shrink a:active {
-  -webkit-transform: scale(0.7);
   transform: scale(0.7); }
 
 .sr-float a:hover {
-  -webkit-transform: translateY(-5px);
   transform: translateY(-5px); }
 
 .sr-float a:active {
-  -webkit-transform: translateY(0);
   transform: translateY(0); }
 
 .sr-sink a:hover {
-  -webkit-transform: translateY(5px);
   transform: translateY(5px); }
 
 .sr-sink a:active {
-  -webkit-transform: translateY(0);
   transform: translateY(0); }
 
 .sr-fade-white a:hover {

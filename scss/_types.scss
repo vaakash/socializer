@@ -56,6 +56,10 @@
         margin: 0 0 0.5em 0;
     }
     
+    a{
+        flex-direction: column;
+    }
+
     .sr-text-in {
         line-height: 1;
         
