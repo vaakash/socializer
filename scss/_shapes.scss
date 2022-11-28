@@ -36,9 +36,13 @@
         position: absolute;
         left: 0;
         right: 0;
+        bottom: -0.5em;
         border-style: solid;
         border-color: inherit;
         border-bottom-color: rgba(0, 0, 0, 0);
         border-width: 0em 1em 0.5em 1em;
     }
+}
+.sr-ribbon.sr-vertical > *{
+    margin-bottom: 1em !important;
 }
