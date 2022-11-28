@@ -28,6 +28,9 @@
     a{
         border-radius: 50% 50% 0 50%;
     }
+    .sr-text-in a{
+        border-radius: 1em 1em 0 1em;
+    }
 }
 .sr-ribbon{
     a:after {
@@ -36,7 +39,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        bottom: -0.5em;
+        top: calc( 100% - 0.25em / 2 );
         border-style: solid;
         border-color: inherit;
         border-bottom-color: rgba(0, 0, 0, 0);
