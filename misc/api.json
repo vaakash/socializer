@@ -9,7 +9,7 @@
         "delicious": [ "Delicious", "fab fa-delicious", "https://delicious.com/post?url={url}&title={title}&notes={excerpt}", "#3274D1", "" ],
         "deviantart": [ "DeviantArt", "fab fa-deviantart", "https://deviantart.com", "#475c4d", "" ],
         "digg": [ "Digg", "fab fa-digg", "https://digg.com/submit?url={url}&title={title}", "#000", "" ],
-        "discord": [ "Discord", "fab fa-discord", "https://discord.com/", "#7289da", "" ],
+        "discord": [ "Discord", "fab fa-discord", "https://discord.com/", "#5865f2", "" ],
         "dribbble": [ "Dribbble", "fab fa-dribbble", "https://dribbble.com/", "#ea4c89", "" ],
         "email": [ "Email", "fa fa-envelope", "mailto:?subject={title}&body={excerpt}%20-%20{url}", "#000", "" ],
         "etsy": [ "Etsy", "fab fa-etsy", "https://www.etsy.com/", "#f1641e", "" ],
