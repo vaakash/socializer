@@ -1,6 +1,6 @@
 /*!
  * Socializer - CSS library for social media buttons
- * Copyright (c) 2022 Aakash Chakravarthy - www.aakashweb.com
+ * Copyright (c) 2023 Aakash Chakravarthy - www.aakashweb.com
  * MIT license
  */
 .socializer {
@@ -150,19 +150,24 @@
   background-color: #f1641e; }
 
 .socializer .sr-facebook a, .socializer .sr-facebook a:visited {
-  color: #1977f3;
-  border-color: #1977f3;
-  background-color: #1977f3; }
+  color: #0866ff;
+  border-color: #0866ff;
+  background-color: #0866ff; }
 
 .socializer .sr-fbmessenger a, .socializer .sr-fbmessenger a:visited {
-  color: #2998ff;
-  border-color: #2998ff;
-  background-color: #2998ff; }
+  color: #0866ff;
+  border-color: #0866ff;
+  background-color: #0866ff; }
 
 .socializer .sr-flickr a, .socializer .sr-flickr a:visited {
   color: #1c9be9;
   border-color: #1c9be9;
   background-color: #1c9be9; }
+
+.socializer .sr-flipboard a, .socializer .sr-flipboard a:visited {
+  color: #F52828;
+  border-color: #F52828;
+  background-color: #F52828; }
 
 .socializer .sr-github a, .socializer .sr-github a:visited {
   color: #333;
@@ -203,6 +208,11 @@
   color: #0274B3;
   border-color: #0274B3;
   background-color: #0274B3; }
+
+.socializer .sr-mastodon a, .socializer .sr-mastodon a:visited {
+  color: #6364ff;
+  border-color: #6364ff;
+  background-color: #6364ff; }
 
 .socializer .sr-medium a, .socializer .sr-medium a:visited {
   color: #02b875;
@@ -314,6 +324,11 @@
   border-color: #179cde;
   background-color: #179cde; }
 
+.socializer .sr-threads a, .socializer .sr-threads a:visited {
+  color: #000;
+  border-color: #000;
+  background-color: #000; }
+
 .socializer .sr-tiktok a, .socializer .sr-tiktok a:visited {
   color: #010101;
   border-color: #010101;
@@ -360,9 +375,14 @@
   background-color: #E6162D; }
 
 .socializer .sr-whatsapp a, .socializer .sr-whatsapp a:visited {
-  color: #60b82d;
-  border-color: #60b82d;
-  background-color: #60b82d; }
+  color: #25d366;
+  border-color: #25d366;
+  background-color: #25d366; }
+
+.socializer .sr-x a, .socializer .sr-x a:visited {
+  color: #000;
+  border-color: #000;
+  background-color: #000; }
 
 .socializer .sr-xing a, .socializer .sr-xing a:visited {
   color: #006567;

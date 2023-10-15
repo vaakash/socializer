@@ -29,7 +29,7 @@ There is a web app to [generate social buttons](https://www.aakashweb.com/apps/s
 
 ```HTML
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/vaakash/socializer@master/css/socializer.min.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
 ```
 
 ### With socializer.js
@@ -50,14 +50,14 @@ There is a web app to [generate social buttons](https://www.aakashweb.com/apps/s
 
 ```HTML
 <ul class="socializer sr-32px sr-icon-white"> <!-- Customization class names go here -->
-    <li class="sr-twitter">
-        <a href="#"><i class="fa fa-twitter"></i></a>
-    </li>
     <li class="sr-facebook">
-        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
     </li>
-    <li class="sr-googleplus">
-        <a href="#"><i class="fa fa-pinterest"></i></a>
+    <li class="sr-linkedin">
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </li>
+    <li class="sr-whatsapp">
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
     </li>
 </ul>
 ```
@@ -109,4 +109,4 @@ WP Socializer is a wordpress plugin for social media buttons and it uses `social
 
 ### License
 
-Copyright (c) 2022 [Aakash Chakravarthy](https://www.aakashweb.com/), released under the MIT License.
+Copyright (c) 2023 [Aakash Chakravarthy](https://www.aakashweb.com/), released under the MIT License.
