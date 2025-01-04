@@ -264,6 +264,11 @@
   border-color: #EF4056;
   background-color: #EF4056; }
 
+.socializer .sr-podcast a, .socializer .sr-podcast a:visited {
+  color: #7224d8;
+  border-color: #7224d8;
+  background-color: #7224d8; }
+
 .socializer .sr-print a, .socializer .sr-print a:visited {
   color: #6D9F00;
   border-color: #6D9F00;

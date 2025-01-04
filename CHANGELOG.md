@@ -1,5 +1,6 @@
 ### v2.1
 * Support for Bluesky icon
+* Support for Podcast icon
 
 ### v2.0
 * Upgrade to FontAwesome v6

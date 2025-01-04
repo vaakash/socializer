@@ -36,6 +36,7 @@
         "phone": [ "Phone", "fa fa-phone", "#", "#1A73E8", "" ],
         "pinterest": [ "Pinterest", "fab fa-pinterest", "https://www.pinterest.com/pin/create/button/?url={url}&media={image}&description={excerpt}", "#CB2027", "" ],
         "pocket": [ "Pocket", "fab fa-get-pocket", "https://getpocket.com/save?url={url}&title={title}", "#EF4056", "" ],
+        "podcast": [ "Podcast", "fa fa-podcast", "#", "#7224d8", "" ],
         "print": [ "Print", "fa fa-print", "https://www.printfriendly.com/print?url={url}", "#6D9F00", "" ],
         "reddit": [ "Reddit", "fab fa-reddit", "https://reddit.com/submit?url={url}&title={title}", "#FF5600", "" ],
         "renren": [ "Renren", "fab fa-renren", "https://www.connect.renren.com/share/sharer?url={url}&title={title}", "#005EAC", "" ],
