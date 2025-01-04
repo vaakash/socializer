@@ -1,3 +1,6 @@
+### v2.1
+* Support for Bluesky icon
+
 ### v2.0
 * Upgrade to FontAwesome v6
 * Support for X icon

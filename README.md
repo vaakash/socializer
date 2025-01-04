@@ -29,7 +29,7 @@ There is a web app to [generate social buttons](https://www.aakashweb.com/apps/s
 
 ```HTML
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/vaakash/socializer@master/css/socializer.min.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css">
 ```
 
 ### With socializer.js
@@ -109,4 +109,4 @@ WP Socializer is a wordpress plugin for social media buttons and it uses `social
 
 ### License
 
-Copyright (c) 2023 [Aakash Chakravarthy](https://www.aakashweb.com/), released under the MIT License.
+Copyright (c) 2025 [Aakash Chakravarthy](https://www.aakashweb.com/), released under the MIT License.

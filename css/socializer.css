@@ -1,6 +1,6 @@
 /*!
  * Socializer - CSS library for social media buttons
- * Copyright (c) 2023 Aakash Chakravarthy - www.aakashweb.com
+ * Copyright (c) 2025 Aakash Chakravarthy - www.aakashweb.com
  * MIT license
  */
 .socializer {
@@ -103,6 +103,11 @@
   color: #FF6501;
   border-color: #FF6501;
   background-color: #FF6501; }
+
+.socializer .sr-bluesky a, .socializer .sr-bluesky a:visited {
+  color: #1083fe;
+  border-color: #1083fe;
+  background-color: #1083fe; }
 
 .socializer .sr-codepen a, .socializer .sr-codepen a:visited {
   color: #000;
