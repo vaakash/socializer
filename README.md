@@ -109,4 +109,4 @@ WP Socializer is a wordpress plugin for social media buttons and it uses `social
 
 ### License
 
-Copyright (c) 2025 [Aakash Chakravarthy](https://www.aakashweb.com/), released under the MIT License.
+Copyright (c) 2026 [Aakash Chakravarthy](https://www.aakashweb.com/), released under the MIT License.

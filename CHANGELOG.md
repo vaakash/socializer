@@ -1,3 +1,7 @@
+### v3.0
+* Removed Delicious, Digg, Google, Google Plus, Pocket, Renren, StumbleUpon, and Yahoo! Bookmarks icons
+* Support for Substack icon
+
 ### v2.1
 * Support for Bluesky icon
 * Support for Podcast icon

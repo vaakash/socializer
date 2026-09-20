@@ -4,7 +4,7 @@ $(document).ready(function(){
     page_vals = {};
     $site_list_tmpl = $( '<li><span></span><i class="fa fa-cog site_action site_settings" title="Button settings"></i><i class="fa fa-xmark site_action site_delete" title="Delete button"></i><div class="site_settings_wrap"><p>Enter custom button URL. Use {url}, {title} as placeholders</p><input type="text" class="site_meta form-control"/></div></li>' );
     default_values = {
-        'sites': [ 'facebook', 'googleplus', 'print', 'email', 'rss' ],
+        'sites': [ 'facebook', 'reddit', 'print', 'email', 'rss' ],
         'sizes': '32px',
         'shapes': '',
         'hover': 'opacity',
@@ -341,7 +341,7 @@ $(document).ready(function(){
     var loadTemplates = function(){
         
         $.each( scr_templates, function( idx, tmpl ){
-            $tmplList.append( '<div class="scr_tmpl_wrap" data-tmpl-id="' + idx + '"><div class="scr_tmpl" data-sites="facebook,twitter,rss,googleplus,print" data-features="' + tmpl[1] + '" data-text="' + tmpl[2] + '" ></div><small>' + tmpl[0] + '</small></div>' );
+            $tmplList.append( '<div class="scr_tmpl_wrap" data-tmpl-id="' + idx + '"><div class="scr_tmpl" data-sites="facebook,x,rss,print" data-features="' + tmpl[1] + '" data-text="' + tmpl[2] + '" ></div><small>' + tmpl[0] + '</small></div>' );
         });
         
         socializer( '.scr_tmpl' );
