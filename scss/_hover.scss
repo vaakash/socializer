@@ -1,3 +1,5 @@
+@use 'config' as *;
+
 .sr-opacity a{
     &:hover{
         opacity: 0.5;

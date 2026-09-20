@@ -66,6 +66,7 @@ body{
 .scr_sites_sel .site_action {
     cursor: pointer;
     opacity: 0.5;
+    width: 32px;
 }
 
 .scr_sites_sel .site_action:hover {
@@ -193,7 +194,7 @@ select.code_type {
 .preview_sharebox {
     position: fixed;
     top: 50%;
-    right): 0;
+    right: 0;
     left: 50%;
     background: #ffffff;
     border-radius: 5px;

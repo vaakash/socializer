@@ -2,7 +2,7 @@ $(document).ready(function(){
     
     api = {};
     page_vals = {};
-    $site_list_tmpl = $( '<li><span></span><i class="fa fa-cog site_action site_settings" title="Button settings"></i><i class="fa fa-trash-o site_action site_delete" title="Delete button"></i><div class="site_settings_wrap"><p>Enter custom button URL. Use {url}, {title} as placeholders</p><input type="text" class="site_meta form-control"/></div></li>' );
+    $site_list_tmpl = $( '<li><span></span><i class="fa fa-cog site_action site_settings" title="Button settings"></i><i class="fa fa-xmark site_action site_delete" title="Delete button"></i><div class="site_settings_wrap"><p>Enter custom button URL. Use {url}, {title} as placeholders</p><input type="text" class="site_meta form-control"/></div></li>' );
     default_values = {
         'sites': [ 'facebook', 'googleplus', 'print', 'email', 'rss' ],
         'sizes': '32px',
@@ -274,10 +274,10 @@ $(document).ready(function(){
                 $scrWithoutJS.removeAttr( attr );
             }
         }
-        $( '.withoutjs_code' ).val( $.trim( $appPreviewWithoutJS.html() ) );
+        $( '.withoutjs_code' ).val( $appPreviewWithoutJS.html().trim() );
         
         $scrWithJS.empty().attr( 'class', 'socializer' );
-        $( '.withjs_code' ).val( $.trim( $appPreviewWithJS.html() ) );
+        $( '.withjs_code' ).val( $appPreviewWithJS.html().trim() );
     }
     
     var refreshPreview = function(){

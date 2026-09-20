@@ -197,3 +197,7 @@ $sites: (
 );
 
 $size-list: ( 32px, 40px, 48px, 64px );
+
+@mixin transform($transforms) {
+    transform: $transforms;
+}

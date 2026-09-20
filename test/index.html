@@ -7,16 +7,16 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="../bower_components/normalize-css/normalize.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css?ver=7.5">
-<!--<script src="https://kit.fontawesome.com/62b69e0e27.js" crossorigin="anonymous"></script>-->
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css">
-<link rel="stylesheet" href="../css/socializer.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+<link rel="stylesheet" href="../css/socializer.min.css">
 
 </head>
 <body>
 
 <style>
+    html {
+        font-family: sans-serif;
+    }
 	body{
 		background-color: #f3f5f6;
 		margin: 15px auto;
@@ -332,14 +332,6 @@
 
 </ul>
 
-
-<!--<script src="https://cdn.rawgit.com/vaakash/socializer/master/js/socializer.js?v=3"></script>-->
-<script src="../js/socializer.js?v=3"></script>
-
-
-<!--<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://cdn.rawgit.com/vaakash/socializer/master/js/socializer.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>-->
-
-
 <h3>bottom</h3>
 <div class="hey"></div>
 
@@ -401,6 +393,8 @@
 </ul>
 </div>
 
+<script src="../js/socializer.min.js?v=3"></script>
+
 <script>(function(){
 
     socializer( '.hey', {meta: {title: 'From JS options', link: 'https://google.com/?s=aakash&t=1'}} );
@@ -411,7 +405,6 @@
     });
 
 }());</script>
-
 
     </body>
 </html>

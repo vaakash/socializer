@@ -1,0 +1,87 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'config' as *;
+
+.socializer{
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    
+    // Default font-size
+    $size: 16px;
+    
+    >*{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+        position: relative;
+        line-height: 0;
+    }
+    
+    a{
+        font-family: sans-serif !important;
+        display: inline-flex;
+        border: 0;
+        text-align: center;
+        text-decoration: none;
+        width: $size;
+        height: $size;
+        font-size: math.div($size, 2);
+        border-style: solid;
+        box-sizing: content-box;
+        align-items: center;
+        justify-content: center;
+        
+        transition: all 0.5s;
+        transition-timing-function: ease-out;
+        
+        &>*{
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0;
+            margin: 0;
+        }
+
+    }
+    
+    &:after{
+        content: '';
+        clear: both;
+        display: block;
+    }
+}
+    
+// Button sizes
+@each $size in $size-list{
+    .sr-#{$size}{
+        min-height: $size;
+
+        a{
+            width: $size;
+            height: $size;
+            font-size: math.div($size, 2);
+        }
+        &.sr-font-sm a{
+            font-size: math.div($size, 2) - math.div($size, 6);
+        }
+        &.sr-font-lg a{
+            font-size: math.div($size, 2) + math.div($size, 6);
+        }
+    }
+}
+ 
+// Site colors
+@each $site, $prop in $sites{
+    .socializer .sr-#{$site} a, .socializer .sr-#{$site} a:visited{
+        color: map.get($prop, 'color');
+        border-color: map.get($prop, 'color');
+        background-color: map.get($prop, 'color');
+    }
+}
+.socializer .sr-more > a, .socializer .sr-more > a:visited{
+    color: green;
+    border-color: green;
+    background-color: green;
+}

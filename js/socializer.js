@@ -335,7 +335,7 @@
     
 }());
 
-function socializer_addbookmark( e ){
+window.socializer_addbookmark = function( e ){
     var ua = navigator.userAgent.toLowerCase();
     var isMac = (ua.indexOf('mac') != -1), str = '';
     e.preventDefault();
@@ -343,7 +343,7 @@ function socializer_addbookmark( e ){
     alert('Press ' + str + ' to bookmark this page');
 }
 
-function socializer_shortlink( e, t ){
+window.socializer_shortlink = function( e, t ){
     e.preventDefault();
     link = t.getAttribute( 'href' );
     if( link != '#' )
