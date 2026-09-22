@@ -396,20 +396,18 @@ $(document).ready(function(){
         
         var $shareBoxWrap = $( '.preview_sharebox' );
         var $shareBox = $( '.share_box' ).fadeTo( 'fast', 0.2 );
-        var sTitle = 'Generate attractive social button icons for your website, check out my design ! @vaakash';
+        var sTitle = 'Generate attractive social button icons for your website, check out my design ! @aakashweb';
         
         $shareBoxWrap.addClass( 'preview_loading' );
         
         var ajaxReq = $.ajax({
-            type: 'POST',
-            url: 'https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyCSgFWmIdYfusNP7ZAVHWVdR4U2qpnwZbo',
-            data: '{"longUrl": "' + url + '"}',
-            contentType: "application/json",
-            dataType: 'json'
+            type: 'GET',
+            url: 'https://tinyurl.com/api-create.php?url=' + encodeURIComponent( url ),
+            dataType: 'text'
         });
         
         ajaxReq.done(function(data){
-            surl = data[ 'id' ];
+            surl = data;
             $( '.shortner_url' ).val( surl );
             socializer( '.socializer_share', {
                 meta: {
